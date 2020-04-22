@@ -1,5 +1,0 @@
-D:\BuddhaTherapyDesktop\TherapyManagementSystem\TherapyManagementSystem.Common\bin\Debug\TherapyManagementSystem.Common.dll
-D:\BuddhaTherapyDesktop\TherapyManagementSystem\TherapyManagementSystem.Common\bin\Debug\TherapyManagementSystem.Common.pdb
-D:\BuddhaTherapyDesktop\TherapyManagementSystem\TherapyManagementSystem.Common\obj\Debug\TherapyManagementSystem.Common.csprojAssemblyReference.cache
-D:\BuddhaTherapyDesktop\TherapyManagementSystem\TherapyManagementSystem.Common\obj\Debug\TherapyManagementSystem.Common.dll
-D:\BuddhaTherapyDesktop\TherapyManagementSystem\TherapyManagementSystem.Common\obj\Debug\TherapyManagementSystem.Common.pdb
