@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TherapyManagementSystem.Domain\TherapyManagementSystem.Domain.csproj" />
+    <ProjectReference Include="..\TherapyManagementSystem.Infrastructure.Data\TherapyManagementSystem.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+</Project>
