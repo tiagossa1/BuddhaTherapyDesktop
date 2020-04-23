@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "dA9QrfSmJFv0VQIKSwOc4mxmnlwIYD4xFBs2W3Ta9H5g0CB2V3KjEXL97zHlhtPQX28EAw/wRMJcnfb6D3leew==",
+  "dgSpecHash": "vUuButuqW1q/mF7Jd9kFyzO4Sa8x77wWW/X5pToT+x//SjZNQBGzg1sYO+XL43OwRUk/469qAhvrC00sc4+kJQ==",
   "success": true,
   "projectFilePath": "E:\\DesktopProjects\\TherapyManagementSystemDesktop\\TherapyManagementSystem\\TherapyManagementSystem.Service\\TherapyManagementSystem.Service.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Tiago\\.nuget\\packages\\entityframework\\6.4.0\\entityframework.6.4.0.nupkg.sha512",
     "C:\\Users\\Tiago\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
     "C:\\Users\\Tiago\\.nuget\\packages\\fluentvalidation.aspnetcore\\8.6.2\\fluentvalidation.aspnetcore.8.6.2.nupkg.sha512",
     "C:\\Users\\Tiago\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\8.6.2\\fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512",

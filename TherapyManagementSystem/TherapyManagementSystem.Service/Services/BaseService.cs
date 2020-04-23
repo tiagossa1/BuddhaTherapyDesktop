@@ -29,7 +29,7 @@ namespace TherapyManagementSystem.Service.Services
 
         public void Delete(Guid id)
         {
-            if(id == null || id == Guid.Empty)
+            if(id == default || id == Guid.Empty)
                 throw new ArgumentException("Invalid id.");
 
             repository.Remove(id);
@@ -37,7 +37,10 @@ namespace TherapyManagementSystem.Service.Services
 
         public T Get(Guid id)
         {
-            throw new NotImplementedException();
+            if (id == default || id == Guid.Empty)
+                throw new ArgumentException("Invalid ID.");
+
+            return repository.Select(id);
         }
 
         public IList<T> Get()
