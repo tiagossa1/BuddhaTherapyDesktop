@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TherapyManagementSystem.Inf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TherapyManagementSystem.Infrastructure.Data", "TherapyManagementSystem.Infrastructure.Data\TherapyManagementSystem.Infrastructure.Data.csproj", "{C1221D06-A8FE-4C33-BE7F-4572A88E27AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TherapyManagementSystem.WinForms", "TherapyManagementSystem.WinForms\TherapyManagementSystem.WinForms.csproj", "{BD651008-C709-49B3-B8A1-20FD9D85AA71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TherapyManagementSystem.UI", "TherapyManagementSystem.WinForms\TherapyManagementSystem.UI.csproj", "{BD651008-C709-49B3-B8A1-20FD9D85AA71}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TherapyManagementSystem.WinForms.TherapistCreator", "TherapyManagementSystem.WinForms.TherapistCreator\TherapyManagementSystem.WinForms.TherapistCreator.csproj", "{94238066-D93C-4252-A076-7277CAFC60AE}"
 EndProject

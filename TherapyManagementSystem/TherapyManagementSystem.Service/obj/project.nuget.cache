@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vUuButuqW1q/mF7Jd9kFyzO4Sa8x77wWW/X5pToT+x//SjZNQBGzg1sYO+XL43OwRUk/469qAhvrC00sc4+kJQ==",
+  "dgSpecHash": "TUMLb688GSMxRIEeJzFpnkUafNo/I7eACy4fH1Mm3R0944Z6MbmGRRirTouZZ9gcSxmwZIByM0RWpniK/9zidg==",
   "success": true,
   "projectFilePath": "E:\\DesktopProjects\\TherapyManagementSystemDesktop\\TherapyManagementSystem\\TherapyManagementSystem.Service\\TherapyManagementSystem.Service.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Tiago\\.nuget\\packages\\bcrypt.net\\0.1.0\\bcrypt.net.0.1.0.nupkg.sha512",
     "C:\\Users\\Tiago\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
     "C:\\Users\\Tiago\\.nuget\\packages\\fluentvalidation.aspnetcore\\8.6.2\\fluentvalidation.aspnetcore.8.6.2.nupkg.sha512",
     "C:\\Users\\Tiago\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\8.6.2\\fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512",
@@ -179,5 +180,16 @@
     "C:\\Users\\Tiago\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
     "C:\\Users\\Tiago\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BCrypt.Net 0.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BCrypt.Net",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

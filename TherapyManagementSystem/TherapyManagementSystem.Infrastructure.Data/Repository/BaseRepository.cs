@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using TherapyManagementSystem.Domain.Entities;
 using TherapyManagementSystem.Domain.Interfaces;
@@ -16,6 +17,11 @@ namespace TherapyManagementSystem.Infrastructure.Data.Repository
         public BaseRepository()
         {
             context = new DatabaseContext();
+        }
+
+        public bool CheckIfExists(Expression<Func<T, bool>> predicate)
+        {
+            return context.Set<T>().Any(predicate);
         }
 
         public void Insert(T obj)

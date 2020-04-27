@@ -1,4 +1,4 @@
-﻿namespace TherapyManagementSystem.WinForms
+﻿namespace TherapyManagementSystem.UI
 {
     partial class ClientsForm
     {

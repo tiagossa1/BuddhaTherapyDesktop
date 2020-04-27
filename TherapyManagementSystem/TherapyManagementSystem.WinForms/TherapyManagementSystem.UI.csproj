@@ -7,7 +7,7 @@
     <ProjectGuid>{BD651008-C709-49B3-B8A1-20FD9D85AA71}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TherapyManagementSystem.WinForms</RootNamespace>
-    <AssemblyName>TherapyManagementSystem.WinForms</AssemblyName>
+    <AssemblyName>TherapyManagementSystem.UI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,8 +59,20 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,6 +94,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TherapyManagementSystem.Domain\TherapyManagementSystem.Domain.csproj">
+      <Project>{BF55B1B3-CB27-4395-9B7C-D0F17B34B5AE}</Project>
+      <Name>TherapyManagementSystem.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TherapyManagementSystem.Service\TherapyManagementSystem.Service.csproj">
+      <Project>{FECA26EC-C089-4DCB-92E6-3F8A2743612D}</Project>
+      <Name>TherapyManagementSystem.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

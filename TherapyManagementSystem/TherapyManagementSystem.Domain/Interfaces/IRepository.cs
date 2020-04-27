@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 using TherapyManagementSystem.Domain.Entities;
 
@@ -16,5 +17,7 @@ namespace TherapyManagementSystem.Domain.Interfaces
         T Select(Guid id);
 
         IList<T> SelectAll();
+
+        bool CheckIfExists(Expression<Func<T, bool>> predicate);
     }
 }

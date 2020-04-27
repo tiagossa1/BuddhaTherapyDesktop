@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TherapyManagementSystem.WinForms
+namespace TherapyManagementSystem.UI
 {
     public partial class ClientsForm : Form
     {
