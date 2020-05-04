@@ -1,0 +1,11 @@
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\bin\Debug\TMS.Clientes.Services.dll
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\bin\Debug\TMS.Clientes.Services.pdb
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\bin\Debug\TMS.Clientes.Domain.dll
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\bin\Debug\FluentValidation.dll
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\bin\Debug\TMS.Clientes.Domain.pdb
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\bin\Debug\TMS.Clientes.Domain.dll.config
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\bin\Debug\FluentValidation.xml
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\obj\Debug\TMS.Clientes.Service.csprojAssemblyReference.cache
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\obj\Debug\TMS.Clientes.Service.csproj.CopyComplete
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\obj\Debug\TMS.Clientes.Services.dll
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Cliente.Services\obj\Debug\TMS.Clientes.Services.pdb

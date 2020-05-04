@@ -1,0 +1,14 @@
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Clientes.Domain.dll.config
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Clientes.Domain.dll
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Clientes.Domain.pdb
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\bin\Debug\EntityFramework.dll
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\bin\Debug\FluentValidation.dll
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\bin\Debug\EntityFramework.xml
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\bin\Debug\FluentValidation.xml
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Clientes.Domain.csprojAssemblyReference.cache
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Clientes.Domain.csproj.CopyComplete
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Clientes.Domain.dll
+C:\Users\Carlos Campos\Desktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Clientes.Domain.pdb
