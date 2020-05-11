@@ -32,7 +32,7 @@ namespace TMS.Clientes.Repository.Repository
                 using (var db = new LiteDatabase("Database.db"))
                 {
                     var col = db.GetCollection<ClientModel>("cliente");
-                    if (col.FindById(id) != new ClientModel())
+                    if (col.FindById(id) != null)
                         return col.Delete(id);
                     return false;
                 }
@@ -43,7 +43,7 @@ namespace TMS.Clientes.Repository.Repository
             }
         }
 
-        public Client.Domain.Model.ClientModel Get(Guid id)
+        public ClientModel Get(Guid id)
         {
             try
             {
@@ -55,11 +55,11 @@ namespace TMS.Clientes.Repository.Repository
             }
             catch
             {
-                return new Client.Domain.Model.ClientModel();
+                return new ClientModel();
             }
         }
 
-        public IList<Client.Domain.Model.ClientModel> GetAll()
+        public IList<ClientModel> GetAll()
         {
             try
             {
@@ -71,11 +71,11 @@ namespace TMS.Clientes.Repository.Repository
             }
             catch
             {
-                return new List<Client.Domain.Model.ClientModel>();
+                return new List<ClientModel>();
             }
         }
 
-        public bool Put(Client.Domain.Model.ClientModel obj)
+        public bool Put(ClientModel obj)
         {
             try
             {

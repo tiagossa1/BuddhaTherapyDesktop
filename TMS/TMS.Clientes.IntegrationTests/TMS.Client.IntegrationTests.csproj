@@ -53,10 +53,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdicionarNovoCliente_IntegrationTests.cs" />
-    <Compile Include="ApagarCliente_IntegrationTests.cs" />
-    <Compile Include="AtualizarCliente_IntegrationTests.cs" />
-    <Compile Include="ObterClientes_IntegrationTests.cs" />
+    <Compile Include="AdicionarNovoCliente.cs" />
+    <Compile Include="ApagarCliente.cs" />
+    <Compile Include="AtualizarCliente.cs" />
+    <Compile Include="ObterClientes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

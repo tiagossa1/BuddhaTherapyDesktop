@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using TMS.Appointment.Domain.Interfaces;
@@ -21,8 +22,11 @@ namespace TMS.Appointment.Repository
                 {
                     var col = db.GetCollection<AppointmentModel>(tableName);
 
-                    if (col.FindById(id) != new AppointmentModel())
+                    if (col.FindById(id) != null)
+                    {
                         return col.Delete(id);
+                    }
+
                     return false;
                 }
             }

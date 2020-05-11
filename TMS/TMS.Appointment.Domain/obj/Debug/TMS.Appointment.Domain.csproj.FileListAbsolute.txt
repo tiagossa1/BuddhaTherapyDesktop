@@ -8,3 +8,12 @@ E:\DesktopProjects\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.c
 E:\DesktopProjects\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.csproj.CopyComplete
 E:\DesktopProjects\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.dll
 E:\DesktopProjects\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\TMS.Appointment.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\TMS.Appointment.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\FluentValidation.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\System.ComponentModel.Annotations.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\FluentValidation.xml
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.csproj.CoreCompileInputs.cache
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.csproj.CopyComplete
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.pdb

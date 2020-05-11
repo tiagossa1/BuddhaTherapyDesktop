@@ -9,13 +9,18 @@ namespace TMS.Appointment.Domain.Models
 {
     public class AppointmentModel : Entity
     {
-        public AppointmentModel(Guid clientID, DateTime dateTime, int appointmentTypeID, string appointmentTypeName, string appointmentTypeDescription)
+        public AppointmentModel(Guid id, Guid clientID, DateTime dateTime, int appointmentTypeID, string appointmentTypeName, string appointmentTypeDescription)
         {
+            Id = id;
             ClientID = clientID;
             DateTime = dateTime;
             AppointmentTypeID = appointmentTypeID;
             AppointmentTypeName = appointmentTypeName;
             AppointmentTypeDescription = appointmentTypeDescription;
+        }
+
+        public AppointmentModel()
+        {
         }
 
         public Guid ClientID { get; set; }

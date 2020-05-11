@@ -18,8 +18,8 @@ namespace TMS.Appointment.Domain.Tests
             var appointmentRepository = new Mock<IAppointmentRepository>();
             AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
 
-            AppointmentModel appointmentOne = new AppointmentModel(Guid.NewGuid(), default, 1, "XYZ", "XYZ");
-            AppointmentModel appointmentTwo = new AppointmentModel(Guid.NewGuid(), DateTime.Now, 0, "XYZ", "XYZ");
+            AppointmentModel appointmentOne = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), default, 1, "XYZ", "XYZ");
+            AppointmentModel appointmentTwo = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 0, "XYZ", "XYZ");
 
             // Act
             IList<string> resultOne = appointmentDomainService.Post(appointmentOne);
@@ -37,7 +37,7 @@ namespace TMS.Appointment.Domain.Tests
             var appointmentRepository = new Mock<IAppointmentRepository>();
             appointmentRepository.Setup(x => x.Post(It.IsAny<AppointmentModel>())).Returns(false);
             AppointmentDomainService AppointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
-            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), DateTime.Now, 1, "XYZ", "XYZ");
+            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "XYZ", "XYZ");
 
             // Act
             IList<string> result = AppointmentDomainService.Post(appointment);
@@ -53,7 +53,7 @@ namespace TMS.Appointment.Domain.Tests
             var appointmentRepository = new Mock<IAppointmentRepository>();
             appointmentRepository.Setup(x => x.Post(It.IsAny<AppointmentModel>())).Returns(true);
             var appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
-            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), DateTime.Now, 5, "XYZ", "XYZ");
+            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 5, "XYZ", "XYZ");
 
             // Act
             IList<string> result = appointmentDomainService.Post(appointment);
@@ -68,7 +68,7 @@ namespace TMS.Appointment.Domain.Tests
             // Arrange
             var appointmentRepository = new Mock<IAppointmentRepository>();
             AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
-            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), DateTime.Now, 2, null, null);
+            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 2, null, null);
 
             // Act
             IList<string> result = appointmentDomainService.Put(appointment);
@@ -84,7 +84,7 @@ namespace TMS.Appointment.Domain.Tests
             var appointmentRepository = new Mock<IAppointmentRepository>();
             appointmentRepository.Setup(x => x.Put(It.IsAny<AppointmentModel>())).Returns(false);
             AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
-            AppointmentModel cliente = new AppointmentModel(Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
+            AppointmentModel cliente = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
 
             // Act
             IList<string> result = appointmentDomainService.Put(cliente);
@@ -99,8 +99,9 @@ namespace TMS.Appointment.Domain.Tests
             // Arrange
             var appointmentRepository = new Mock<IAppointmentRepository>();
             appointmentRepository.Setup(x => x.Put(It.IsAny<AppointmentModel>())).Returns(true);
+
             var appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
-            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
+            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
 
             // Act
             IList<string> result = appointmentDomainService.Put(appointment);
@@ -130,7 +131,7 @@ namespace TMS.Appointment.Domain.Tests
             // Arrange
             Guid appointmentGuid = Guid.NewGuid();
             var appointmentRepository = new Mock<IAppointmentRepository>();
-            appointmentRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(new AppointmentModel(appointmentGuid, DateTime.Now, 1, "xyz", "xyz"));
+            appointmentRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(new AppointmentModel(appointmentGuid, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz"));
             AppointmentDomainService AppointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
 
             // Act
@@ -144,7 +145,7 @@ namespace TMS.Appointment.Domain.Tests
         public void GetAll_VaiRetornarOsClientes()
         {
             // Arrange
-            IList<AppointmentModel> appointments = new List<AppointmentModel>() { new AppointmentModel(Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz") };
+            IList<AppointmentModel> appointments = new List<AppointmentModel>() { new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz") };
             var appointmentRepository = new Mock<IAppointmentRepository>();
             appointmentRepository.Setup(x => x.GetAll()).Returns(appointments);
             AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);

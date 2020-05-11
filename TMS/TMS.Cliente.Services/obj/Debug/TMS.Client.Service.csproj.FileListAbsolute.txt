@@ -10,3 +10,15 @@ E:\DesktopProjects\TMS\TMS.Cliente.Services\obj\Debug\TMS.Client.Service.csproj.
 E:\DesktopProjects\TMS\TMS.Cliente.Services\obj\Debug\TMS.Client.Service.csproj.CopyComplete
 E:\DesktopProjects\TMS\TMS.Cliente.Services\obj\Debug\TMS.Client.Services.dll
 E:\DesktopProjects\TMS\TMS.Cliente.Services\obj\Debug\TMS.Client.Services.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\bin\Debug\TMS.Client.Services.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\bin\Debug\TMS.Client.Services.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\bin\Debug\TMS.Client.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\bin\Debug\FluentValidation.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\bin\Debug\TMS.Client.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\bin\Debug\TMS.Client.Domain.dll.config
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\bin\Debug\FluentValidation.xml
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\obj\Debug\TMS.Client.Service.csprojAssemblyReference.cache
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\obj\Debug\TMS.Client.Service.csproj.CoreCompileInputs.cache
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\obj\Debug\TMS.Client.Service.csproj.CopyComplete
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\obj\Debug\TMS.Client.Services.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Cliente.Services\obj\Debug\TMS.Client.Services.pdb
