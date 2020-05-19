@@ -25,8 +25,8 @@ namespace TMS.Appointment.IntegrationTests
             Guid appointmentId = Guid.NewGuid();
             Guid clientId = Guid.NewGuid();
 
-            AppointmentDto appointment = new AppointmentDto(appointmentId, clientId, DateTime.Now, 1, "xyz", "xyz");
-            AppointmentDto appointmentNew = new AppointmentDto(appointmentId, clientId, DateTime.Now, 2, "xyz", "xyz");
+            AppointmentDto appointment = new AppointmentDto(appointmentId, clientId, DateTime.Now, 1, "xyz");
+            AppointmentDto appointmentNew = new AppointmentDto(appointmentId, clientId, DateTime.Now, 2, "xyz");
 
             // Act
             IList<string> insertResult = appointmentService.Post(appointment);

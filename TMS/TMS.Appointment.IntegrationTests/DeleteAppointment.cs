@@ -36,7 +36,7 @@ namespace TMS.Appointment.IntegrationTests
             AppointmentService appointmentService = new AppointmentService(container.GetInstance<AppointmentDomainService>());
 
             Guid appointmentId = Guid.NewGuid();
-            AppointmentDto appointment = new AppointmentDto(appointmentId, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
+            AppointmentDto appointment = new AppointmentDto(appointmentId, Guid.NewGuid(), DateTime.Now, 1, "xyz");
 
             // Act
             IList<string> result = appointmentService.Post(appointment);

@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,24 +49,38 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppointmentsForm.cs">
+    <Compile Include="AppointmentForms\CreateOrUpdateAppointmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppointmentsForm.Designer.cs">
-      <DependentUpon>AppointmentsForm.cs</DependentUpon>
+    <Compile Include="AppointmentForms\CreateOrUpdateAppointmentForm.Designer.cs">
+      <DependentUpon>CreateOrUpdateAppointmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientsForm.cs">
+    <Compile Include="AppointmentForms\AppointmentMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientsForm.Designer.cs">
-      <DependentUpon>ClientsForm.cs</DependentUpon>
+    <Compile Include="AppointmentForms\AppointmentMainForm.Designer.cs">
+      <DependentUpon>AppointmentMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoicesForm.cs">
+    <Compile Include="ClientForms\CreateOrUpdateClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvoicesForm.Designer.cs">
+    <Compile Include="ClientForms\CreateOrUpdateClientForm.Designer.cs">
+      <DependentUpon>CreateOrUpdateClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientForms\ClientMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientForms\ClientMainForm.Designer.cs">
+      <DependentUpon>ClientMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoreEnums.cs" />
+    <Compile Include="InvoiceForms\InvoicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceForms\InvoicesForm.Designer.cs">
       <DependentUpon>InvoicesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -70,10 +89,21 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapper\AppointmentMapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ClientsForm.resx">
-      <DependentUpon>ClientsForm.cs</DependentUpon>
+    <Compile Include="UIModels\AppointmentUIModel.cs" />
+    <EmbeddedResource Include="AppointmentForms\AppointmentMainForm.resx">
+      <DependentUpon>AppointmentMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentForms\CreateOrUpdateAppointmentForm.resx">
+      <DependentUpon>CreateOrUpdateAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientForms\CreateOrUpdateClientForm.resx">
+      <DependentUpon>CreateOrUpdateClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientForms\ClientMainForm.resx">
+      <DependentUpon>ClientMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -83,6 +113,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,6 +134,32 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.Appointment.Domain\TMS.Appointment.Domain.csproj">
+      <Project>{0814701F-71D0-422B-BCC6-3BD0C58BDB41}</Project>
+      <Name>TMS.Appointment.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Appointment.Repository\TMS.Appointment.Repository.csproj">
+      <Project>{7FBCB119-3481-40AA-9D7E-272A4D931DF7}</Project>
+      <Name>TMS.Appointment.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Appointment.Service\TMS.Appointment.Service.csproj">
+      <Project>{85740BA8-9192-4ABD-B4C4-B06F922EDA28}</Project>
+      <Name>TMS.Appointment.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Cliente.Services\TMS.Client.Service.csproj">
+      <Project>{19414BC8-F34A-4FE2-B744-BD81381D6FD8}</Project>
+      <Name>TMS.Client.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Clientes.Domain\TMS.Client.Domain.csproj">
+      <Project>{6F57D90B-6691-4709-B5B1-B216893C0310}</Project>
+      <Name>TMS.Client.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Clientes.Repository\TMS.Client.Repository.csproj">
+      <Project>{67AC58B4-33D7-4DFA-A821-6AC3BAB7FB27}</Project>
+      <Name>TMS.Client.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

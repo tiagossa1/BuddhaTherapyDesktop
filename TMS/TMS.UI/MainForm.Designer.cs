@@ -77,7 +77,7 @@
             this.btnInvoices.Text = "RECIBOS";
             this.btnInvoices.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInvoices.UseVisualStyleBackColor = true;
-            this.btnInvoices.Click += new System.EventHandler(this.btnInvoices_Click);
+            this.btnInvoices.Click += new System.EventHandler(this.BtnInvoices_Click);
             // 
             // MainForm
             // 
@@ -93,6 +93,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TMS - Menu";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }

@@ -27,3 +27,4 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\De
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.csprojAssemblyReference.cache

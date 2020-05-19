@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TMS.Clientes.Service.Model;
+using TMS.UI.AppointmentForms;
 
 namespace TMS.UI
 {
@@ -29,7 +32,7 @@ namespace TMS.UI
 
         private void BtnAppointments_Click(object sender, EventArgs e)
         {
-            var appointmentsForm = new AppointmentsForm();
+            var appointmentsForm = new AppointmentMainForm();
 
             Hide();
 
@@ -37,7 +40,7 @@ namespace TMS.UI
             appointmentsForm.Show();
         }
 
-        private void btnInvoices_Click(object sender, EventArgs e)
+        private void BtnInvoices_Click(object sender, EventArgs e)
         {
             var invoicesForm = new InvoicesForm();
 
@@ -45,7 +48,10 @@ namespace TMS.UI
 
             invoicesForm.Closed += (s, args) => Show();
             invoicesForm.Show();
+        }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

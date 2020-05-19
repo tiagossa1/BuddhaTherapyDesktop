@@ -17,3 +17,4 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.csprojAssemblyReference.cache

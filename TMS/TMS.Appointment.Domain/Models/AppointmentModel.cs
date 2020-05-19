@@ -9,14 +9,13 @@ namespace TMS.Appointment.Domain.Models
 {
     public class AppointmentModel : Entity
     {
-        public AppointmentModel(Guid id, Guid clientID, DateTime dateTime, int appointmentTypeID, string appointmentTypeName, string appointmentTypeDescription)
+        public AppointmentModel(Guid id, Guid clientID, DateTime dateTime, int appointmentTypeID, string appointmentTypeName)
         {
             Id = id;
             ClientID = clientID;
             DateTime = dateTime;
             AppointmentTypeID = appointmentTypeID;
             AppointmentTypeName = appointmentTypeName;
-            AppointmentTypeDescription = appointmentTypeDescription;
         }
 
         public AppointmentModel()
@@ -27,7 +26,6 @@ namespace TMS.Appointment.Domain.Models
         public DateTime DateTime { get; set; }
         public int AppointmentTypeID { get; set; }
         public string AppointmentTypeName { get; set; }
-        public string AppointmentTypeDescription { get; set; }
         public override bool IsValid()
         {
             ValidationResult = new AppointmentModelValidation().Validate(this);
