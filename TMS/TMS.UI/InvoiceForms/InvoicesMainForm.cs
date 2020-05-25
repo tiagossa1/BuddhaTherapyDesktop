@@ -13,18 +13,21 @@ using TMS.Invoice.Repository.Repository;
 using TMS.Invoice.Service.Model;
 using TMS.Invoice.Service.Service;
 using TMS.UI.InvoiceForms;
+using TMS.UI.Mapper;
 
 namespace TMS.UI
 {
     public partial class InvoicesForm : Form
     {
         private readonly InvoiceService invoiceService;
+        private readonly InvoiceMapper invoiceMapper;
         private List<InvoiceDto> invoices;
         public InvoicesForm()
         {
-            InitializeComponent();
-
             invoiceService = new InvoiceService(new InvoiceDomainService(new InvoiceRepository()));
+            invoiceMapper = new InvoiceMapper();
+
+            InitializeComponent();
         }
 
         private void BtnCreate_Click(object sender, EventArgs e)
@@ -45,7 +48,7 @@ namespace TMS.UI
         private void RefreshDataSource()
         {
             invoices = invoiceService.GetAll().ToList();
-            dataGridView1.DataSource = invoices;
+            dataGridView1.DataSource = invoiceMapper.ToUiModelList(invoices);
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)

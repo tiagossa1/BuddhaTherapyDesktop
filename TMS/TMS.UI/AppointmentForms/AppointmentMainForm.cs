@@ -20,10 +20,12 @@ namespace TMS.UI.AppointmentForms
     {
         private readonly AppointmentService appointmentService;
         private List<AppointmentDto> appointments = new List<AppointmentDto>();
+        private readonly AppointmentMapper appointmentMapper;
 
         public AppointmentMainForm()
         {
             appointmentService = new AppointmentService(new AppointmentDomainService(new AppointmentRepository()));
+            appointmentMapper = new AppointmentMapper();
 
             InitializeComponent();
         }
@@ -46,7 +48,7 @@ namespace TMS.UI.AppointmentForms
         private void RefreshDataSource()
         {
             appointments = appointmentService.GetAll().ToList();
-            dataGridView1.DataSource = AppointmentMapper.ToUiModelList(appointments);
+            dataGridView1.DataSource = appointmentMapper.ToUiModelList(appointments);
         }
 
         private void AppointmentsForm_Load(object sender, EventArgs e)

@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using TMS.Appointment.Service.Model;
 using TMS.Client.Domain.Services;
 using TMS.Clientes.Repository.Repository;
+using TMS.UI.Mapper.Interfaces;
 using TMS.UI.UIModels;
 
 namespace TMS.UI.Mapper
 {
-    public static class AppointmentMapper
+    public class AppointmentMapper : IMapper<AppointmentDto, AppointmentUIModel>
     {
-        public static AppointmentUIModel ToUiModel(AppointmentDto dto)
+        public AppointmentUIModel ToUiModel(AppointmentDto dto)
         {
             var clientService = new ClientService(new ClientDomainService(new ClientRepository()));
 
@@ -22,7 +23,7 @@ namespace TMS.UI.Mapper
             return new AppointmentUIModel(clientName, dto.DateTime, dto.AppointmentTypeName);
         }
 
-        public static List<AppointmentUIModel> ToUiModelList(List<AppointmentDto> dtos)
+        public List<AppointmentUIModel> ToUiModelList(List<AppointmentDto> dtos)
         {
             return dtos.Select(ToUiModel).ToList();
         }

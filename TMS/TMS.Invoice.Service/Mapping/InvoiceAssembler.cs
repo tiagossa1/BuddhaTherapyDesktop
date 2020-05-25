@@ -28,7 +28,7 @@ namespace TMS.Invoice.Service.Mapping
         {
             if (invoices is null)
                 return new List<InvoiceModel>();
-            return new List<InvoiceModel>(invoices.Select(x => new InvoiceModel(x.Id, x.ClientId, x.AppointmentId, x.Price, x.InvoiceDate)));
+            return new List<InvoiceModel>(invoices.Select(x => new InvoiceModel(x.Id, x.AppointmentId, x.ClientId, x.Price, x.InvoiceDate)));
         }
 
         public static List<InvoiceDto> EntitiesToDto(List<InvoiceModel> cliente)
@@ -36,7 +36,7 @@ namespace TMS.Invoice.Service.Mapping
             if (cliente is null)
                 return new List<InvoiceDto>();
 
-            return new List<InvoiceDto>(cliente.Select(x => new InvoiceDto(x.Id, x.ClientId, x.AppointmentId, x.Price, x.InvoiceDate)));
+            return new List<InvoiceDto>(cliente.Select(x => new InvoiceDto(x.Id, x.AppointmentId, x.ClientId, x.Price, x.InvoiceDate)));
         }
     }
 }

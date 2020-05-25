@@ -44,6 +44,14 @@ namespace TMS.UI.InvoiceForms
         private void CreateOrUpdateInvoiceForm_Load(object sender, EventArgs e)
         {
             SetupAppointmentComboBox();
+
+            if (Invoice != null)
+            {
+                cmbAppointments.SelectedIndex = invoiceService.GetAll().ToList().FindIndex(i => i.Id == Invoice.Id);
+                txtPrice.Text = Invoice.Price.ToString();
+
+                ChangeCreateLabelsToEditingLabels();
+            }
         }
 
         private void SetupAppointmentComboBox()
@@ -61,9 +69,18 @@ namespace TMS.UI.InvoiceForms
         {
             var selectedAppointment = appointments[cmbAppointments.SelectedIndex];
 
-            var invoice = new InvoiceDto(Guid.NewGuid(), selectedAppointment.Id, selectedAppointment.ClientID, decimal.Parse(txtPrice.Text), DateTime.UtcNow);
+            var invoice = new InvoiceDto(Invoice != null ? Invoice.Id : Guid.NewGuid(), selectedAppointment.Id, selectedAppointment.ClientID, decimal.Parse(txtPrice.Text), DateTime.UtcNow);
 
-            var results = invoiceService.Post(invoice);
+            List<string> results;
+
+            if (Invoice != null)
+            {
+                results = invoiceService.Put(invoice).ToList();
+            }
+            else
+            {
+                results = invoiceService.Post(invoice).ToList();
+            }
 
             if (results.Count > 0)
             {
@@ -91,6 +108,12 @@ namespace TMS.UI.InvoiceForms
             {
                 e.Handled = true;
             }
+        }
+
+        private void ChangeCreateLabelsToEditingLabels()
+        {
+            Text = "Editar Recibo";
+            btnCreateOrEdit.Text = "Editar";
         }
     }
 }

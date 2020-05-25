@@ -1,10 +1,10 @@
-﻿using AutoMapper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,24 +13,27 @@ using TMS.Client.Domain.Services;
 using TMS.Clientes.Repository.Repository;
 using TMS.Clientes.Service.Model;
 using TMS.UI.ClientForms;
+using TMS.UI.Mapper;
 
 namespace TMS.UI
 {
     public partial class ClientsForm : Form
     {
         private readonly ClientService clientService;
+        private readonly ClientMapper clientMapper;
         private List<ClientDto> clients = new List<ClientDto>();
+
         public ClientsForm()
         {
             clientService = new ClientService(new ClientDomainService(new ClientRepository()));
+            clientMapper = new ClientMapper();
 
             InitializeComponent();
         }
 
         private void ClientsForm_Load(object sender, EventArgs e)
         {
-            clients = clientService.GetAll().ToList();
-            dataGridView1.DataSource = clients;
+            RefreshDataSource();
         }
 
         private void BtnCreate_Click(object sender, EventArgs e)
@@ -73,7 +76,7 @@ namespace TMS.UI
         private void RefreshDataSource()
         {
             clients = clientService.GetAll().ToList();
-            dataGridView1.DataSource = clients;
+            dataGridView1.DataSource = clientMapper.ToUiModelList(clients);
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
