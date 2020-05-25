@@ -77,11 +77,17 @@
       <DependentUpon>ClientMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CoreEnums.cs" />
-    <Compile Include="InvoiceForms\InvoicesForm.cs">
+    <Compile Include="InvoiceForms\CreateOrUpdateInvoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InvoiceForms\InvoicesForm.Designer.cs">
-      <DependentUpon>InvoicesForm.cs</DependentUpon>
+    <Compile Include="InvoiceForms\CreateOrUpdateInvoiceForm.Designer.cs">
+      <DependentUpon>CreateOrUpdateInvoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceForms\InvoicesMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceForms\InvoicesMainForm.Designer.cs">
+      <DependentUpon>InvoicesMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -104,6 +110,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientForms\ClientMainForm.resx">
       <DependentUpon>ClientMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceForms\CreateOrUpdateInvoiceForm.resx">
+      <DependentUpon>CreateOrUpdateInvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceForms\InvoicesMainForm.resx">
+      <DependentUpon>InvoicesMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -159,6 +171,18 @@
     <ProjectReference Include="..\TMS.Clientes.Repository\TMS.Client.Repository.csproj">
       <Project>{67AC58B4-33D7-4DFA-A821-6AC3BAB7FB27}</Project>
       <Name>TMS.Client.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Invoice.Domain\TMS.Invoice.Domain.csproj">
+      <Project>{61668B91-0F28-4AFB-9C03-43B410F751FA}</Project>
+      <Name>TMS.Invoice.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Invoice.Repository\TMS.Invoice.Repository.csproj">
+      <Project>{7D7D5A12-D1ED-4347-A827-330E9490CD6A}</Project>
+      <Name>TMS.Invoice.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Invoice.Service\TMS.Invoice.Service.csproj">
+      <Project>{467EC9AC-401F-4B6D-AEC4-4C49FA8707E7}</Project>
+      <Name>TMS.Invoice.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -50,7 +50,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(602, 317);
+            this.dataGridView1.Size = new System.Drawing.Size(603, 281);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.DataGridView1_RowStateChanged);
             // 
@@ -60,9 +60,9 @@
             this.btnCreate.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.Image")));
             this.btnCreate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCreate.Location = new System.Drawing.Point(6, 3);
+            this.btnCreate.Location = new System.Drawing.Point(0, 0);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(98, 44);
+            this.btnCreate.Size = new System.Drawing.Size(98, 45);
             this.btnCreate.TabIndex = 1;
             this.btnCreate.Text = "Criar";
             this.btnCreate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -83,7 +83,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.10638F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.89362F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(608, 384);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(612, 341);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // panel2
@@ -94,9 +94,9 @@
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.btnCreate);
-            this.panel2.Location = new System.Drawing.Point(3, 329);
+            this.panel2.Location = new System.Drawing.Point(3, 293);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(605, 52);
+            this.panel2.Size = new System.Drawing.Size(606, 45);
             this.panel2.TabIndex = 3;
             // 
             // btnEdit
@@ -106,9 +106,9 @@
             this.btnEdit.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(214, 3);
+            this.btnEdit.Location = new System.Drawing.Point(208, 0);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(98, 44);
+            this.btnEdit.Size = new System.Drawing.Size(98, 45);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Editar";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -122,9 +122,9 @@
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(110, 3);
+            this.btnDelete.Location = new System.Drawing.Point(104, 0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(98, 44);
+            this.btnDelete.Size = new System.Drawing.Size(98, 45);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Apagar";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -139,14 +139,14 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(605, 320);
+            this.panel1.Size = new System.Drawing.Size(606, 284);
             this.panel1.TabIndex = 2;
             // 
             // ClientsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 388);
+            this.ClientSize = new System.Drawing.Size(613, 345);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientsForm";

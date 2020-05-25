@@ -45,6 +45,8 @@ namespace TMS.UI
 
                 datePicker.Value = Appointment.DateTime;
                 timePicker.Value = Appointment.DateTime;
+
+                ChangeCreateLabelsToEditingLabels();
             }
         }
 
@@ -101,6 +103,12 @@ namespace TMS.UI
                 MessageBox.Show(message, "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
+        }
+
+        private void ChangeCreateLabelsToEditingLabels()
+        {
+            Text = "Editar Consulta";
+            btnCreateOrEdit.Text = "Editar";
         }
     }
 }

@@ -34,10 +34,13 @@ namespace TMS.UI.AppointmentForms
 
             Hide();
 
-            createOrUpdateAppointmentForm.Closed += (s, args) => Show();
-            createOrUpdateAppointmentForm.Show();
+            createOrUpdateAppointmentForm.Closed += (s, args) =>
+            {
+                RefreshDataSource();
+                Show();
+            };
 
-            RefreshDataSource();
+            createOrUpdateAppointmentForm.Show();
         }
 
         private void RefreshDataSource()
@@ -80,10 +83,13 @@ namespace TMS.UI.AppointmentForms
 
             Hide();
 
-            createOrUpdateAppointmentForm.Closed += (s, args) => Show();
-            createOrUpdateAppointmentForm.Show();
+            createOrUpdateAppointmentForm.Closed += (s, args) =>
+            {
+                Show();
+                RefreshDataSource();
+            };
 
-            RefreshDataSource();
+            createOrUpdateAppointmentForm.Show();
         }
     }
 }

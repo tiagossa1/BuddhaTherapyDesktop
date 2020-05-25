@@ -39,10 +39,13 @@ namespace TMS.UI
 
             Hide();
 
-            addClientForm.Closed += (s, args) => Show();
-            addClientForm.Show();
+            addClientForm.Closed += (s, args) =>
+            {
+                RefreshDataSource();
+                Show();
+            };
 
-            RefreshDataSource();
+            addClientForm.Show();
         }
 
         private void DataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
@@ -80,10 +83,13 @@ namespace TMS.UI
 
             Hide();
 
-            addClientForm.Closed += (s, args) => Show();
-            addClientForm.Show();
+            addClientForm.Closed += (s, args) =>
+            {
+                RefreshDataSource();
+                Show();
+            };
 
-            RefreshDataSource();
+            addClientForm.Show();
         }
     }
 }

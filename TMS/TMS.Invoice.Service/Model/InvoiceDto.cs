@@ -12,9 +12,10 @@ namespace TMS.Invoice.Service.Model
         {
         }
 
-        public InvoiceDto(Guid id, Guid clientId, decimal price, DateTime invoiceDate)
+        public InvoiceDto(Guid id, Guid appointmentId, Guid clientId, decimal price, DateTime invoiceDate)
         {
             Id = id;
+            AppointmentId = appointmentId;
             ClientId = clientId;
             Price = price;
             InvoiceDate = invoiceDate;

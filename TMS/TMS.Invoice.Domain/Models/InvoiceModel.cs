@@ -13,9 +13,10 @@ namespace TMS.Invoice.Domain.Models
         {
         }
 
-        public InvoiceModel(Guid id, Guid clientId, decimal price, DateTime invoiceDate)
+        public InvoiceModel(Guid id, Guid appointmentId, Guid clientId, decimal price, DateTime invoiceDate)
         {
             Id = id;
+            AppointmentId = appointmentId;
             ClientId = clientId;
             Price = price;
             InvoiceDate = invoiceDate;
