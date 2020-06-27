@@ -40,7 +40,7 @@ namespace TMS.Invoice.IntegrationTests
             Guid invoiceId = Guid.NewGuid();
 
             // Act
-            InvoiceDto invoice = new InvoiceDto(invoiceId, Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoice = new InvoiceDto(invoiceId, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
             IList<string> postResult = InvoiceService.Post(invoice);
 
@@ -62,7 +62,7 @@ namespace TMS.Invoice.IntegrationTests
             Guid invoiceId = Guid.NewGuid();
 
             // Act
-            InvoiceDto invoice = new InvoiceDto(invoiceId, Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoice = new InvoiceDto(invoiceId, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
             IList<string> postResult = InvoiceService.Post(invoice);
 

@@ -45,6 +45,7 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tes
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\bin\Debug\FluentValidation.xml
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.csprojAssemblyReference.cache
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.csproj.CoreCompileInputs.cache
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.dll

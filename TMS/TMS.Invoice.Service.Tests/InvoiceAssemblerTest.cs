@@ -17,9 +17,9 @@ namespace TMS.Invoice.Service.Tests
             // Arrange
             Guid newGuid = Guid.NewGuid();
 
-            InvoiceDto invoiceDto = new InvoiceDto(newGuid, Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoiceDto = new InvoiceDto(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
-            InvoiceModel invoice = new InvoiceModel(newGuid, Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceModel invoice = new InvoiceModel(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
             // Act
             InvoiceModel result = InvoiceAssembler.DtoToEntity(invoiceDto);
@@ -44,9 +44,9 @@ namespace TMS.Invoice.Service.Tests
             // Arrange
             Guid newGuid = Guid.NewGuid();
 
-            InvoiceDto invoiceDto = new InvoiceDto(newGuid, Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoiceDto = new InvoiceDto(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
-            InvoiceModel invoice = new InvoiceModel(newGuid, Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceModel invoice = new InvoiceModel(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
             // Act
             InvoiceDto result = InvoiceAssembler.EntityToDto(invoice);
@@ -61,9 +61,9 @@ namespace TMS.Invoice.Service.Tests
             // Arrange
             Guid newGuid = Guid.NewGuid();
 
-            List<InvoiceDto> invoiceDtos = new List<InvoiceDto>() { new InvoiceDto(newGuid, Guid.NewGuid(), decimal.One, DateTime.Now) };
+            List<InvoiceDto> invoiceDtos = new List<InvoiceDto>() { new InvoiceDto(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
 
-            List<InvoiceModel> invoices = new List<InvoiceModel>() { new InvoiceModel(newGuid, Guid.NewGuid(), decimal.One, DateTime.Now) };
+            List<InvoiceModel> invoices = new List<InvoiceModel>() { new InvoiceModel(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
 
             // Act
             List<InvoiceDto> result = InvoiceAssembler.EntitiesToDto(invoices);
@@ -78,9 +78,9 @@ namespace TMS.Invoice.Service.Tests
             // Arrange
             Guid newGuid = Guid.NewGuid();
 
-            List<InvoiceDto> invoiceDtos = new List<InvoiceDto>() { new InvoiceDto(newGuid, Guid.NewGuid(), decimal.One, DateTime.Now) };
+            List<InvoiceDto> invoiceDtos = new List<InvoiceDto>() { new InvoiceDto(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
 
-            List<InvoiceModel> cliente = new List<InvoiceModel>() { new InvoiceModel(newGuid, Guid.NewGuid(), decimal.One, DateTime.Now) };
+            List<InvoiceModel> cliente = new List<InvoiceModel>() { new InvoiceModel(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
 
             // Act
             List<InvoiceModel> result = InvoiceAssembler.DtosToEntities(invoiceDtos);

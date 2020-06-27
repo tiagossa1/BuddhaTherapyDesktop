@@ -17,7 +17,7 @@ namespace TMS.Invoice.IntegrationTests
             // Arrange
             var container = BootStrapDI.Bootstrap();
             InvoiceService invoiceService = new InvoiceService(container.GetInstance<InvoiceDomainService>());
-            InvoiceDto invoice = new InvoiceDto(Guid.NewGuid(), Guid.NewGuid(), decimal.One, default);
+            InvoiceDto invoice = new InvoiceDto(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, default);
 
             // Act
             IList<string> result = invoiceService.Post(invoice);
@@ -32,7 +32,7 @@ namespace TMS.Invoice.IntegrationTests
             // Arrange
             var container = BootStrapDI.Bootstrap();
             InvoiceService invoiceService = new InvoiceService(container.GetInstance<InvoiceDomainService>());
-            InvoiceDto invoice = new InvoiceDto(Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoice = new InvoiceDto(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
             // Act
             IList<string> result = invoiceService.Post(invoice);

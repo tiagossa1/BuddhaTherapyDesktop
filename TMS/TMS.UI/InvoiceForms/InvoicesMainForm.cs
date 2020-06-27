@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastMember;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ using TMS.Invoice.Service.Model;
 using TMS.Invoice.Service.Service;
 using TMS.UI.InvoiceForms;
 using TMS.UI.Mapper;
+using TMS.UI.UIModels;
 
 namespace TMS.UI
 {
@@ -32,17 +34,17 @@ namespace TMS.UI
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            var createOrUpdateInvoice = new CreateOrUpdateInvoiceForm(null);
+            var createOrUpdateInvoiceForm = new CreateOrUpdateInvoiceForm(null);
 
             Hide();
 
-            createOrUpdateInvoice.Closed += (s, args) =>
+            createOrUpdateInvoiceForm.Closed += (s, args) =>
             {
                 RefreshDataSource();
                 Show();
             };
 
-            createOrUpdateInvoice.Show();
+            createOrUpdateInvoiceForm.Show();
         }
 
         private void RefreshDataSource()
@@ -89,9 +91,44 @@ namespace TMS.UI
         {
             if (e.StateChanged == DataGridViewElementStates.Selected)
             {
-                btnDelete.Enabled = !btnDelete.Enabled;
-                btnEdit.Enabled = !btnEdit.Enabled;
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
             }
+            else
+            {
+                btnDelete.Enabled = false;
+                btnEdit.Enabled = false;
+            }
+        }
+
+        private void TxtFilter_TextChanged(object sender, EventArgs e)
+        {
+            txtFilter.Text = txtFilter.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(txtFilter.Text))
+            {
+                var selectedInvoices = invoiceMapper.ToUiModelList(invoices).FindAll(x => 
+                (x.Consulta ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Data.ToString() ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Preco.ToString() ?? string.Empty).Contains(txtFilter.Text));
+
+                dataGridView1.DataSource = ConvertToDataTable(selectedInvoices);
+            }
+            else
+            {
+                RefreshDataSource();
+            }
+        }
+
+        private DataTable ConvertToDataTable(List<InvoiceUIModel> selectedInvoices)
+        {
+            DataTable table = new DataTable();
+            using (var reader = ObjectReader.Create(selectedInvoices))
+            {
+                table.Load(reader);
+            }
+
+            return table;
         }
     }
 }

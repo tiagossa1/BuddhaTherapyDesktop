@@ -51,6 +51,7 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\FluentValidation.xml
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\obj\Debug\TMS.Client.Domain.Tests.csprojAssemblyReference.cache
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\obj\Debug\TMS.Client.Domain.Tests.csproj.CoreCompileInputs.cache
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\obj\Debug\TMS.Client.Domain.Tests.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\obj\Debug\TMS.Client.Domain.Tests.dll

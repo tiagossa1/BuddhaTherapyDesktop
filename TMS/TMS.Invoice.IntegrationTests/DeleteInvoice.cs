@@ -39,7 +39,7 @@ namespace TMS.Invoice.IntegrationTests
 
             Guid invoiceId = Guid.NewGuid();
 
-            InvoiceDto invoice = new InvoiceDto(invoiceId, Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoice = new InvoiceDto(invoiceId, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
             // Act
             IList<string> result = InvoiceService.Post(invoice);

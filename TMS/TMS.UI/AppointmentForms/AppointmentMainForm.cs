@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastMember;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ using TMS.Appointment.Repository;
 using TMS.Appointment.Service.Model;
 using TMS.Appointment.Service.Service;
 using TMS.UI.Mapper;
+using TMS.UI.UIModels;
 
 namespace TMS.UI.AppointmentForms
 {
@@ -48,7 +50,18 @@ namespace TMS.UI.AppointmentForms
         private void RefreshDataSource()
         {
             appointments = appointmentService.GetAll().ToList();
-            dataGridView1.DataSource = appointmentMapper.ToUiModelList(appointments);
+            dataGridView1.DataSource = ConvertToDataTable(appointmentMapper.ToUiModelList(appointments));
+        }
+
+        private DataTable ConvertToDataTable(List<AppointmentUIModel> selectedAppointments)
+        {
+            DataTable table = new DataTable();
+            using (var reader = ObjectReader.Create(selectedAppointments))
+            {
+                table.Load(reader);
+            }
+
+            return table;
         }
 
         private void AppointmentsForm_Load(object sender, EventArgs e)
@@ -92,6 +105,26 @@ namespace TMS.UI.AppointmentForms
             };
 
             createOrUpdateAppointmentForm.Show();
+        }
+
+        private void TxtFilter_TextChanged(object sender, EventArgs e)
+        {
+            txtFilter.Text = txtFilter.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(txtFilter.Text))
+            {
+                var selectedAppointments = appointmentMapper.ToUiModelList(appointments).FindAll(x =>
+                (x.Consulta ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Data.ToString() ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Descricao ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Nome ?? string.Empty).Contains(txtFilter.Text));
+
+                dataGridView1.DataSource = ConvertToDataTable(selectedAppointments);
+            }
+            else
+            {
+                RefreshDataSource();
+            }
         }
     }
 }

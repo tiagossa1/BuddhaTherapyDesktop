@@ -19,7 +19,7 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), default, default);
+            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), default, default);
 
             // Act
             IList<string> result = invoiceDomainService.Post(invoice);
@@ -38,7 +38,7 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), default, default);
+            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), default, default);
 
             // Act
             IList<string> result = invoiceDomainService.Post(invoice);
@@ -57,7 +57,7 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
             // Act
             IList<string> result = invoiceDomainService.Post(invoice);
@@ -74,7 +74,7 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService InvoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), decimal.One, default);
+            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, default);
 
             // Act
             IList<string> result = InvoiceDomainService.Put(invoice);
@@ -93,7 +93,7 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
             // Act
             IList<string> result = invoiceDomainService.Put(invoice);
@@ -112,7 +112,7 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
 
             // Act
             IList<string> result = invoiceDomainService.Put(invoice);
@@ -146,7 +146,7 @@ namespace TMS.Invoice.Domain.Tests
 
             var invoiceRepository = new Mock<IInvoiceRepository>();
 
-            invoiceRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(new InvoiceModel(invoiceGuid, Guid.NewGuid(), decimal.One, DateTime.Now));
+            invoiceRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(new InvoiceModel(invoiceGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now));
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
@@ -161,7 +161,7 @@ namespace TMS.Invoice.Domain.Tests
         public void GetAll_VaiRetornarOsRecibos()
         {
             // Arrange
-            IList<InvoiceModel> invoices = new List<InvoiceModel>() { new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
+            IList<InvoiceModel> invoices = new List<InvoiceModel>() { new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
 
             var invoiceRepository = new Mock<IInvoiceRepository>();
 

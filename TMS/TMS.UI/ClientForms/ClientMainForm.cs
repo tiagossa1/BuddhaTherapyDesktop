@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastMember;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ using TMS.Clientes.Repository.Repository;
 using TMS.Clientes.Service.Model;
 using TMS.UI.ClientForms;
 using TMS.UI.Mapper;
+using TMS.UI.UIModels;
 
 namespace TMS.UI
 {
@@ -51,15 +53,6 @@ namespace TMS.UI
             addClientForm.Show();
         }
 
-        private void DataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
-        {
-            if (e.StateChanged == DataGridViewElementStates.Selected)
-            {
-                btnDelete.Enabled = !btnDelete.Enabled;
-                btnEdit.Enabled = !btnEdit.Enabled;
-            }
-        }
-
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             var clientIndex = dataGridView1.CurrentCell.RowIndex;
@@ -76,7 +69,7 @@ namespace TMS.UI
         private void RefreshDataSource()
         {
             clients = clientService.GetAll().ToList();
-            dataGridView1.DataSource = clientMapper.ToUiModelList(clients);
+            dataGridView1.DataSource = ConvertToDataTable(clientMapper.ToUiModelList(clients));
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
@@ -93,6 +86,54 @@ namespace TMS.UI
             };
 
             addClientForm.Show();
+        }
+
+        private void TxtFilter_TextChanged(object sender, EventArgs e)
+        {
+            txtFilter.Text = txtFilter.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(txtFilter.Text))
+            {
+                var selectedClients = clientMapper.ToUiModelList(clients).FindAll(x =>
+                (x.Contacto.ToString() ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Email ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Endereco ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.NIF.ToString() ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Nome ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Profissao ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Sobrenome ?? string.Empty).Contains(txtFilter.Text));
+
+                dataGridView1.DataSource = ConvertToDataTable(selectedClients);
+            }
+            else
+            {
+                RefreshDataSource();
+            }
+        }
+
+        private DataTable ConvertToDataTable(List<ClientUIModel> selectedClients)
+        {
+            DataTable table = new DataTable();
+            using (var reader = ObjectReader.Create(selectedClients))
+            {
+                table.Load(reader);
+            }
+
+            return table;
+        }
+
+        private void DataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            if (e.StateChanged == DataGridViewElementStates.Selected)
+            {
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
+            }
+            else
+            {
+                btnDelete.Enabled = false;
+                btnEdit.Enabled = false;
+            }
         }
     }
 }

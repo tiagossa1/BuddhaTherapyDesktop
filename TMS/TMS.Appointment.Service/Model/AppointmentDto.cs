@@ -8,13 +8,14 @@ namespace TMS.Appointment.Service.Model
 {
     public class AppointmentDto
     {
-        public AppointmentDto(Guid id, Guid clientID, DateTime dateTime, int appointmentTypeID, string appointmentTypeName)
+        public AppointmentDto(Guid id, Guid clientID, DateTime dateTime, int appointmentTypeID, string appointmentTypeName, string appointmentDescription)
         {
             Id = id;
             ClientID = clientID;
             DateTime = dateTime;
             AppointmentTypeID = appointmentTypeID;
             AppointmentTypeName = appointmentTypeName;
+            AppointmentDescription = appointmentDescription;
         }
 
         public AppointmentDto()
@@ -25,6 +26,7 @@ namespace TMS.Appointment.Service.Model
         public DateTime DateTime { get; set; }
         public int AppointmentTypeID { get; set; }
         public string AppointmentTypeName { get; set; }
+        public string AppointmentDescription { get; set; }
         public override bool Equals(object obj)
         {
             var compareTo = obj as AppointmentDto;

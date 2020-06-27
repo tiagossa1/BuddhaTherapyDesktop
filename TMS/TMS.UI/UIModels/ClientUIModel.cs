@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastMember;
+using System;
 using System.Collections.Generic;
 using System.IO.Packaging;
 using System.Linq;
@@ -15,21 +16,28 @@ namespace TMS.UI.UIModels
 
         public ClientUIModel(string firstName, string lastName, string address, int phoneNumber, string email, int nif, string jobTitle)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Address = address;
-            PhoneNumber = phoneNumber;
+            Nome = firstName;
+            Sobrenome = lastName;
+            Endereco = address;
+            Contacto = phoneNumber;
             Email = email;
             NIF = nif;
-            JobTitle = jobTitle;
+            Profissao = jobTitle;
         }
 
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public string Address { get; private set; }
-        public int PhoneNumber { get; private set; }
-        public string Email { get; private set; }
-        public int NIF { get; private set; }
-        public string JobTitle { get; private set; }
+        [Ordinal(0)]
+        public string Nome { get; set; }
+        [Ordinal(1)]
+        public string Sobrenome { get; set; }
+        [Ordinal(2)]
+        public string Endereco { get; set; }
+        [Ordinal(3)]
+        public int Contacto { get; set; }
+        [Ordinal(4)]
+        public string Email { get; set; }
+        [Ordinal(5)]
+        public int NIF { get; set; }
+        [Ordinal(6)]
+        public string Profissao { get; set; }
     }
 }

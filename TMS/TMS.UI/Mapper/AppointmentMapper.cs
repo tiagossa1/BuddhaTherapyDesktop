@@ -20,7 +20,7 @@ namespace TMS.UI.Mapper
             var selectedClient = clientService.Get(dto.ClientID);
             var clientName = $"{selectedClient.FirstName} {selectedClient.LastName}";
 
-            return new AppointmentUIModel(clientName, dto.DateTime, dto.AppointmentTypeName);
+            return new AppointmentUIModel(clientName, dto.DateTime, dto.AppointmentTypeName, dto.AppointmentDescription);
         }
 
         public List<AppointmentUIModel> ToUiModelList(List<AppointmentDto> dtos)

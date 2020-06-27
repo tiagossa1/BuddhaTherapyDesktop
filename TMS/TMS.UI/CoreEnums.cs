@@ -17,9 +17,8 @@ namespace TMS.UI
             MassagemTerapeutica = 5,
             Reflexologia = 6,
             Reiki = 7,
-            Shantala = 8,
-            Shiatsu = 9,
-            Tarot = 10
+            MesaRadionica = 8,
+            Tarot = 9
         }
     }
 }

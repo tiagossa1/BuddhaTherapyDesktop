@@ -23,8 +23,8 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\De
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\EntityFramework.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\EntityFramework.SqlServer.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\FluentValidation.xml
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.csprojAssemblyReference.cache
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.csproj.CoreCompileInputs.cache
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.csprojAssemblyReference.cache

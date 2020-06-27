@@ -12,18 +12,18 @@ namespace TMS.UI.UIModels
         {
         }
 
-        public InvoiceUIModel(string appointmentName, string clientFirstName, string clientLastName, decimal price, DateTime invoiceDate)
+        public InvoiceUIModel(string appointmentName, decimal price, DateTime invoiceDate)
         {
-            AppointmentName = appointmentName;
-            ClientFirstName = clientFirstName;
-            ClientLastName = clientLastName;
-            Price = price;
-            InvoiceDate = invoiceDate;
+            Consulta = appointmentName;
+            //ClientFirstName = clientFirstName;
+            //ClientLastName = clientLastName;
+            Preco = price;
+            Data = invoiceDate;
         }
-        public string AppointmentName { get; private set; }
-        public string ClientFirstName { get; private set; }
-        public string ClientLastName { get; private set; }
-        public decimal Price { get; private set; }
-        public DateTime InvoiceDate { get; private set; }
+        public string Consulta { get; private set; }
+        //public string ClientFirstName { get; private set; }
+        //public string ClientLastName { get; private set; }
+        public decimal Preco { get; private set; }
+        public DateTime Data { get; private set; }
     }
 }

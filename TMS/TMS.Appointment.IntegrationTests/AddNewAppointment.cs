@@ -20,7 +20,7 @@ namespace TMS.Appointment.IntegrationTests
             // Arrange
             var container = BootStrapDI.Bootstrap();
             AppointmentService appointmentService = new AppointmentService(container.GetInstance<AppointmentDomainService>());
-            AppointmentDto appointment = new AppointmentDto(Guid.NewGuid(), Guid.NewGuid(), default, 1, "xyz");
+            AppointmentDto appointment = new AppointmentDto(Guid.NewGuid(), Guid.NewGuid(), default, 1, "xyz", "xyz");
 
             // Act
             IList<string> result = appointmentService.Post(appointment);
@@ -35,7 +35,7 @@ namespace TMS.Appointment.IntegrationTests
             // Arrange
             var container = BootStrapDI.Bootstrap();
             AppointmentService AppointmentService = new AppointmentService(container.GetInstance<AppointmentDomainService>());
-            AppointmentDto appointment = new AppointmentDto(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz");
+            AppointmentDto appointment = new AppointmentDto(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
 
             // Act
             IList<string> result = AppointmentService.Post(appointment);

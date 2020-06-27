@@ -48,11 +48,13 @@ namespace TMS.UI
 
                 ChangeCreateLabelsToEditingLabels();
             }
+
+            timePicker.ShowUpDown = true;
         }
 
         private void SetupAppointmentTypeComboBox()
         {
-            cmbAppointmentType.DataSource = Enum.GetValues(typeof(CoreEnums.AppointmentType));
+            cmbAppointmentType.DataSource = Enum.GetValues(typeof(CoreEnums.AppointmentType)).Cast<CoreEnums.AppointmentType>().OrderBy(x => x).ToList();
         }
 
         private void SetupClientComboBox()
@@ -70,6 +72,12 @@ namespace TMS.UI
             e.Value = $"{firstName} {lastName}";
         }
 
+        private void ChangeCreateLabelsToEditingLabels()
+        {
+            Text = "Editar Consulta";
+            btnCreateOrEdit.Text = "Editar";
+        }
+
         private void BtnCreateOrEdit_Click(object sender, EventArgs e)
         {
             List<string> results;
@@ -80,7 +88,8 @@ namespace TMS.UI
                 DateTime = datePicker.Value.Date + timePicker.Value.TimeOfDay,
                 ClientID = ((ClientDto)cmbClient.SelectedItem).Id,
                 AppointmentTypeID = (int)(CoreEnums.AppointmentType)cmbAppointmentType.SelectedItem,
-                AppointmentTypeName = ((CoreEnums.AppointmentType)cmbAppointmentType.SelectedItem).ToString()
+                AppointmentTypeName = ((CoreEnums.AppointmentType)cmbAppointmentType.SelectedItem).ToString(),
+                AppointmentDescription = txtDescription.Text
             };
 
             if (Appointment != null)
@@ -103,12 +112,6 @@ namespace TMS.UI
                 MessageBox.Show(message, "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
-        }
-
-        private void ChangeCreateLabelsToEditingLabels()
-        {
-            Text = "Editar Consulta";
-            btnCreateOrEdit.Text = "Editar";
         }
     }
 }

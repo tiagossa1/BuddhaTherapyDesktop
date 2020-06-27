@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastMember;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,19 +9,25 @@ namespace TMS.UI.UIModels
 {
     public class AppointmentUIModel
     {
-        public AppointmentUIModel(string clientName, DateTime dateTime, string appointmentTypeName)
+        public AppointmentUIModel(string clientName, DateTime dateTime, string appointmentTypeName, string appointmentDescription)
         {
-            ClientName = clientName;
-            DateTime = dateTime;
-            AppointmentTypeName = appointmentTypeName;
+            Nome = clientName;
+            Data = dateTime;
+            Consulta = appointmentTypeName;
+            Descricao = appointmentDescription;
         }
 
         public AppointmentUIModel()
         {
         }
 
-        public string ClientName { get; set; }
-        public DateTime DateTime { get; set; }
-        public string AppointmentTypeName { get; set; }
+        [Ordinal(0)]
+        public string Nome { get; set; }
+        [Ordinal(1)]
+        public DateTime Data { get; set; }
+        [Ordinal(2)]
+        public string Consulta { get; set; }
+        [Ordinal(3)]
+        public string Descricao { get; set; }
     }
 }
