@@ -59,7 +59,7 @@ namespace TMS.Clientes.Repository.Repository
             }
         }
 
-        public IList<ClientModel> GetAll()
+        public List<ClientModel> GetAll()
         {
             try
             {

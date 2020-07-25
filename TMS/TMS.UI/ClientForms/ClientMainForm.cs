@@ -57,7 +57,7 @@ namespace TMS.UI
         {
             var clientIndex = dataGridView1.CurrentCell.RowIndex;
 
-            DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer eliminar este cliente?", "Confirmação", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Ao eliminar este cliente, todas as receitas e consultas são eliminadas. Continuar?", "Confirmação", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.Yes)
             {
@@ -129,7 +129,7 @@ namespace TMS.UI
                 btnDelete.Enabled = true;
                 btnEdit.Enabled = true;
             }
-            else
+            else if (e.StateChanged != DataGridViewElementStates.Displayed)
             {
                 btnDelete.Enabled = false;
                 btnEdit.Enabled = false;

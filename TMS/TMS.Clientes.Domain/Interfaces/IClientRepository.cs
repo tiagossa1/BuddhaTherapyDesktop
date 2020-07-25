@@ -12,8 +12,8 @@ namespace TMS.Client.Domain.Interfaces
 
         bool Delete(Guid id);
 
-        Model.ClientModel Get(Guid id);
+        ClientModel Get(Guid id);
 
-        IList<Model.ClientModel> GetAll();
+        List<ClientModel> GetAll();
     }
 }

@@ -67,7 +67,24 @@
     <Compile Include="Validations\ClientModelValidation.cs" />
     <Compile Include="Validations\ClientValidation.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.Appointment.Domain\TMS.Appointment.Domain.csproj">
+      <Project>{0814701f-71d0-422b-bcc6-3bd0c58bdb41}</Project>
+      <Name>TMS.Appointment.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Appointment.Repository\TMS.Appointment.Repository.csproj">
+      <Project>{7FBCB119-3481-40AA-9D7E-272A4D931DF7}</Project>
+      <Name>TMS.Appointment.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Invoice.Domain\TMS.Invoice.Domain.csproj">
+      <Project>{61668B91-0F28-4AFB-9C03-43B410F751FA}</Project>
+      <Name>TMS.Invoice.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Invoice.Repository\TMS.Invoice.Repository.csproj">
+      <Project>{7D7D5A12-D1ED-4347-A827-330E9490CD6A}</Project>
+      <Name>TMS.Invoice.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

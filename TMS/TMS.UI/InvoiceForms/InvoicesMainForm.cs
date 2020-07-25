@@ -94,7 +94,7 @@ namespace TMS.UI
                 btnDelete.Enabled = true;
                 btnEdit.Enabled = true;
             }
-            else
+            else if(e.StateChanged != DataGridViewElementStates.Displayed)
             {
                 btnDelete.Enabled = false;
                 btnEdit.Enabled = false;

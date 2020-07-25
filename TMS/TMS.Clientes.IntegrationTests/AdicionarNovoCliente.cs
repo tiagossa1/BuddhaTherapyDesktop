@@ -13,7 +13,6 @@ namespace TMS.Client.IntegrationTests
         [DataTestMethod]
         [DataRow(null, "XYZ", "XYZ", 912564785, "XYZ", 123456789, "XYZ")]
         [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ", 123456789, "")]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ", 1234567898, "xyz")]
         public void VaiFalharDevidoaErrosdeValidacaodeDominio(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
         {
             // Arrange

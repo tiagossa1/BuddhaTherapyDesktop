@@ -73,8 +73,13 @@ namespace TMS.UI.AppointmentForms
         {
             if (e.StateChanged == DataGridViewElementStates.Selected)
             {
-                btnDelete.Enabled = !btnDelete.Enabled;
-                btnEdit.Enabled = !btnEdit.Enabled;
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
+            }
+            else if (e.StateChanged != DataGridViewElementStates.Displayed)
+            {
+                btnDelete.Enabled = false;
+                btnEdit.Enabled = false;
             }
         }
 

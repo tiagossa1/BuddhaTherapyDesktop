@@ -9,14 +9,15 @@ namespace TMS.Appointment.Domain.Interfaces
 {
     public interface IAppointmentRepository
     {
-        bool Post(AppointmentModel obj);
+        bool Create(AppointmentModel obj);
 
-        bool Put(AppointmentModel obj);
+        bool Update(AppointmentModel obj);
 
         bool Delete(Guid id);
+        bool DeleteByClientID(Guid id);
 
         AppointmentModel Get(Guid id);
 
-        IList<AppointmentModel> GetAll();
+        List<AppointmentModel> GetAll();
     }
 }

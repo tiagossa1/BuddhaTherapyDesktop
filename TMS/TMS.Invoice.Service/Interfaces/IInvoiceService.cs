@@ -9,14 +9,14 @@ namespace TMS.Invoice.Service.Interfaces
 {
     public interface IInvoiceService
     {
-        IList<string> Post(InvoiceDto obj);
+        List<string> Post(InvoiceDto obj);
 
-        IList<string> Put(InvoiceDto obj);
+        List<string> Put(InvoiceDto obj);
 
         bool Delete(Guid id);
 
         InvoiceDto Get(Guid id);
 
-        IList<InvoiceDto> GetAll();
+        List<InvoiceDto> GetAll();
     }
 }

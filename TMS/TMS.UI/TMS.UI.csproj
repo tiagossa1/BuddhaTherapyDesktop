@@ -155,7 +155,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\meeting.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMS.Appointment.Domain\TMS.Appointment.Domain.csproj">
@@ -194,6 +194,21 @@
       <Project>{467EC9AC-401F-4B6D-AEC4-4C49FA8707E7}</Project>
       <Name>TMS.Invoice.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customers_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meeting_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill_hover.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

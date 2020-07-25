@@ -28,3 +28,13 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\De
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\obj\Debug\TMS.Client.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Appointment.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Appointment.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Appointment.Repository.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Invoice.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Invoice.Repository.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\LiteDB.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Appointment.Repository.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Invoice.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\TMS.Invoice.Repository.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain\bin\Debug\LiteDB.xml

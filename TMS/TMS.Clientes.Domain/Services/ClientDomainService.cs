@@ -1,33 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMS.Appointment.Domain.Interfaces;
+using TMS.Appointment.Domain.Services;
+using TMS.Appointment.Repository;
 using TMS.Client.Domain.Interfaces;
+using TMS.Client.Domain.Model;
+using TMS.Invoice.Domain.Interfaces;
+using TMS.Invoice.Repository.Repository;
 
 namespace TMS.Client.Domain.Services
 {
     public class ClientDomainService : IClientDomainService
     {
         private readonly IClientRepository _clienteRepository;
+        private readonly IAppointmentRepository appointmentRepository;
+        private readonly IInvoiceRepository invoiceRepository;
         public ClientDomainService(IClientRepository clienteRepository)
         {
             _clienteRepository = clienteRepository;
+            appointmentRepository = new AppointmentRepository();
+            invoiceRepository = new InvoiceRepository();
         }
         public bool Delete(Guid id)
         {
+            appointmentRepository.DeleteByClientID(id);
+            invoiceRepository.DeleteByClientID(id);
             return _clienteRepository.Delete(id);
         }
 
-        public Model.ClientModel Get(Guid id)
+        public ClientModel Get(Guid id)
         {
             return _clienteRepository.Get(id);
         }
 
-        public IList<Model.ClientModel> GetAll()
+        public List<ClientModel> GetAll()
         {
             return _clienteRepository.GetAll();
         }
 
-        public IList<string> Post(Model.ClientModel cliente)
+        public List<string> Post(ClientModel cliente)
         {
             if (!cliente.IsValid())
                 return NotifyValidationErrors(cliente);
@@ -37,7 +49,7 @@ namespace TMS.Client.Domain.Services
             return result ? new List<string>() : new List<string>() { "Error inserting on the database" };
         }
 
-        public IList<string> Put(Model.ClientModel cliente)
+        public List<string> Put(ClientModel cliente)
         {
             if (!cliente.IsValid())
                 return NotifyValidationErrors(cliente);
@@ -46,7 +58,7 @@ namespace TMS.Client.Domain.Services
 
             return result ? new List<string>() : new List<string>() { "Error updating on the database" };
         }
-        private IList<string> NotifyValidationErrors(Model.ClientModel cliente)
+        private List<string> NotifyValidationErrors(ClientModel cliente)
         {
             return cliente.ValidationResult.Errors.Select(x => x.ErrorMessage).ToList();
         }

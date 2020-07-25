@@ -58,3 +58,11 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTe
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Repository.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Repository.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Repository.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Repository.pdb

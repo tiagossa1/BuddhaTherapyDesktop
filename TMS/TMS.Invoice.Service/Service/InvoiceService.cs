@@ -29,17 +29,17 @@ namespace TMS.Invoice.Service.Service
             return InvoiceAssembler.EntityToDto(invoiceDomainService.Get(id));
         }
 
-        public IList<InvoiceDto> GetAll()
+        public List<InvoiceDto> GetAll()
         {
             return InvoiceAssembler.EntitiesToDto(invoiceDomainService.GetAll().ToList());
         }
 
-        public IList<string> Post(InvoiceDto obj)
+        public List<string> Post(InvoiceDto obj)
         {
             return invoiceDomainService.Post(InvoiceAssembler.DtoToEntity(obj));
         }
 
-        public IList<string> Put(InvoiceDto obj)
+        public List<string> Put(InvoiceDto obj)
         {
             return invoiceDomainService.Put(InvoiceAssembler.DtoToEntity(obj));
         }

@@ -30,6 +30,30 @@ namespace TMS.Invoice.Repository.Repository
             }
         }
 
+        public bool DeleteByClientID(Guid id)
+        {
+            try
+            {
+                using (var db = new LiteDatabase("Database.db"))
+                {
+                    var col = db.GetCollection<InvoiceModel>(collectionName);
+
+                    var findByClientID = col.FindOne(x => x.ClientId == id);
+
+                    if (findByClientID != null)
+                    {
+                        return col.Delete(findByClientID.Id);
+                    }
+
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public InvoiceModel Get(Guid id)
         {
             try
@@ -46,7 +70,7 @@ namespace TMS.Invoice.Repository.Repository
             }
         }
 
-        public IList<InvoiceModel> GetAll()
+        public List<InvoiceModel> GetAll()
         {
             try
             {

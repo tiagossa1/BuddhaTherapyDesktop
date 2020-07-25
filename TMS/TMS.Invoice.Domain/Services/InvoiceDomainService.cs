@@ -22,17 +22,22 @@ namespace TMS.Invoice.Domain.Services
             return invoiceRepository.Delete(id);
         }
 
+        public bool DeleteByClientID(Guid id)
+        {
+            return invoiceRepository.DeleteByClientID(id);
+        }
+
         public InvoiceModel Get(Guid id)
         {
             return invoiceRepository.Get(id);
         }
 
-        public IList<InvoiceModel> GetAll()
+        public List<InvoiceModel> GetAll()
         {
             return invoiceRepository.GetAll();
         }
 
-        public IList<string> Post(InvoiceModel obj)
+        public List<string> Post(InvoiceModel obj)
         {
             if (!obj.IsValid())
                 return NotifyValidationErrors(obj);
@@ -42,7 +47,7 @@ namespace TMS.Invoice.Domain.Services
             return result ? new List<string>() : new List<string>() { "Error inserting on the database" };
         }
 
-        public IList<string> Put(InvoiceModel obj)
+        public List<string> Put(InvoiceModel obj)
         {
             if (!obj.IsValid())
                 return NotifyValidationErrors(obj);
@@ -52,7 +57,7 @@ namespace TMS.Invoice.Domain.Services
             return result ? new List<string>() : new List<string>() { "Error updating on the database" };
         }
 
-        private IList<string> NotifyValidationErrors(InvoiceModel invoiceModel)
+        private List<string> NotifyValidationErrors(InvoiceModel invoiceModel)
         {
             return invoiceModel.ValidationResult.Errors.Select(x => x.ErrorMessage).ToList();
         }

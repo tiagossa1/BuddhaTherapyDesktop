@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TMS.Clientes.Service.Model;
 using TMS.UI.AppointmentForms;
+using TMS.UI.Properties;
 
 namespace TMS.UI
 {
@@ -19,7 +20,7 @@ namespace TMS.UI
             InitializeComponent();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void BtnClients_Click(object sender, EventArgs e)
         {
             var clientsForm = new ClientsForm();
 
@@ -51,6 +52,36 @@ namespace TMS.UI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+        }
+
+        private void BtnClients_MouseEnter(object sender, EventArgs e)
+        {
+            btnClients.BackgroundImage = new Bitmap(Resources.customers_hover);
+        }
+
+        private void BtnClients_MouseLeave(object sender, EventArgs e)
+        {
+            btnClients.BackgroundImage = new Bitmap(Resources.customers);
+        }
+
+        private void BtnAppointments_MouseEnter(object sender, EventArgs e)
+        {
+            btnAppointments.BackgroundImage = new Bitmap(Resources.meeting_hover);
+        }
+
+        private void BtnAppointments_MouseLeave(object sender, EventArgs e)
+        {
+            btnAppointments.BackgroundImage = new Bitmap(Resources.meeting);
+        }
+
+        private void BtnInvoices_MouseEnter(object sender, EventArgs e)
+        {
+            btnInvoices.BackgroundImage = new Bitmap(Resources.bill_hover);
+        }
+
+        private void BtnInvoices_MouseLeave(object sender, EventArgs e)
+        {
+            btnInvoices.BackgroundImage = new Bitmap(Resources.bill);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TMS.Appointment.Repository
 {
     public class AppointmentRepository : IAppointmentRepository
     {
-        private readonly string tableName = "appointment";
+        private const string tableName = "appointment";
 
         public bool Delete(Guid id)
         {
@@ -25,6 +25,29 @@ namespace TMS.Appointment.Repository
                     if (col.FindById(id) != null)
                     {
                         return col.Delete(id);
+                    }
+
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public bool DeleteByClientID(Guid id)
+        {
+            try
+            {
+                using (var db = new LiteDatabase("Database.db"))
+                {
+                    var col = db.GetCollection<AppointmentModel>(tableName);
+
+                    var findAppointmentByClientID = col.FindOne(x => x.ClientID == id);
+
+                    if (findAppointmentByClientID != null)
+                    {
+                        return col.Delete(findAppointmentByClientID.Id);
                     }
 
                     return false;
@@ -52,7 +75,7 @@ namespace TMS.Appointment.Repository
             }
         }
 
-        public IList<AppointmentModel> GetAll()
+        public List<AppointmentModel> GetAll()
         {
             try
             {
@@ -68,7 +91,7 @@ namespace TMS.Appointment.Repository
             }
         }
 
-        public bool Post(AppointmentModel obj)
+        public bool Create(AppointmentModel obj)
         {
             try
             {
@@ -85,7 +108,7 @@ namespace TMS.Appointment.Repository
             return true;
         }
 
-        public bool Put(AppointmentModel obj)
+        public bool Update(AppointmentModel obj)
         {
             try
             {
@@ -100,5 +123,6 @@ namespace TMS.Appointment.Repository
                 return false;
             }
         }
+
     }
 }

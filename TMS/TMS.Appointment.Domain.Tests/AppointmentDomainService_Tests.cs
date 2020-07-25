@@ -22,8 +22,8 @@ namespace TMS.Appointment.Domain.Tests
             AppointmentModel appointmentTwo = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 0, "XYZ", "XYZ");
 
             // Act
-            IList<string> resultOne = appointmentDomainService.Post(appointmentOne);
-            IList<string> resultTwo = appointmentDomainService.Post(appointmentTwo);
+            IList<string> resultOne = appointmentDomainService.Create(appointmentOne);
+            IList<string> resultTwo = appointmentDomainService.Create(appointmentTwo);
 
             // Assert
             Assert.IsTrue(resultOne.Count > 0);
@@ -35,12 +35,12 @@ namespace TMS.Appointment.Domain.Tests
         {
             // Arrange
             var appointmentRepository = new Mock<IAppointmentRepository>();
-            appointmentRepository.Setup(x => x.Post(It.IsAny<AppointmentModel>())).Returns(false);
+            appointmentRepository.Setup(x => x.Create(It.IsAny<AppointmentModel>())).Returns(false);
             AppointmentDomainService AppointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
             AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "XYZ", "XYZ");
 
             // Act
-            IList<string> result = AppointmentDomainService.Post(appointment);
+            IList<string> result = AppointmentDomainService.Create(appointment);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -51,12 +51,12 @@ namespace TMS.Appointment.Domain.Tests
         {
             // Arrange
             var appointmentRepository = new Mock<IAppointmentRepository>();
-            appointmentRepository.Setup(x => x.Post(It.IsAny<AppointmentModel>())).Returns(true);
+            appointmentRepository.Setup(x => x.Create(It.IsAny<AppointmentModel>())).Returns(true);
             var appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
             AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 5, "XYZ", "XYZ");
 
             // Act
-            IList<string> result = appointmentDomainService.Post(appointment);
+            IList<string> result = appointmentDomainService.Create(appointment);
 
             // Assert
             Assert.IsTrue(result.Count == 0);
@@ -71,7 +71,7 @@ namespace TMS.Appointment.Domain.Tests
             AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 2, null, null);
 
             // Act
-            IList<string> result = appointmentDomainService.Put(appointment);
+            IList<string> result = appointmentDomainService.Update(appointment);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -82,12 +82,12 @@ namespace TMS.Appointment.Domain.Tests
         {
             // Arrange
             var appointmentRepository = new Mock<IAppointmentRepository>();
-            appointmentRepository.Setup(x => x.Put(It.IsAny<AppointmentModel>())).Returns(false);
+            appointmentRepository.Setup(x => x.Update(It.IsAny<AppointmentModel>())).Returns(false);
             AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
             AppointmentModel cliente = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
 
             // Act
-            IList<string> result = appointmentDomainService.Put(cliente);
+            IList<string> result = appointmentDomainService.Update(cliente);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -98,13 +98,13 @@ namespace TMS.Appointment.Domain.Tests
         {
             // Arrange
             var appointmentRepository = new Mock<IAppointmentRepository>();
-            appointmentRepository.Setup(x => x.Put(It.IsAny<AppointmentModel>())).Returns(true);
+            appointmentRepository.Setup(x => x.Update(It.IsAny<AppointmentModel>())).Returns(true);
 
             var appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
             AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
 
             // Act
-            IList<string> result = appointmentDomainService.Put(appointment);
+            IList<string> result = appointmentDomainService.Update(appointment);
 
             // Assert
             Assert.IsTrue(result.Count == 0);
@@ -145,13 +145,13 @@ namespace TMS.Appointment.Domain.Tests
         public void GetAll_VaiRetornarOsClientes()
         {
             // Arrange
-            IList<AppointmentModel> appointments = new List<AppointmentModel>() { new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz") };
+            var appointments = new List<AppointmentModel>() { new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz") };
             var appointmentRepository = new Mock<IAppointmentRepository>();
             appointmentRepository.Setup(x => x.GetAll()).Returns(appointments);
             AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
 
             // Act
-            IList<AppointmentModel> result = appointmentDomainService.GetAll();
+            var result = appointmentDomainService.GetAll();
 
             // Assert
             Assert.AreEqual(appointments, result);

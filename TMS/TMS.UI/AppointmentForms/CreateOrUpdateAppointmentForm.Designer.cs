@@ -34,11 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbClient = new Guna.UI2.WinForms.Guna2ComboBox();
             this.datePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.timePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cmbAppointmentType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnCreateOrEdit = new Guna.UI2.WinForms.Guna2Button();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label3
@@ -95,40 +95,22 @@
             // 
             // datePicker
             // 
+            this.datePicker.BackColor = System.Drawing.Color.Transparent;
             this.datePicker.BorderThickness = 1;
             this.datePicker.CheckedState.Parent = this.datePicker;
             this.datePicker.FillColor = System.Drawing.Color.White;
             this.datePicker.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePicker.ForeColor = System.Drawing.Color.Black;
-            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePicker.HoverState.Parent = this.datePicker;
-            this.datePicker.Location = new System.Drawing.Point(115, 51);
+            this.datePicker.Location = new System.Drawing.Point(115, 52);
             this.datePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datePicker.MinDate = new System.DateTime(2020, 5, 26, 0, 0, 0, 0);
             this.datePicker.Name = "datePicker";
             this.datePicker.ShadowDecoration.Parent = this.datePicker;
-            this.datePicker.Size = new System.Drawing.Size(150, 22);
+            this.datePicker.Size = new System.Drawing.Size(150, 21);
             this.datePicker.TabIndex = 35;
             this.datePicker.Value = new System.DateTime(2020, 5, 26, 18, 40, 18, 825);
-            // 
-            // timePicker
-            // 
-            this.timePicker.BorderThickness = 1;
-            this.timePicker.CheckedState.Parent = this.timePicker;
-            this.timePicker.CustomFormat = "HH:mm";
-            this.timePicker.FillColor = System.Drawing.Color.White;
-            this.timePicker.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timePicker.ForeColor = System.Drawing.Color.Black;
-            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.timePicker.HoverState.Parent = this.timePicker;
-            this.timePicker.Location = new System.Drawing.Point(271, 51);
-            this.timePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.timePicker.MinDate = new System.DateTime(2020, 5, 26, 0, 0, 0, 0);
-            this.timePicker.Name = "timePicker";
-            this.timePicker.ShadowDecoration.Parent = this.timePicker;
-            this.timePicker.Size = new System.Drawing.Size(96, 22);
-            this.timePicker.TabIndex = 36;
-            this.timePicker.Value = new System.DateTime(2020, 6, 6, 18, 40, 0, 0);
             // 
             // cmbAppointmentType
             // 
@@ -204,16 +186,27 @@
             this.label4.TabIndex = 42;
             this.label4.Text = "Descrição";
             // 
+            // timePicker
+            // 
+            this.timePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timePicker.CustomFormat = "HH:mm";
+            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timePicker.Location = new System.Drawing.Point(272, 53);
+            this.timePicker.Name = "timePicker";
+            this.timePicker.ShowUpDown = true;
+            this.timePicker.Size = new System.Drawing.Size(96, 20);
+            this.timePicker.TabIndex = 43;
+            // 
             // CreateOrUpdateAppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 317);
+            this.Controls.Add(this.timePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnCreateOrEdit);
             this.Controls.Add(this.cmbAppointmentType);
-            this.Controls.Add(this.timePicker);
             this.Controls.Add(this.datePicker);
             this.Controls.Add(this.cmbClient);
             this.Controls.Add(this.label3);
@@ -237,10 +230,10 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox cmbClient;
         private Guna.UI2.WinForms.Guna2DateTimePicker datePicker;
-        private Guna.UI2.WinForms.Guna2DateTimePicker timePicker;
         private Guna.UI2.WinForms.Guna2ComboBox cmbAppointmentType;
         private Guna.UI2.WinForms.Guna2Button btnCreateOrEdit;
         private Guna.UI2.WinForms.Guna2TextBox txtDescription;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker timePicker;
     }
 }

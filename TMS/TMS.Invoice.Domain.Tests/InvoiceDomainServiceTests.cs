@@ -161,7 +161,7 @@ namespace TMS.Invoice.Domain.Tests
         public void GetAll_VaiRetornarOsRecibos()
         {
             // Arrange
-            IList<InvoiceModel> invoices = new List<InvoiceModel>() { new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
+            var invoices = new List<InvoiceModel>() { new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
 
             var invoiceRepository = new Mock<IInvoiceRepository>();
 
@@ -169,7 +169,7 @@ namespace TMS.Invoice.Domain.Tests
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
             // Act
-            IList<InvoiceModel> result = invoiceDomainService.GetAll();
+            var result = invoiceDomainService.GetAll();
 
             // Assert
             Assert.AreEqual(invoices, result);

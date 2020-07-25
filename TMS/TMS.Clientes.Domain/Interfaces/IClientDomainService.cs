@@ -6,14 +6,14 @@ namespace TMS.Client.Domain.Interfaces
 {
     public interface IClientDomainService
     {
-        IList<string> Post(Model.ClientModel obj);
+        List<string> Post(ClientModel obj);
 
-        IList<string> Put(Model.ClientModel obj);
+        List<string> Put(ClientModel obj);
 
         bool Delete(Guid id);
 
-        Model.ClientModel Get(Guid id);
+        ClientModel Get(Guid id);
 
-        IList<Model.ClientModel> GetAll();
+        List<ClientModel> GetAll();
     }
 }

@@ -154,7 +154,7 @@ namespace TMS.Client.Domain.Tests
         public void ClientDomainService_GetAll_VaiRetornarOsClientes()
         {
             // Arrange
-            IList<ClientModel> clientes = new List<ClientModel>() { new ClientModel(Guid.NewGuid(), "XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ") };
+            var clientes = new List<ClientModel>() { new ClientModel(Guid.NewGuid(), "XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ") };
             var _clienteRepository = new Mock<IClientRepository>();
             _clienteRepository.Setup(x => x.GetAll()).Returns(clientes);
             ClientDomainService ClientDomainService = new ClientDomainService(_clienteRepository.Object);

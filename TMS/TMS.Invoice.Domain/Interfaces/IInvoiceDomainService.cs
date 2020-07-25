@@ -9,14 +9,15 @@ namespace TMS.Invoice.Domain.Interfaces
 {
     public interface IInvoiceDomainService
     {
-        IList<string> Post(InvoiceModel obj);
+        List<string> Post(InvoiceModel obj);
 
-        IList<string> Put(InvoiceModel obj);
+        List<string> Put(InvoiceModel obj);
 
         bool Delete(Guid id);
+        bool DeleteByClientID(Guid id);
 
         InvoiceModel Get(Guid id);
 
-        IList<InvoiceModel> GetAll();
+        List<InvoiceModel> GetAll();
     }
 }

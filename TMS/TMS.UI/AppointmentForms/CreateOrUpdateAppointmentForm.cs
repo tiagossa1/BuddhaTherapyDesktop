@@ -49,7 +49,9 @@ namespace TMS.UI
                 ChangeCreateLabelsToEditingLabels();
             }
 
-            timePicker.ShowUpDown = true;
+            datePicker.Value = DateTime.Now;
+            timePicker.Value = DateTime.Now;
+            //timePicker.ShowUpDown = true;
         }
 
         private void SetupAppointmentTypeComboBox()

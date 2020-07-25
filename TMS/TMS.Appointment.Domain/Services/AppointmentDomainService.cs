@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using TMS.Appointment.Domain.Interfaces;
@@ -19,38 +20,45 @@ namespace TMS.Appointment.Domain.Services
         {
             return _appointmentRepository.Delete(id);
         }
+        public bool DeleteByClientID(Guid id)
+        {
+            if (id == Guid.Empty)
+                return false;
+
+            return _appointmentRepository.DeleteByClientID(id);
+        }
 
         public AppointmentModel Get(Guid id)
         {
             return _appointmentRepository.Get(id);
         }
 
-        public IList<AppointmentModel> GetAll()
+        public List<AppointmentModel> GetAll()
         {
             return _appointmentRepository.GetAll();
         }
 
-        public IList<string> Post(AppointmentModel obj)
+        public List<string> Create(AppointmentModel obj)
         {
             if (!obj.IsValid())
                 return NotifyValidationErrors(obj);
 
-            bool result = _appointmentRepository.Post(obj);
+            bool result = _appointmentRepository.Create(obj);
 
             return result ? new List<string>() : new List<string>() { "Error inserting on the database" };
         }
 
-        public IList<string> Put(AppointmentModel obj)
+        public List<string> Update(AppointmentModel obj)
         {
             if (!obj.IsValid())
                 return NotifyValidationErrors(obj);
 
-            bool result = _appointmentRepository.Put(obj);
+            bool result = _appointmentRepository.Update(obj);
 
             return result ? new List<string>() : new List<string>() { "Error updating on the database" };
         }
 
-        private IList<string> NotifyValidationErrors(AppointmentModel appointment)
+        private List<string> NotifyValidationErrors(AppointmentModel appointment)
         {
             return appointment.ValidationResult.Errors.Select(x => x.ErrorMessage).ToList();
         }

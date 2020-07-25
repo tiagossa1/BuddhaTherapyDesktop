@@ -26,17 +26,17 @@ namespace TMS.Client.Domain.Services
             return ClientAssembler.EntityToDto(_clientDomainService.Get(id));
         }
 
-        public IList<ClientDto> GetAll()
+        public List<ClientDto> GetAll()
         {
             return ClientAssembler.EntitiesToDto(_clientDomainService.GetAll().ToList());
         }
 
-        public IList<string> Post(ClientDto cliente)
+        public List<string> Post(ClientDto cliente)
         {
             return  _clientDomainService.Post(ClientAssembler.DtoToEntity(cliente));
         }
 
-        public IList<string> Put(ClientDto cliente)
+        public List<string> Put(ClientDto cliente)
         {
             return _clientDomainService.Put(ClientAssembler.DtoToEntity(cliente));
         }

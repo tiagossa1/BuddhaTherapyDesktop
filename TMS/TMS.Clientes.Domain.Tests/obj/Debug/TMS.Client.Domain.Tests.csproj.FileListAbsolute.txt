@@ -56,3 +56,13 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\obj\Debug\TMS.Client.Domain.Tests.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\obj\Debug\TMS.Client.Domain.Tests.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\obj\Debug\TMS.Client.Domain.Tests.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\TMS.Appointment.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\TMS.Invoice.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\TMS.Appointment.Repository.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\TMS.Invoice.Repository.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\LiteDB.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\TMS.Appointment.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\TMS.Invoice.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\TMS.Appointment.Repository.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\TMS.Invoice.Repository.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Domain.Tests\bin\Debug\LiteDB.xml

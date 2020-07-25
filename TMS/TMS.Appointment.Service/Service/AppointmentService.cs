@@ -36,12 +36,12 @@ namespace TMS.Appointment.Service.Service
 
         public IList<string> Post(AppointmentDto obj)
         {
-            return appointmentDomainService.Post(AppointmentAssembler.DtoToEntity(obj));
+            return appointmentDomainService.Create(AppointmentAssembler.DtoToEntity(obj));
         }
 
         public IList<string> Put(AppointmentDto obj)
         {
-            return appointmentDomainService.Put(AppointmentAssembler.DtoToEntity(obj));
+            return appointmentDomainService.Update(AppointmentAssembler.DtoToEntity(obj));
         }
     }
 }
