@@ -194,6 +194,7 @@
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "APAGAR";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnEdit
             // 
@@ -213,6 +214,7 @@
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "EDITAR";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnCreate
             // 

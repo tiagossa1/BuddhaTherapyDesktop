@@ -29,10 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.appointmentsNotificationBadge = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnInvoices = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnAppointments = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnClients = new Guna.UI2.WinForms.Guna2ImageButton();
             this.SuspendLayout();
+            // 
+            // appointmentsNotificationBadge
+            // 
+            this.appointmentsNotificationBadge.CheckedState.Parent = this.appointmentsNotificationBadge;
+            this.appointmentsNotificationBadge.CustomImages.Parent = this.appointmentsNotificationBadge;
+            this.appointmentsNotificationBadge.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(225)))), ((int)(((byte)(244)))));
+            this.appointmentsNotificationBadge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointmentsNotificationBadge.ForeColor = System.Drawing.Color.Red;
+            this.appointmentsNotificationBadge.HoverState.Parent = this.appointmentsNotificationBadge;
+            this.appointmentsNotificationBadge.Location = new System.Drawing.Point(547, 5);
+            this.appointmentsNotificationBadge.Name = "appointmentsNotificationBadge";
+            this.appointmentsNotificationBadge.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.appointmentsNotificationBadge.ShadowDecoration.Parent = this.appointmentsNotificationBadge;
+            this.appointmentsNotificationBadge.Size = new System.Drawing.Size(23, 24);
+            this.appointmentsNotificationBadge.TabIndex = 7;
+            this.appointmentsNotificationBadge.Text = "0";
+            this.appointmentsNotificationBadge.Click += new System.EventHandler(this.AppointmentsNotificationBadge_Click);
             // 
             // btnInvoices
             // 
@@ -40,51 +58,46 @@
             this.btnInvoices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnInvoices.CheckedState.Parent = this.btnInvoices;
             this.btnInvoices.HoverState.Parent = this.btnInvoices;
-            this.btnInvoices.Location = new System.Drawing.Point(315, 12);
+            this.btnInvoices.Location = new System.Drawing.Point(383, 12);
             this.btnInvoices.Name = "btnInvoices";
             this.btnInvoices.PressedState.Parent = this.btnInvoices;
-            this.btnInvoices.Size = new System.Drawing.Size(146, 53);
+            this.btnInvoices.Size = new System.Drawing.Size(147, 134);
             this.btnInvoices.TabIndex = 6;
             this.btnInvoices.Click += new System.EventHandler(this.BtnInvoices_Click);
-            this.btnInvoices.MouseEnter += new System.EventHandler(this.BtnInvoices_MouseEnter);
-            this.btnInvoices.MouseLeave += new System.EventHandler(this.BtnInvoices_MouseLeave);
             // 
             // btnAppointments
             // 
-            this.btnAppointments.BackgroundImage = global::TMS.UI.Properties.Resources.meeting;
-            this.btnAppointments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAppointments.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAppointments.BackgroundImage")));
+            this.btnAppointments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAppointments.CheckedState.Parent = this.btnAppointments;
             this.btnAppointments.HoverState.Parent = this.btnAppointments;
-            this.btnAppointments.Location = new System.Drawing.Point(163, 12);
+            this.btnAppointments.Location = new System.Drawing.Point(203, 12);
             this.btnAppointments.Name = "btnAppointments";
             this.btnAppointments.PressedState.Parent = this.btnAppointments;
-            this.btnAppointments.Size = new System.Drawing.Size(146, 53);
+            this.btnAppointments.Size = new System.Drawing.Size(147, 134);
             this.btnAppointments.TabIndex = 5;
             this.btnAppointments.Click += new System.EventHandler(this.BtnAppointments_Click);
-            this.btnAppointments.MouseEnter += new System.EventHandler(this.BtnAppointments_MouseEnter);
-            this.btnAppointments.MouseLeave += new System.EventHandler(this.BtnAppointments_MouseLeave);
             // 
             // btnClients
             // 
             this.btnClients.BackColor = System.Drawing.Color.Transparent;
-            this.btnClients.BackgroundImage = global::TMS.UI.Properties.Resources.customers;
-            this.btnClients.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClients.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClients.BackgroundImage")));
+            this.btnClients.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClients.CheckedState.Parent = this.btnClients;
             this.btnClients.HoverState.Parent = this.btnClients;
-            this.btnClients.Location = new System.Drawing.Point(11, 12);
+            this.btnClients.Location = new System.Drawing.Point(23, 12);
             this.btnClients.Name = "btnClients";
             this.btnClients.PressedState.Parent = this.btnClients;
-            this.btnClients.Size = new System.Drawing.Size(146, 53);
+            this.btnClients.Size = new System.Drawing.Size(147, 134);
             this.btnClients.TabIndex = 4;
             this.btnClients.Click += new System.EventHandler(this.BtnClients_Click);
-            this.btnClients.MouseEnter += new System.EventHandler(this.BtnClients_MouseEnter);
-            this.btnClients.MouseLeave += new System.EventHandler(this.BtnClients_MouseLeave);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 78);
+            this.ClientSize = new System.Drawing.Size(574, 158);
+            this.Controls.Add(this.appointmentsNotificationBadge);
             this.Controls.Add(this.btnInvoices);
             this.Controls.Add(this.btnAppointments);
             this.Controls.Add(this.btnClients);
@@ -95,6 +108,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TMS - Menu";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.VisibleChanged += new System.EventHandler(this.MainForm_VisibleChanged);
             this.ResumeLayout(false);
 
         }
@@ -103,6 +117,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton btnClients;
         private Guna.UI2.WinForms.Guna2ImageButton btnAppointments;
         private Guna.UI2.WinForms.Guna2ImageButton btnInvoices;
+        private Guna.UI2.WinForms.Guna2CircleButton appointmentsNotificationBadge;
     }
 }
 

@@ -123,6 +123,5 @@ namespace TMS.Appointment.Repository
                 return false;
             }
         }
-
     }
 }

@@ -119,7 +119,7 @@ namespace TMS.UI.AppointmentForms
             if (!string.IsNullOrWhiteSpace(txtFilter.Text))
             {
                 var selectedAppointments = appointmentMapper.ToUiModelList(appointments).FindAll(x =>
-                (x.Consulta ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.TipoDeConsulta ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Data.ToString() ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Descricao ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Nome ?? string.Empty).Contains(txtFilter.Text));

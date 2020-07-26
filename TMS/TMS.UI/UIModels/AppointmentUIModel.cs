@@ -13,7 +13,7 @@ namespace TMS.UI.UIModels
         {
             Nome = clientName;
             Data = dateTime;
-            Consulta = appointmentTypeName;
+            TipoDeConsulta = appointmentTypeName;
             Descricao = appointmentDescription;
         }
 
@@ -26,7 +26,7 @@ namespace TMS.UI.UIModels
         [Ordinal(1)]
         public DateTime Data { get; set; }
         [Ordinal(2)]
-        public string Consulta { get; set; }
+        public string TipoDeConsulta { get; set; }
         [Ordinal(3)]
         public string Descricao { get; set; }
     }

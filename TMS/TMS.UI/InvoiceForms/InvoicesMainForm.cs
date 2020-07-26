@@ -107,7 +107,7 @@ namespace TMS.UI
 
             if (!string.IsNullOrWhiteSpace(txtFilter.Text))
             {
-                var selectedInvoices = invoiceMapper.ToUiModelList(invoices).FindAll(x => 
+                var selectedInvoices = invoiceMapper.ToUiModelList(invoices).FindAll(x =>
                 (x.Consulta ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Data.ToString() ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Preco.ToString() ?? string.Empty).Contains(txtFilter.Text));

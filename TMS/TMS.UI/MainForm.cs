@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TMS.Appointment.Domain.Services;
+using TMS.Appointment.Repository;
+using TMS.Appointment.Service.Service;
 using TMS.Clientes.Service.Model;
 using TMS.UI.AppointmentForms;
+using TMS.UI.Mapper;
 using TMS.UI.Properties;
 
 namespace TMS.UI
 {
     public partial class MainForm : Form
     {
+        private string todaysAppointmentTooltipText = string.Empty;
         public MainForm()
         {
             InitializeComponent();
@@ -52,36 +57,37 @@ namespace TMS.UI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            CheckIfThereAreAppointmentsForToday();
         }
 
-        private void BtnClients_MouseEnter(object sender, EventArgs e)
+        private void AppointmentsNotificationBadge_Click(object sender, EventArgs e)
         {
-            btnClients.BackgroundImage = new Bitmap(Resources.customers_hover);
+            if (!string.IsNullOrWhiteSpace(todaysAppointmentTooltipText))
+                MessageBox.Show(todaysAppointmentTooltipText, "Informação", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
 
-        private void BtnClients_MouseLeave(object sender, EventArgs e)
+        private void MainForm_VisibleChanged(object sender, EventArgs e)
         {
-            btnClients.BackgroundImage = new Bitmap(Resources.customers);
+            if (Visible)
+            {
+                CheckIfThereAreAppointmentsForToday();
+            }
         }
 
-        private void BtnAppointments_MouseEnter(object sender, EventArgs e)
+        private void CheckIfThereAreAppointmentsForToday()
         {
-            btnAppointments.BackgroundImage = new Bitmap(Resources.meeting_hover);
-        }
+            AppointmentMapper appointmentMapper = new AppointmentMapper();
 
-        private void BtnAppointments_MouseLeave(object sender, EventArgs e)
-        {
-            btnAppointments.BackgroundImage = new Bitmap(Resources.meeting);
-        }
+            var appointments = new AppointmentService(new AppointmentDomainService(new AppointmentRepository())).GetAll();
 
-        private void BtnInvoices_MouseEnter(object sender, EventArgs e)
-        {
-            btnInvoices.BackgroundImage = new Bitmap(Resources.bill_hover);
-        }
+            var appointmentsForToday = appointmentMapper.ToUiModelList(appointments.FindAll(x => x.DateTime.Date == DateTime.Now.Date));
 
-        private void BtnInvoices_MouseLeave(object sender, EventArgs e)
-        {
-            btnInvoices.BackgroundImage = new Bitmap(Resources.bill);
+            appointmentsNotificationBadge.Text = appointmentsForToday.Count.ToString();
+
+            if (appointmentsForToday.Count > 0)
+            {
+                todaysAppointmentTooltipText = $"Consultas para hoje: {string.Join(" | ", appointmentsForToday.Select(x => x.Nome))} | {string.Join(" ", appointmentsForToday.Select(x => x.TipoDeConsulta))} | {string.Join(" ", appointmentsForToday.Select(x => x.Data))}";
+            }
         }
     }
 }

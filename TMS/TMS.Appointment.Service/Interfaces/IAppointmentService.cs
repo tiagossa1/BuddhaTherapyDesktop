@@ -9,14 +9,14 @@ namespace TMS.Appointment.Service.Interfaces
 {
     public interface IAppointmentService
     {
-        IList<string> Post(AppointmentDto obj);
+        List<string> Post(AppointmentDto obj);
 
-        IList<string> Put(AppointmentDto obj);
+        List<string> Put(AppointmentDto obj);
 
         bool Delete(Guid id);
 
         AppointmentDto Get(Guid id);
 
-        IList<AppointmentDto> GetAll();
+        List<AppointmentDto> GetAll();
     }
 }

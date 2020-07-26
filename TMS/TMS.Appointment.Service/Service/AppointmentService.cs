@@ -29,17 +29,17 @@ namespace TMS.Appointment.Service.Service
             return AppointmentAssembler.EntityToDto(appointmentDomainService.Get(id));
         }
 
-        public IList<AppointmentDto> GetAll()
+        public List<AppointmentDto> GetAll()
         {
             return AppointmentAssembler.EntitiesToDto(appointmentDomainService.GetAll().ToList());
         }
 
-        public IList<string> Post(AppointmentDto obj)
+        public List<string> Post(AppointmentDto obj)
         {
             return appointmentDomainService.Create(AppointmentAssembler.DtoToEntity(obj));
         }
 
-        public IList<string> Put(AppointmentDto obj)
+        public List<string> Put(AppointmentDto obj)
         {
             return appointmentDomainService.Update(AppointmentAssembler.DtoToEntity(obj));
         }
