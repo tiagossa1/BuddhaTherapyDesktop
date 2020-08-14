@@ -24,16 +24,30 @@ namespace TMS.Invoice.IntegrationTests
 
             Guid invoiceId = Guid.NewGuid();
 
-            InvoiceDto invoice = new InvoiceDto(invoiceId, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoice = new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = invoiceId,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
-            InvoiceDto invoiceNewResult = new InvoiceDto(invoiceId, Guid.NewGuid(), Guid.NewGuid(), 5.00M, DateTime.Now);
+            InvoiceDto invoiceNewResult = new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = invoiceId,
+                InvoiceDate = DateTime.Now,
+                Price = 5.00M
+            };
 
             // Act
-            IList<string> insertResult = invoiceService.Post(invoice);
+            List<string> insertResult = invoiceService.Post(invoice);
 
             invoice.Price = 5.00M;
 
-            IList<string> updateResult = invoiceService.Put(invoice);
+            List<string> updateResult = invoiceService.Put(invoice);
 
             InvoiceDto getResult = invoiceService.Get(invoiceId);
 
@@ -51,7 +65,7 @@ namespace TMS.Invoice.IntegrationTests
 
             InvoiceService InvoiceService = new InvoiceService(container.GetInstance<InvoiceDomainService>());
 
-            IList<string> updateResult = InvoiceService.Put(null);
+            List<string> updateResult = InvoiceService.Put(null);
 
             // Assert
             Assert.IsTrue(updateResult.Count > 0);

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Castle.DynamicProxy.Generators.Emitters;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -12,108 +13,173 @@ namespace TMS.Client.Domain.Tests
     public class ClientDomainService_Tests
     {
         [DataTestMethod]
-        [DataRow(null, "XYZ", "XYZ", 912564785, "XYZ", 123456789, "XYZ")]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ", 123456789, "")]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ", 1234567898, "xyz")]
-        public void ClientDomainService_Post_VaiFalharDevidoaErrosdeValidacaodeDominio(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
+        [DataRow(null, "XYZ", "XYZ", "912564785", "XYZ", "123456789", "XYZ")]
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ", "123456789", "")]
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ", "1234567898", "xyz")]
+        public void ClientDomainService_Post_VaiFalharDevidoaErrosdeValidacaodeDominio(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
-            var _clienteRepository = new Mock<IClientRepository>();
-            ClientDomainService ClientDomainService = new ClientDomainService(_clienteRepository.Object);
-            ClientModel cliente = new ClientModel(Guid.NewGuid(), firstName, lastname, address, phoneNumber, email, nif, jobTitle);
+            var clientRepository = new Mock<IClientRepository>();
+            ClientDomainService clientDomainService = new ClientDomainService(clientRepository.Object);
+            ClientModel cliente = new ClientModel()
+            {
+                Address = address,
+                Email = email,
+                PhoneNumber = phoneNumber,
+                FirstName = firstName,
+                Id = Guid.NewGuid(),
+                JobTitle = jobTitle,
+                LastName = lastname,
+                NIF = nif
+            };
 
             // Act
-            IList<string> result = ClientDomainService.Post(cliente);
+            List<string> result = clientDomainService.Post(cliente);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
         }
 
         [DataTestMethod]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ")]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ")]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "xyz")]
-        public void ClientDomainService_Post_VaiFalharNoInsertNaDb(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "XYZ")]
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "XYZ")]
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "xyz")]
+        public void ClientDomainService_Post_VaiFalharNoInsertNaDb(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
-            var _clienteRepository = new Mock<IClientRepository>();
-            _clienteRepository.Setup(x => x.Post(It.IsAny<ClientModel>())).Returns(false);
-            ClientDomainService ClientDomainService = new ClientDomainService(_clienteRepository.Object);
-            ClientModel client = new ClientModel(Guid.NewGuid(), firstName, lastname, address, phoneNumber, email, nif, jobTitle);
+            var clientRepository = new Mock<IClientRepository>();
+            clientRepository.Setup(x => x.Post(It.IsAny<ClientModel>())).Returns(false);
+            ClientDomainService ClientDomainService = new ClientDomainService(clientRepository.Object);
+
+            ClientModel client = new ClientModel()
+            {
+                Address = address,
+                Email = email,
+                PhoneNumber = phoneNumber,
+                FirstName = firstName,
+                Id = Guid.NewGuid(),
+                JobTitle = jobTitle,
+                LastName = lastname,
+                NIF = nif
+            };
 
             // Act
-            IList<string> result = ClientDomainService.Post(client);
+            List<string> result = ClientDomainService.Post(client);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
         }
 
         [DataTestMethod]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ")]
-        public void ClientDomainService_Post_VaiDarSucesso(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "XYZ")]
+        public void ClientDomainService_Post_VaiDarSucesso(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
-            var _clienteRepository = new Mock<IClientRepository>();
-            _clienteRepository.Setup(x => x.Post(It.IsAny<ClientModel>())).Returns(true);
-            ClientDomainService ClientDomainService = new ClientDomainService(_clienteRepository.Object);
-            ClientModel cliente = new ClientModel(Guid.NewGuid(), firstName, lastname, address, phoneNumber, email, nif, jobTitle);
+            var clientRepository = new Mock<IClientRepository>();
+            clientRepository.Setup(x => x.Post(It.IsAny<ClientModel>())).Returns(true);
+            ClientDomainService clientDomainService = new ClientDomainService(clientRepository.Object);
+
+            ClientModel client = new ClientModel()
+            {
+                Address = address,
+                Email = email,
+                PhoneNumber = phoneNumber,
+                FirstName = firstName,
+                Id = Guid.NewGuid(),
+                JobTitle = jobTitle,
+                LastName = lastname,
+                NIF = nif
+            };
 
             // Act
-            IList<string> result = ClientDomainService.Post(cliente);
+            List<string> result = clientDomainService.Post(client);
 
             // Assert
             Assert.IsTrue(result.Count == 0);
         }
 
         [DataTestMethod]
-        [DataRow(null, "XYZ", "XYZ", 912564785, "XYZ", 123456789, "XYZ")]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ", 123456789, "")]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ", 1234567898, "xyz")]
-        public void ClientDomainService_Put_VaiFalharDevidoaErrosdeValidacaodeDominio(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
+        [DataRow(null, "XYZ", "XYZ", "912564785", "XYZ", "123456789", "XYZ")]
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ", "123456789", "")]
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ", "1234567898", "xyz")]
+        public void ClientDomainService_Put_VaiFalharDevidoaErrosdeValidacaodeDominio(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
-            var _clienteRepository = new Mock<IClientRepository>();
-            ClientDomainService ClientDomainService = new ClientDomainService(_clienteRepository.Object);
-            ClientModel cliente = new ClientModel(Guid.NewGuid(), firstName, lastname, address, phoneNumber, email, nif, jobTitle);
+            var clientRepository = new Mock<IClientRepository>();
+            ClientDomainService clientDomainService = new ClientDomainService(clientRepository.Object);
+
+            ClientModel client = new ClientModel()
+            {
+                Address = address,
+                Email = email,
+                PhoneNumber = phoneNumber,
+                FirstName = firstName,
+                Id = Guid.NewGuid(),
+                JobTitle = jobTitle,
+                LastName = lastname,
+                NIF = nif
+            };
 
             // Act
-            IList<string> result = ClientDomainService.Put(cliente);
+            List<string> result = clientDomainService.Put(client);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
         }
 
         [DataTestMethod]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ")]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ")]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "xyz")]
-        public void ClientDomainService_Put_VaiFalharNoInsertNaDb(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "XYZ")]
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "XYZ")]
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "xyz")]
+        public void ClientDomainService_Put_VaiFalharNoInsertNaDb(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
-            var _clienteRepository = new Mock<IClientRepository>();
-            _clienteRepository.Setup(x => x.Put(It.IsAny<ClientModel>())).Returns(false);
-            ClientDomainService ClientDomainService = new ClientDomainService(_clienteRepository.Object);
-            ClientModel cliente = new ClientModel(Guid.NewGuid(), firstName, lastname, address, phoneNumber, email, nif, jobTitle);
+            var clientRepository = new Mock<IClientRepository>();
+            clientRepository.Setup(x => x.Put(It.IsAny<ClientModel>())).Returns(false);
+            ClientDomainService clientDomainService = new ClientDomainService(clientRepository.Object);
+
+            ClientModel client = new ClientModel()
+            {
+                Address = address,
+                Email = email,
+                PhoneNumber = phoneNumber,
+                FirstName = firstName,
+                Id = Guid.NewGuid(),
+                JobTitle = jobTitle,
+                LastName = lastname,
+                NIF = nif
+            };
 
             // Act
-            IList<string> result = ClientDomainService.Put(cliente);
+            List<string> result = clientDomainService.Put(client);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
         }
 
         [DataTestMethod]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ")]
-        public void ClientDomainService_Put_VaiDarSucesso(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "XYZ")]
+        public void ClientDomainService_Put_VaiDarSucesso(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
-            var _clientRepository = new Mock<IClientRepository>();
-            _clientRepository.Setup(x => x.Put(It.IsAny<ClientModel>())).Returns(true);
-            ClientDomainService ClientDomainService = new ClientDomainService(_clientRepository.Object);
-            ClientModel client = new ClientModel(Guid.NewGuid(), firstName, lastname, address, phoneNumber, email, nif, jobTitle);
+            var clientRepository = new Mock<IClientRepository>();
+            clientRepository.Setup(x => x.Put(It.IsAny<ClientModel>())).Returns(true);
+            ClientDomainService ClientDomainService = new ClientDomainService(clientRepository.Object);
+
+            ClientModel client = new ClientModel()
+            {
+                Address = address,
+                Email = email,
+                PhoneNumber = phoneNumber,
+                FirstName = firstName,
+                Id = Guid.NewGuid(),
+                JobTitle = jobTitle,
+                LastName = lastname,
+                NIF = nif
+            };
 
             // Act
-            IList<string> result = ClientDomainService.Put(client);
+            List<string> result = ClientDomainService.Put(client);
 
             // Assert
             Assert.IsTrue(result.Count == 0);
@@ -123,12 +189,12 @@ namespace TMS.Client.Domain.Tests
         public void ClientDomainService_Delete_VaiDarSucessoEApagar()
         {
             // Arrange
-            var _clienteRepository = new Mock<IClientRepository>();
-            _clienteRepository.Setup(x => x.Delete(It.IsAny<Guid>())).Returns(true);
-            ClientDomainService ClientDomainService = new ClientDomainService(_clienteRepository.Object);
+            var clientRepository = new Mock<IClientRepository>();
+            clientRepository.Setup(x => x.Delete(It.IsAny<Guid>())).Returns(true);
+            ClientDomainService clientDomainService = new ClientDomainService(clientRepository.Object);
 
             // Act
-            bool result = ClientDomainService.Delete(Guid.NewGuid());
+            bool result = clientDomainService.Delete(Guid.NewGuid());
 
             // Assert
             Assert.IsTrue(result);
@@ -139,12 +205,23 @@ namespace TMS.Client.Domain.Tests
         {
             // Arrange
             Guid clientGuid = Guid.NewGuid();
-            var _clienteRepository = new Mock<IClientRepository>();
-            _clienteRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(new ClientModel(clientGuid, "XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ"));
-            ClientDomainService ClientDomainService = new ClientDomainService(_clienteRepository.Object);
+            var clientRepository = new Mock<IClientRepository>();
+            clientRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(new ClientModel()
+            {
+                Address = "xyz",
+                PhoneNumber = "123456789",
+                NIF = "123456789",
+                LastName = "xyz",
+                JobTitle = "xyz",
+                Id = clientGuid,
+                Email = "xyz",
+                FirstName = "xyz"
+            });
+
+            ClientDomainService clientDomainService = new ClientDomainService(clientRepository.Object);
 
             // Act
-            ClientModel result = ClientDomainService.Get(Guid.NewGuid());
+            ClientModel result = clientDomainService.Get(Guid.NewGuid());
 
             // Assert
             Assert.AreEqual(result.GetType(), typeof(ClientModel));
@@ -154,16 +231,27 @@ namespace TMS.Client.Domain.Tests
         public void ClientDomainService_GetAll_VaiRetornarOsClientes()
         {
             // Arrange
-            var clientes = new List<ClientModel>() { new ClientModel(Guid.NewGuid(), "XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ") };
-            var _clienteRepository = new Mock<IClientRepository>();
-            _clienteRepository.Setup(x => x.GetAll()).Returns(clientes);
-            ClientDomainService ClientDomainService = new ClientDomainService(_clienteRepository.Object);
+            var clients = new List<ClientModel>() {new ClientModel()
+            {
+                Address = "xyz",
+                PhoneNumber = "123456789",
+                NIF = "123456789",
+                LastName = "xyz",
+                JobTitle = "xyz",
+                Id = Guid.NewGuid(),
+                Email = "xyz",
+                FirstName = "xyz"
+            } };
+
+            var clientRepository = new Mock<IClientRepository>();
+            clientRepository.Setup(x => x.GetAll()).Returns(clients);
+            ClientDomainService clientDomainService = new ClientDomainService(clientRepository.Object);
 
             // Act
-            IList<ClientModel> result = ClientDomainService.GetAll();
+            List<ClientModel> result = clientDomainService.GetAll();
 
             // Assert
-            Assert.AreEqual(clientes, result);
+            Assert.AreEqual(clients, result);
         }
     }
 }

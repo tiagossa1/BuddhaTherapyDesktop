@@ -17,10 +17,17 @@ namespace TMS.Invoice.IntegrationTests
             // Arrange
             var container = BootStrapDI.Bootstrap();
             InvoiceService invoiceService = new InvoiceService(container.GetInstance<InvoiceDomainService>());
-            InvoiceDto invoice = new InvoiceDto(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, default);
+            InvoiceDto invoice = new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = Guid.NewGuid(),
+                InvoiceDate = default,
+                Price = decimal.One
+            };
 
             // Act
-            IList<string> result = invoiceService.Post(invoice);
+            List<string> result = invoiceService.Post(invoice);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -32,10 +39,18 @@ namespace TMS.Invoice.IntegrationTests
             // Arrange
             var container = BootStrapDI.Bootstrap();
             InvoiceService invoiceService = new InvoiceService(container.GetInstance<InvoiceDomainService>());
-            InvoiceDto invoice = new InvoiceDto(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+
+            InvoiceDto invoice = new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = Guid.NewGuid(),
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
             // Act
-            IList<string> result = invoiceService.Post(invoice);
+            List<string> result = invoiceService.Post(invoice);
 
             // Assert
             Assert.IsTrue(result.Count == 0);

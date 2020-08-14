@@ -12,7 +12,6 @@ namespace TMS.Invoice.Repository.Repository
     public class InvoiceRepository : IInvoiceRepository
     {
         private const string tableName = "invoice";
-        private const string appointmentTableName = "appointment";
 
         public bool Delete(Guid id)
         {
@@ -59,7 +58,7 @@ namespace TMS.Invoice.Repository.Repository
                     return col.FindAll().ToList();
                 }
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 return new List<InvoiceModel>();
             }

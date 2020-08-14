@@ -20,10 +20,18 @@ namespace TMS.Appointment.IntegrationTests
             // Arrange
             var container = BootStrapDI.Bootstrap();
             AppointmentService appointmentService = new AppointmentService(container.GetInstance<AppointmentDomainService>());
-            AppointmentDto appointment = new AppointmentDto(Guid.NewGuid(), Guid.NewGuid(), default, 1, "xyz", "xyz");
+            AppointmentDto appointment = new AppointmentDto()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 0,
+                AppointmentTypeName = "xyz",
+                DateTime = default,
+                Id = Guid.NewGuid()
+            };
 
             // Act
-            IList<string> result = appointmentService.Post(appointment);
+            List<string> result = appointmentService.Create(appointment);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -35,10 +43,18 @@ namespace TMS.Appointment.IntegrationTests
             // Arrange
             var container = BootStrapDI.Bootstrap();
             AppointmentService AppointmentService = new AppointmentService(container.GetInstance<AppointmentDomainService>());
-            AppointmentDto appointment = new AppointmentDto(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
+            AppointmentDto appointment = new AppointmentDto()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = Guid.NewGuid()
+            };
 
             // Act
-            IList<string> result = AppointmentService.Post(appointment);
+            List<string> result = AppointmentService.Create(appointment);
 
             // Assert
             Assert.IsTrue(result.Count == 0);

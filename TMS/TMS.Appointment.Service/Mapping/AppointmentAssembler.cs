@@ -15,7 +15,15 @@ namespace TMS.Appointment.Service.Mapping
             if (appointmentDto is null)
                 return new AppointmentModel();
 
-            return new AppointmentModel(appointmentDto.Id, appointmentDto.ClientID, appointmentDto.DateTime, appointmentDto.AppointmentTypeID, appointmentDto.AppointmentTypeName, appointmentDto.AppointmentDescription);
+            return new AppointmentModel()
+            {
+                AppointmentDescription = appointmentDto.AppointmentDescription,
+                Id = appointmentDto.Id,
+                AppointmentTypeID = appointmentDto.AppointmentTypeID,
+                AppointmentTypeName = appointmentDto.AppointmentTypeName,
+                ClientID = appointmentDto.ClientID,
+                DateTime = appointmentDto.DateTime
+            };
         }
 
         public static AppointmentDto EntityToDto(AppointmentModel appointment)
@@ -23,7 +31,15 @@ namespace TMS.Appointment.Service.Mapping
             if (appointment is null)
                 return new AppointmentDto();
 
-            return new AppointmentDto(appointment.Id, appointment.ClientID, appointment.DateTime, appointment.AppointmentTypeID, appointment.AppointmentTypeName, appointment.AppointmentDescription);
+            return new AppointmentDto()
+            {
+                AppointmentDescription = appointment.AppointmentDescription,
+                Id = appointment.Id,
+                AppointmentTypeID = appointment.AppointmentTypeID,
+                AppointmentTypeName = appointment.AppointmentTypeName,
+                ClientID = appointment.ClientID,
+                DateTime = appointment.DateTime
+            };
         }
 
         public static List<AppointmentModel> DtosToEntities(List<AppointmentDto> appointment)
@@ -31,7 +47,7 @@ namespace TMS.Appointment.Service.Mapping
             if (appointment is null)
                 return new List<AppointmentModel>();
 
-            return new List<AppointmentModel>(appointment.Select(x => new AppointmentModel(x.Id, x.ClientID, x.DateTime, x.AppointmentTypeID, x.AppointmentTypeName, x.AppointmentDescription)));
+            return new List<AppointmentModel>(appointment.Select(DtoToEntity));
         }
 
         public static List<AppointmentDto> EntitiesToDto(List<AppointmentModel> appointment)
@@ -39,7 +55,7 @@ namespace TMS.Appointment.Service.Mapping
             if (appointment is null)
                 return new List<AppointmentDto>();
 
-            return new List<AppointmentDto>(appointment.Select(x => new AppointmentDto(x.Id, x.ClientID, x.DateTime, x.AppointmentTypeID, x.AppointmentTypeName, x.AppointmentDescription)));
+            return new List<AppointmentDto>(appointment.Select(EntityToDto));
         }
     }
 }

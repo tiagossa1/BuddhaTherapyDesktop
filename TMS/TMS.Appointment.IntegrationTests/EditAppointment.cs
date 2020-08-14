@@ -25,15 +25,32 @@ namespace TMS.Appointment.IntegrationTests
             Guid appointmentId = Guid.NewGuid();
             Guid clientId = Guid.NewGuid();
 
-            AppointmentDto appointment = new AppointmentDto(appointmentId, clientId, DateTime.Now, 1, "xyz", "xyz");
-            AppointmentDto appointmentNew = new AppointmentDto(appointmentId, clientId, DateTime.Now, 2, "xyz", "xyz");
+            AppointmentDto appointment = new AppointmentDto()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = clientId,
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = appointmentId
+            };
+
+            AppointmentDto appointmentNew = new AppointmentDto()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = clientId,
+                AppointmentTypeID = 3,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = appointmentId
+            };
 
             // Act
-            IList<string> insertResult = appointmentService.Post(appointment);
+            List<string> insertResult = appointmentService.Create(appointment);
 
-            appointment.AppointmentTypeID = 2;
+            appointment.AppointmentTypeID = 3;
 
-            IList<string> updateResult = appointmentService.Put(appointment);
+            List<string> updateResult = appointmentService.Edit(appointment);
             AppointmentDto appointmentResult = appointmentService.Get(appointmentId);
 
             // Assert
@@ -49,7 +66,7 @@ namespace TMS.Appointment.IntegrationTests
             var container = BootStrapDI.Bootstrap();
             AppointmentService appointmentService = new AppointmentService(container.GetInstance<AppointmentDomainService>());
 
-            IList<string> updateResult = appointmentService.Put(null);
+            List<string> updateResult = appointmentService.Edit(null);
             // Assert
             Assert.IsTrue(updateResult.Count > 0);
         }

@@ -40,9 +40,16 @@ namespace TMS.Invoice.IntegrationTests
             Guid invoiceId = Guid.NewGuid();
 
             // Act
-            InvoiceDto invoice = new InvoiceDto(invoiceId, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoice = new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = invoiceId,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
-            IList<string> postResult = InvoiceService.Post(invoice);
+            List<string> postResult = InvoiceService.Post(invoice);
 
             InvoiceDto getResult = InvoiceService.Get(invoiceId);
 
@@ -62,9 +69,16 @@ namespace TMS.Invoice.IntegrationTests
             Guid invoiceId = Guid.NewGuid();
 
             // Act
-            InvoiceDto invoice = new InvoiceDto(invoiceId, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoice = new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = invoiceId,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
-            IList<string> postResult = InvoiceService.Post(invoice);
+            List<string> postResult = InvoiceService.Post(invoice);
 
             List<InvoiceDto> getAllResult = InvoiceService.GetAll().ToList();
 

@@ -15,7 +15,7 @@ namespace TMS.Invoice.IntegrationTests
     public class DeleteInvoice
     {
         [TestMethod]
-        public void VaiApagarUmInvoiceQueNaoExiste()
+        public void VaiApagarUmReciboQueNaoExiste()
         {
             // Arrange
             var container = BootStrapDI.Bootstrap();
@@ -30,7 +30,7 @@ namespace TMS.Invoice.IntegrationTests
         }
 
         [TestMethod]
-        public void VaiApagarUmInvoice()
+        public void VaiApagarUmRecibo()
         {
             // Arrange
             var container = BootStrapDI.Bootstrap();
@@ -39,10 +39,17 @@ namespace TMS.Invoice.IntegrationTests
 
             Guid invoiceId = Guid.NewGuid();
 
-            InvoiceDto invoice = new InvoiceDto(invoiceId, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoice = new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = invoiceId,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
             // Act
-            IList<string> result = InvoiceService.Post(invoice);
+            List<string> result = InvoiceService.Post(invoice);
 
             bool invoiceResult = InvoiceService.Delete(invoiceId);
 

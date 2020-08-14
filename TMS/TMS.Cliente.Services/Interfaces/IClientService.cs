@@ -6,9 +6,9 @@ namespace TMS.Clientes.Services.Interfaces
 {
     public interface IClientService
     {
-        List<string> Post(ClientDto obj);
+        List<string> Create(ClientDto obj);
 
-        List<string> Put(ClientDto obj);
+        List<string> Edit(ClientDto obj);
 
         bool Delete(Guid id);
 

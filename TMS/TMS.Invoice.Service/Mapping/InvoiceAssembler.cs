@@ -16,27 +16,11 @@ namespace TMS.Invoice.Service.Mapping
         {
             if (invoiceDto is null)
                 return new InvoiceModel();
+
             return new InvoiceModel()
             {
-                Appointment = new AppointmentModel()
-                {
-                    Id = invoiceDto.Appointment.Id,
-                    AppointmentDescription = invoiceDto.Appointment.AppointmentDescription,
-                    AppointmentTypeID = invoiceDto.Appointment.AppointmentTypeID,
-                    AppointmentTypeName = invoiceDto.Appointment.AppointmentTypeName,
-                    Client = new ClientModel()
-                    {
-                        Address = invoiceDto.Appointment.Client.Address,
-                        Email = invoiceDto.Appointment.Client.Email,
-                        FirstName = invoiceDto.Appointment.Client.FirstName,
-                        Id = invoiceDto.Appointment.Client.Id,
-                        JobTitle = invoiceDto.Appointment.Client.JobTitle,
-                        LastName = invoiceDto.Appointment.Client.LastName,
-                        NIF = invoiceDto.Appointment.Client.NIF,
-                        PhoneNumber = invoiceDto.Appointment.Client.PhoneNumber
-                    },
-                    DateTime = invoiceDto.Appointment.DateTime
-                },
+                AppointmentID = invoiceDto.AppointmentID,
+                ClientID = invoiceDto.ClientID,
                 Id = invoiceDto.Id,
                 InvoiceDate = invoiceDto.InvoiceDate,
                 Price = invoiceDto.Price
@@ -47,27 +31,11 @@ namespace TMS.Invoice.Service.Mapping
         {
             if (invoice is null)
                 return new InvoiceDto();
+
             return new InvoiceDto()
             {
-                Appointment = new Appointment.Service.Model.AppointmentDto()
-                {
-                    Id = invoice.Appointment.Id,
-                    AppointmentDescription = invoice.Appointment.AppointmentDescription,
-                    AppointmentTypeID = invoice.Appointment.AppointmentTypeID,
-                    AppointmentTypeName = invoice.Appointment.AppointmentTypeName,
-                    Client = new Clientes.Service.Model.ClientDto()
-                    {
-                        Address = invoice.Appointment.Client.Address,
-                        Email = invoice.Appointment.Client.Email,
-                        FirstName = invoice.Appointment.Client.FirstName,
-                        Id = invoice.Appointment.Client.Id,
-                        JobTitle = invoice.Appointment.Client.JobTitle,
-                        LastName = invoice.Appointment.Client.LastName,
-                        NIF = invoice.Appointment.Client.NIF,
-                        PhoneNumber = invoice.Appointment.Client.PhoneNumber
-                    },
-                    DateTime = invoice.Appointment.DateTime
-                },
+                AppointmentID = invoice.AppointmentID,
+                ClientID = invoice.ClientID,
                 Id = invoice.Id,
                 InvoiceDate = invoice.InvoiceDate,
                 Price = invoice.Price

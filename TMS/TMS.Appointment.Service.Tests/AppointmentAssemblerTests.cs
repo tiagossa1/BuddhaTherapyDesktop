@@ -16,9 +16,26 @@ namespace TMS.Appointment.Service.Tests
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
-            AppointmentDto appointmentDto = new AppointmentDto(newGuid, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
 
-            AppointmentModel appointment = new AppointmentModel(newGuid, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
+            AppointmentDto appointmentDto = new AppointmentDto()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = newGuid
+            };
+
+            AppointmentModel appointment = new AppointmentModel()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = newGuid
+            };
 
             // Act
             AppointmentModel result = AppointmentAssembler.DtoToEntity(appointmentDto);
@@ -41,15 +58,31 @@ namespace TMS.Appointment.Service.Tests
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
-            AppointmentDto AppointmentDto = new AppointmentDto(newGuid, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
+            AppointmentDto appointmentDto = new AppointmentDto()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = newGuid
+            };
 
-            AppointmentModel cliente = new AppointmentModel(newGuid, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
+            AppointmentModel appointment = new AppointmentModel()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = newGuid
+            };
 
             // Act
-            AppointmentDto result = AppointmentAssembler.EntityToDto(cliente);
+            AppointmentDto result = AppointmentAssembler.EntityToDto(appointment);
 
             // Assert
-            Assert.IsTrue(result.Equals(AppointmentDto));
+            Assert.IsTrue(result.Equals(appointmentDto));
         }
 
         [TestMethod]
@@ -58,12 +91,28 @@ namespace TMS.Appointment.Service.Tests
             // Arrange
             Guid newGuid = Guid.NewGuid();
 
-            List<AppointmentDto> appointmentDtos = new List<AppointmentDto>() { new AppointmentDto(newGuid, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz") };
+            List<AppointmentDto> appointmentDtos = new List<AppointmentDto>() { new AppointmentDto()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = newGuid
+            } };
 
-            List<AppointmentModel> appointment = new List<AppointmentModel>() { new AppointmentModel(newGuid, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz") };
+            List<AppointmentModel> appointments = new List<AppointmentModel>() { new AppointmentModel()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = newGuid
+            } };
 
             // Act
-            List<AppointmentDto> result = AppointmentAssembler.EntitiesToDto(appointment);
+            List<AppointmentDto> result = AppointmentAssembler.EntitiesToDto(appointments);
 
             // Assert
             Assert.IsTrue(result.SequenceEqual(appointmentDtos));
@@ -74,15 +123,31 @@ namespace TMS.Appointment.Service.Tests
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
-            List<AppointmentDto> appointmentDtos = new List<AppointmentDto>() { new AppointmentDto(newGuid, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz") };
+            List<AppointmentDto> appointmentDtos = new List<AppointmentDto>() { new AppointmentDto()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = newGuid
+            } };
 
-            List<AppointmentModel> cliente = new List<AppointmentModel>() { new AppointmentModel(newGuid, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz") };
+            List<AppointmentModel> appointments = new List<AppointmentModel>() { new AppointmentModel()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = newGuid
+            } };
 
             // Act
             List<AppointmentModel> result = AppointmentAssembler.DtosToEntities(appointmentDtos);
 
             // Assert
-            Assert.IsTrue(result.SequenceEqual(cliente));
+            Assert.IsTrue(result.SequenceEqual(appointments));
         }
 
         [TestMethod]

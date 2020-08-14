@@ -58,7 +58,7 @@ namespace TMS.UI.InvoiceForms
         {
             var appointments = appointmentService.GetAll().Select(a =>
             {
-                var client = clientService.Get(a.Client.Id);
+                var client = clientService.Get(a.ClientID);
                 return $"{client.FirstName} {client.LastName} | {a.DateTime}";
             }).ToArray();
 
@@ -72,7 +72,7 @@ namespace TMS.UI.InvoiceForms
             var invoice = new InvoiceDto()
             {
                 Id = Invoice != null ? Invoice.Id : Guid.NewGuid(),
-                Appointment = selectedAppointment,
+                AppointmentID = selectedAppointment.Id,
                 InvoiceDate = DateTime.UtcNow,
                 Price = decimal.Parse(txtPrice.Text)
             };

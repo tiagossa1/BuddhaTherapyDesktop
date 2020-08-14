@@ -48,9 +48,25 @@
     <Compile Include="Service\ClientService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TMS.Appointment.Domain\TMS.Appointment.Domain.csproj">
+      <Project>{0814701F-71D0-422B-BCC6-3BD0C58BDB41}</Project>
+      <Name>TMS.Appointment.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Appointment.Repository\TMS.Appointment.Repository.csproj">
+      <Project>{7FBCB119-3481-40AA-9D7E-272A4D931DF7}</Project>
+      <Name>TMS.Appointment.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TMS.Clientes.Domain\TMS.Client.Domain.csproj">
       <Project>{6f57d90b-6691-4709-b5b1-b216893c0310}</Project>
       <Name>TMS.Client.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Invoice.Domain\TMS.Invoice.Domain.csproj">
+      <Project>{61668B91-0F28-4AFB-9C03-43B410F751FA}</Project>
+      <Name>TMS.Invoice.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Invoice.Repository\TMS.Invoice.Repository.csproj">
+      <Project>{7D7D5A12-D1ED-4347-A827-330E9490CD6A}</Project>
+      <Name>TMS.Invoice.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -33,9 +33,19 @@ namespace TMS.Client.IntegrationTests
             ClientService ClientService = new ClientService(container.GetInstance<ClientDomainService>());
             Guid userId = Guid.NewGuid();
             // Act
-            ClientDto cliente = new ClientDto(userId, "XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ");
+            ClientDto cliente = new ClientDto()
+            {
+                Id = userId,
+                Address = "xyz",
+                Email = "xyz",
+                FirstName = "xyz",
+                JobTitle = "xyz",
+                LastName = "xyz",
+                NIF = "123456789",
+                PhoneNumber = "123456789"
+            };
 
-            IList<string> postResult = ClientService.Post(cliente);
+            List<string> postResult = ClientService.Create(cliente);
             ClientDto clienteResult = ClientService.Get(userId);
 
             // Assert
@@ -52,8 +62,18 @@ namespace TMS.Client.IntegrationTests
             Guid userId = Guid.NewGuid();
 
             // Act
-            ClientDto cliente = new ClientDto(userId, "XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ");
-            IList<string> postResult = ClientService.Post(cliente);
+            ClientDto cliente = new ClientDto()
+            {
+                Address = "xyz",
+                PhoneNumber = "123456789",
+                NIF = "123456789",
+                LastName = "xyz",
+                JobTitle = "xyz",
+                FirstName = "xyz",
+                Email = "xyz",
+                Id = userId
+            };
+            IList<string> postResult = ClientService.Create(cliente);
             List<ClientDto> clienteResult = ClientService.GetAll().ToList();
 
             // Assert

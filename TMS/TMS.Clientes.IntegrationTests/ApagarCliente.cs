@@ -28,17 +28,28 @@ namespace TMS.Client.IntegrationTests
         {
             // Arrange
             var container = BootStrapDI.Bootstrap();
-            ClientService ClientService = new ClientService(container.GetInstance<ClientDomainService>());
-            Guid userId = Guid.NewGuid();
-            ClientDto cliente = new ClientDto(userId, "XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ");
+            ClientService clientService = new ClientService(container.GetInstance<ClientDomainService>());
+            Guid clientId = Guid.NewGuid();
+
+            ClientDto client = new ClientDto()
+            {
+                Address = "xyz",
+                PhoneNumber = "123456789",
+                NIF = "123456789",
+                LastName = "xyz",
+                Email = "xyz",
+                FirstName = "xyz",
+                JobTitle = "xyz",
+                Id = clientId
+            };
 
             // Act
-            IList<string> result = ClientService.Post(cliente);
-            bool clienteResult = ClientService.Delete(userId);
+            List<string> result = clientService.Create(client);
+            bool clientResult = clientService.Delete(clientId);
 
             // Assert
             Assert.IsTrue(result.Count == 0);
-            Assert.IsTrue(clienteResult);
+            Assert.IsTrue(clientResult);
         }
     }
 }

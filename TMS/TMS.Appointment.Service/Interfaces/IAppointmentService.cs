@@ -9,9 +9,9 @@ namespace TMS.Appointment.Service.Interfaces
 {
     public interface IAppointmentService
     {
-        List<string> Post(AppointmentDto obj);
+        List<string> Create(AppointmentDto obj);
 
-        List<string> Put(AppointmentDto obj);
+        List<string> Edit(AppointmentDto obj);
 
         bool Delete(Guid id);
 

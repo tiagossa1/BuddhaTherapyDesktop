@@ -83,11 +83,11 @@ namespace TMS.UI.ClientForms
 
             if (Client != null)
             {
-                results = clientService.Put(clientDto).ToList();
+                results = clientService.Edit(clientDto).ToList();
             }
             else
             {
-                results = clientService.Post(clientDto).ToList();
+                results = clientService.Create(clientDto).ToList();
             }
 
             if (results.Count > 0)

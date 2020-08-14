@@ -17,9 +17,23 @@ namespace TMS.Invoice.Service.Tests
             // Arrange
             Guid newGuid = Guid.NewGuid();
 
-            InvoiceDto invoiceDto = new InvoiceDto(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoiceDto = new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = newGuid,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
-            InvoiceModel invoice = new InvoiceModel(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceModel invoice = new InvoiceModel()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = newGuid,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
             // Act
             InvoiceModel result = InvoiceAssembler.DtoToEntity(invoiceDto);
@@ -44,9 +58,23 @@ namespace TMS.Invoice.Service.Tests
             // Arrange
             Guid newGuid = Guid.NewGuid();
 
-            InvoiceDto invoiceDto = new InvoiceDto(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceDto invoiceDto = new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = newGuid,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
-            InvoiceModel invoice = new InvoiceModel(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceModel invoice = new InvoiceModel()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = newGuid,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
             // Act
             InvoiceDto result = InvoiceAssembler.EntityToDto(invoice);
@@ -61,9 +89,23 @@ namespace TMS.Invoice.Service.Tests
             // Arrange
             Guid newGuid = Guid.NewGuid();
 
-            List<InvoiceDto> invoiceDtos = new List<InvoiceDto>() { new InvoiceDto(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
+            List<InvoiceDto> invoiceDtos = new List<InvoiceDto>() { new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = newGuid,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            } };
 
-            List<InvoiceModel> invoices = new List<InvoiceModel>() { new InvoiceModel(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
+            List<InvoiceModel> invoices = new List<InvoiceModel>() { new InvoiceModel()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = newGuid,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            } };
 
             // Act
             List<InvoiceDto> result = InvoiceAssembler.EntitiesToDto(invoices);
@@ -78,9 +120,23 @@ namespace TMS.Invoice.Service.Tests
             // Arrange
             Guid newGuid = Guid.NewGuid();
 
-            List<InvoiceDto> invoiceDtos = new List<InvoiceDto>() { new InvoiceDto(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
+            List<InvoiceDto> invoiceDtos = new List<InvoiceDto>() { new InvoiceDto()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = newGuid,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            } };
 
-            List<InvoiceModel> cliente = new List<InvoiceModel>() { new InvoiceModel(newGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
+            List<InvoiceModel> cliente = new List<InvoiceModel>() { new InvoiceModel()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = newGuid,
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            } };
 
             // Act
             List<InvoiceModel> result = InvoiceAssembler.DtosToEntities(invoiceDtos);

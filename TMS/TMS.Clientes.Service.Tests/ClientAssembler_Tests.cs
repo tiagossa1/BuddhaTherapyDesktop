@@ -20,9 +20,19 @@ namespace TMS.Client.Domain.Tests
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
-            ClientDto ClientDto = new ClientDto(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle);
+            ClientDto clientDto = new ClientDto()
+            {
+                Address = address,
+                Id = newGuid,
+                FirstName = firstName,
+                Email = email,
+                JobTitle = jobTitle,
+                LastName = lastname,
+                NIF = nif,
+                PhoneNumber = phoneNumber
+            };
 
-            Model.ClientModel cliente = new Model.ClientModel()
+            Model.ClientModel client = new Model.ClientModel()
             {
                 Address = address,
                 PhoneNumber = phoneNumber,
@@ -35,10 +45,10 @@ namespace TMS.Client.Domain.Tests
             };
 
             // Act
-            Model.ClientModel result = ClientAssembler.DtoToEntity(ClientDto);
+            Model.ClientModel result = ClientAssembler.DtoToEntity(clientDto);
 
             // Assert
-            Assert.IsTrue(result.Equals(cliente));
+            Assert.IsTrue(result.Equals(client));
         }
 
         [TestMethod]
@@ -56,8 +66,20 @@ namespace TMS.Client.Domain.Tests
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
-            ClientDto ClientDto = new ClientDto(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle);
-            Model.ClientModel cliente = new Model.ClientModel()
+
+            ClientDto clientDto = new ClientDto()
+            {
+                Address = address,
+                Id = newGuid,
+                FirstName = firstName,
+                Email = email,
+                JobTitle = jobTitle,
+                LastName = lastname,
+                NIF = nif,
+                PhoneNumber = phoneNumber
+            };
+
+            Model.ClientModel client = new Model.ClientModel()
             {
                 Address = address,
                 PhoneNumber = phoneNumber,
@@ -70,10 +92,10 @@ namespace TMS.Client.Domain.Tests
             };
 
             // Act
-            ClientDto result = ClientAssembler.EntityToDto(cliente);
+            ClientDto result = ClientAssembler.EntityToDto(client);
 
             // Assert
-            Assert.IsTrue(result.Equals(ClientDto));
+            Assert.IsTrue(result.Equals(clientDto));
         }
 
         [DataTestMethod]
@@ -82,8 +104,19 @@ namespace TMS.Client.Domain.Tests
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
-            List<ClientDto> ClientDtos = new List<ClientDto>() { new ClientDto(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle) };
-            List<Model.ClientModel> cliente = new List<Model.ClientModel>() { new Model.ClientModel() {
+            List<ClientDto> clientDtos = new List<ClientDto>() { new ClientDto()
+            {
+                Address = address,
+                Id = newGuid,
+                FirstName = firstName,
+                Email = email,
+                JobTitle = jobTitle,
+                LastName = lastname,
+                NIF = nif,
+                PhoneNumber = phoneNumber
+            } };
+
+            List<Model.ClientModel> clients = new List<Model.ClientModel>() { new Model.ClientModel() {
                 Address = address,
                 PhoneNumber = phoneNumber,
                 NIF = nif,
@@ -95,10 +128,10 @@ namespace TMS.Client.Domain.Tests
             } };
 
             // Act
-            List<ClientDto> result = ClientAssembler.EntitiesToDto(cliente);
+            List<ClientDto> result = ClientAssembler.EntitiesToDto(clients);
 
             // Assert
-            Assert.IsTrue(result.SequenceEqual(ClientDtos));
+            Assert.IsTrue(result.SequenceEqual(clientDtos));
         }
 
         [DataTestMethod]
@@ -107,8 +140,19 @@ namespace TMS.Client.Domain.Tests
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
-            List<ClientDto> ClientDtos = new List<ClientDto>() { new ClientDto(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle) };
-            List<Model.ClientModel> cliente = new List<Model.ClientModel>() { new Model.ClientModel() {
+            List<ClientDto> clientDtos = new List<ClientDto>() { new ClientDto()
+            {
+                Address = address,
+                Id = newGuid,
+                FirstName = firstName,
+                Email = email,
+                JobTitle = jobTitle,
+                LastName = lastname,
+                NIF = nif,
+                PhoneNumber = phoneNumber
+            } };
+
+            List<Model.ClientModel> clients = new List<Model.ClientModel>() { new Model.ClientModel() {
                 Address = address,
                 PhoneNumber = phoneNumber,
                 NIF = nif,
@@ -120,10 +164,10 @@ namespace TMS.Client.Domain.Tests
             } };
 
             // Act
-            List<Model.ClientModel> result = ClientAssembler.DtosToEntities(ClientDtos);
+            List<Model.ClientModel> result = ClientAssembler.DtosToEntities(clientDtos);
 
             // Assert
-            Assert.IsTrue(result.SequenceEqual(cliente));
+            Assert.IsTrue(result.SequenceEqual(clients));
         }
 
         [TestMethod]

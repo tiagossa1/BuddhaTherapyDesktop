@@ -117,7 +117,7 @@ namespace TMS.UI
                             PhoneNumber = string.IsNullOrEmpty(client.Telemvel) ? client.TelefoneFixo : client.Telemvel
                         };
 
-                        var errors = clientService.Post(clientDto);
+                        var errors = clientService.Create(clientDto);
 
                         if (errors?.Count > 0)
                         {

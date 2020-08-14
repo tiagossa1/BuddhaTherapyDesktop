@@ -11,7 +11,8 @@ namespace TMS.Invoice.Service.Model
     public class InvoiceDto
     {
         public Guid Id { get; set; }
-        public AppointmentDto Appointment { get; set; }
+        public Guid AppointmentID { get; set; }
+        public Guid ClientID { get; set; }
         public decimal Price { get; set; }
         public DateTime InvoiceDate { get; set; }
 

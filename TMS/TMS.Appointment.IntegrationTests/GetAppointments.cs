@@ -29,17 +29,26 @@ namespace TMS.Appointment.IntegrationTests
         }
 
         [TestMethod]
-        public void VaiRetornarUmAppointment()
+        public void VaiRetornarUmaConsulta()
         {
             // Arrange
             var container = BootStrapDI.Bootstrap();
-            AppointmentService AppointmentService = new AppointmentService(container.GetInstance<AppointmentDomainService>());
+            AppointmentService appointmentService = new AppointmentService(container.GetInstance<AppointmentDomainService>());
             Guid appointmentId = Guid.NewGuid();
             // Act
-            AppointmentDto appointment = new AppointmentDto(appointmentId, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
 
-            IList<string> postResult = AppointmentService.Post(appointment);
-            AppointmentDto appointmentResult = AppointmentService.Get(appointmentId);
+            AppointmentDto appointment = new AppointmentDto()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = appointmentId
+            };
+
+            List<string> postResult = appointmentService.Create(appointment);
+            AppointmentDto appointmentResult = appointmentService.Get(appointmentId);
 
             // Assert
             Assert.IsTrue(postResult.Count == 0);
@@ -47,16 +56,26 @@ namespace TMS.Appointment.IntegrationTests
         }
 
         [TestMethod]
-        public void VaiRetornarTodosOsAppointments()
+        public void VaiRetornarTodasAsConsultas()
         {
             // Arrange
             var container = BootStrapDI.Bootstrap();
             AppointmentService appointmentService = new AppointmentService(container.GetInstance<AppointmentDomainService>());
+
             Guid appointmentId = Guid.NewGuid();
 
             // Act
-            AppointmentDto appointment = new AppointmentDto(appointmentId, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
-            IList<string> postResult = appointmentService.Post(appointment);
+            AppointmentDto appointment = new AppointmentDto()
+            {
+                AppointmentDescription = "xyz",
+                ClientID = Guid.NewGuid(),
+                AppointmentTypeID = 2,
+                AppointmentTypeName = "xyz",
+                DateTime = DateTime.Now,
+                Id = appointmentId
+            };
+
+            List<string> postResult = appointmentService.Create(appointment);
             List<AppointmentDto> appointmentResult = appointmentService.GetAll().ToList();
 
             // Assert
