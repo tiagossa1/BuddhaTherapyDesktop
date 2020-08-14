@@ -10,7 +10,10 @@ using System.Windows.Forms;
 using TMS.Appointment.Domain.Services;
 using TMS.Appointment.Repository;
 using TMS.Appointment.Service.Service;
+using TMS.Client.Domain.Services;
+using TMS.Clientes.Repository.Repository;
 using TMS.Clientes.Service.Model;
+using TMS.ImportRepository;
 using TMS.UI.AppointmentForms;
 using TMS.UI.Mapper;
 using TMS.UI.Properties;
@@ -80,13 +83,52 @@ namespace TMS.UI
 
             var appointments = new AppointmentService(new AppointmentDomainService(new AppointmentRepository())).GetAll();
 
-            var appointmentsForToday = appointmentMapper.ToUiModelList(appointments.FindAll(x => x.DateTime.Date == DateTime.Now.Date));
+            var appointmentsForToday = appointmentMapper.ToUiModelList(appointments.FindAll(x => x.DateTime >= DateTime.Now));
 
             appointmentsNotificationBadge.Text = appointmentsForToday.Count.ToString();
 
             if (appointmentsForToday.Count > 0)
             {
-                todaysAppointmentTooltipText = $"Consultas para hoje: {string.Join(" | ", appointmentsForToday.Select(x => x.Nome))} | {string.Join(" ", appointmentsForToday.Select(x => x.TipoDeConsulta))} | {string.Join(" ", appointmentsForToday.Select(x => x.Data))}";
+                todaysAppointmentTooltipText = $"Consultas para hoje: {string.Join(" | ", appointmentsForToday.Select(x => x.Nome))} | {string.Join(" ", appointmentsForToday.Select(x => x.TipoDeConsulta))} | {string.Join(" ", appointmentsForToday.Select(x => x.Data))}.";
+            }
+        }
+
+        private void BtnImportFromSqlite_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    var clientService = new ClientService(new ClientDomainService(new ClientRepository()));
+                    var errorList = new Dictionary<string, List<string>>();
+                    var repository = new Repository($"Data Source={openFileDialog1.FileName};Version=3;");
+
+                    foreach (var client in repository.Get())
+                    {
+                        var clientDto = new ClientDto()
+                        {
+                            Id = Guid.NewGuid(),
+                            Address = client.Localidade,
+                            Email = client.Email,
+                            FirstName = client.Nome,
+                            LastName = client.Apelidos,
+                            JobTitle = client.Profisso,
+                            NIF = client.NIF,
+                            PhoneNumber = string.IsNullOrEmpty(client.Telemvel) ? client.TelefoneFixo : client.Telemvel
+                        };
+
+                        var errors = clientService.Post(clientDto);
+
+                        if (errors?.Count > 0)
+                        {
+                            errorList.Add($"{client.Nome} {client.Apelidos}", errors);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

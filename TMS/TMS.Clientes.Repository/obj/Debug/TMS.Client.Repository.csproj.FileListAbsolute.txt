@@ -28,10 +28,6 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bi
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Client.Domain.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\FluentValidation.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Appointment.Domain.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Invoice.Domain.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Appointment.Repository.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Invoice.Repository.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Client.Domain.pdb
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Client.Domain.dll.config
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\LiteDB.xml
@@ -39,10 +35,6 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bi
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\System.Numerics.Vectors.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\FluentValidation.xml
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Appointment.Domain.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Invoice.Domain.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Appointment.Repository.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\bin\Debug\TMS.Invoice.Repository.pdb
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\obj\Debug\TMS.Client.Repository.csprojAssemblyReference.cache
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\obj\Debug\TMS.Client.Repository.csproj.CoreCompileInputs.cache
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.Repository\obj\Debug\TMS.Client.Repository.csproj.CopyComplete

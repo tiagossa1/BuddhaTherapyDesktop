@@ -24,3 +24,7 @@ E:\DesktopProjects\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Do
 E:\DesktopProjects\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.csproj.CopyComplete
 E:\DesktopProjects\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.dll
 E:\DesktopProjects\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.csprojAssemblyReference.cache
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.csproj.CoreCompileInputs.cache
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain.Tests\obj\Debug\TMS.Appointment.Domain.Tests.pdb

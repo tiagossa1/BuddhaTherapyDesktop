@@ -17,8 +17,29 @@ namespace TMS.Client.IntegrationTests
             var container = BootStrapDI.Bootstrap();
             ClientService ClientService = new ClientService(container.GetInstance<ClientDomainService>());
             Guid userId = Guid.NewGuid();
-            ClientDto cliente = new ClientDto(userId, "XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ");
-            ClientDto clienteNewResult = new ClientDto(userId, "Carlos", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ");
+            ClientDto cliente = new ClientDto()
+            {
+                Id = userId,
+                Address = "xyz",
+                Email = "xyz",
+                FirstName = "xyz",
+                JobTitle = "xyz",
+                LastName = "xyz",
+                NIF = "123456789",
+                PhoneNumber = "123456789"
+            };
+
+            ClientDto clienteNewResult = new ClientDto()
+            {
+                Id = userId,
+                Address = "xyz",
+                Email = "xyz",
+                FirstName = "Carlos",
+                JobTitle = "xyz",
+                LastName = "xyz",
+                NIF = "123456789",
+                PhoneNumber = "123456789"
+            };
 
             // Act
             IList<string> insertResult = ClientService.Post(cliente);
@@ -39,7 +60,7 @@ namespace TMS.Client.IntegrationTests
             var container = BootStrapDI.Bootstrap();
             ClientService ClientService = new ClientService(container.GetInstance<ClientDomainService>());
 
-            IList<string> updateResult = ClientService.Put(null);
+            List<string> updateResult = ClientService.Put(null);
             // Assert
             Assert.IsTrue(updateResult.Count > 0);
         }

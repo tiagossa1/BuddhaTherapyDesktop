@@ -16,16 +16,10 @@ namespace TMS.Appointment.Domain.Services
         {
             _appointmentRepository = appointmentRepository;
         }
+
         public bool Delete(Guid id)
         {
             return _appointmentRepository.Delete(id);
-        }
-        public bool DeleteByClientID(Guid id)
-        {
-            if (id == Guid.Empty)
-                return false;
-
-            return _appointmentRepository.DeleteByClientID(id);
         }
 
         public AppointmentModel Get(Guid id)

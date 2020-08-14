@@ -1,42 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TMS.Appointment.Domain.Interfaces;
-using TMS.Appointment.Domain.Services;
-using TMS.Appointment.Repository;
 using TMS.Client.Domain.Interfaces;
 using TMS.Client.Domain.Model;
-using TMS.Invoice.Domain.Interfaces;
-using TMS.Invoice.Repository.Repository;
 
 namespace TMS.Client.Domain.Services
 {
     public class ClientDomainService : IClientDomainService
     {
-        private readonly IClientRepository _clienteRepository;
-        private readonly IAppointmentRepository appointmentRepository;
-        private readonly IInvoiceRepository invoiceRepository;
-        public ClientDomainService(IClientRepository clienteRepository)
+        private readonly IClientRepository clientRepository;
+        public ClientDomainService(IClientRepository clientRepository)
         {
-            _clienteRepository = clienteRepository;
-            appointmentRepository = new AppointmentRepository();
-            invoiceRepository = new InvoiceRepository();
+            this.clientRepository = clientRepository;
         }
         public bool Delete(Guid id)
         {
-            appointmentRepository.DeleteByClientID(id);
-            invoiceRepository.DeleteByClientID(id);
-            return _clienteRepository.Delete(id);
+            return clientRepository.Delete(id);
         }
 
         public ClientModel Get(Guid id)
         {
-            return _clienteRepository.Get(id);
+            return clientRepository.Get(id);
         }
 
         public List<ClientModel> GetAll()
         {
-            return _clienteRepository.GetAll();
+            return clientRepository.GetAll();
         }
 
         public List<string> Post(ClientModel cliente)
@@ -44,7 +33,7 @@ namespace TMS.Client.Domain.Services
             if (!cliente.IsValid())
                 return NotifyValidationErrors(cliente);
 
-            bool result = _clienteRepository.Post(cliente);
+            bool result = clientRepository.Post(cliente);
 
             return result ? new List<string>() : new List<string>() { "Error inserting on the database" };
         }
@@ -54,7 +43,7 @@ namespace TMS.Client.Domain.Services
             if (!cliente.IsValid())
                 return NotifyValidationErrors(cliente);
 
-            bool result = _clienteRepository.Put(cliente);
+            bool result = clientRepository.Put(cliente);
 
             return result ? new List<string>() : new List<string>() { "Error updating on the database" };
         }

@@ -25,8 +25,8 @@ namespace TMS.UI.Mapper
         }
         public InvoiceUIModel ToUiModel(InvoiceDto dto)
         {
-            var client = clientService.Get(dto.ClientId);
-            var appointment = appointmentService.Get(dto.AppointmentId);
+            var client = clientService.Get(dto.Appointment.Client.Id);
+            var appointment = appointmentService.Get(dto.Appointment.Id);
 
             return new InvoiceUIModel($"{client.FirstName} {client.LastName} | {appointment.DateTime}", dto.Price, dto.InvoiceDate);
         }

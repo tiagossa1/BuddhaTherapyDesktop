@@ -97,6 +97,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.Invoice.Service.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.UI", "TMS.UI\TMS.UI.csproj", "{DBDCBECB-0BDF-4091-9C62-220AA9AE652A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.ImportRepository", "TMS.ImportRepository\TMS.ImportRepository.csproj", "{F20B68F5-FA3E-4583-8B9D-815F131DA6EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -191,6 +193,10 @@ Global
 		{DBDCBECB-0BDF-4091-9C62-220AA9AE652A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBDCBECB-0BDF-4091-9C62-220AA9AE652A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBDCBECB-0BDF-4091-9C62-220AA9AE652A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20B68F5-FA3E-4583-8B9D-815F131DA6EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20B68F5-FA3E-4583-8B9D-815F131DA6EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20B68F5-FA3E-4583-8B9D-815F131DA6EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20B68F5-FA3E-4583-8B9D-815F131DA6EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

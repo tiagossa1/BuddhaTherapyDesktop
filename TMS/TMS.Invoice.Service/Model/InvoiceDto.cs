@@ -3,26 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS.Appointment.Service.Model;
+using TMS.Clientes.Service.Model;
 
 namespace TMS.Invoice.Service.Model
 {
     public class InvoiceDto
     {
-        public InvoiceDto()
-        {
-        }
-
-        public InvoiceDto(Guid id, Guid appointmentId, Guid clientId, decimal price, DateTime invoiceDate)
-        {
-            Id = id;
-            AppointmentId = appointmentId;
-            ClientId = clientId;
-            Price = price;
-            InvoiceDate = invoiceDate;
-        }
         public Guid Id { get; set; }
-        public Guid AppointmentId { get; set; }
-        public Guid ClientId { get; set; }
+        public AppointmentDto Appointment { get; set; }
         public decimal Price { get; set; }
         public DateTime InvoiceDate { get; set; }
 

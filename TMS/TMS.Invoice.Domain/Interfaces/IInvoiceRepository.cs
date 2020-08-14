@@ -14,7 +14,6 @@ namespace TMS.Invoice.Domain.Interfaces
         bool Put(InvoiceModel obj);
 
         bool Delete(Guid id);
-        bool DeleteByClientID(Guid id);
 
         InvoiceModel Get(Guid id);
 

@@ -9,7 +9,7 @@ namespace TMS.Invoice.Domain.Models
 {
     public abstract class Entity
     {
-        public Guid Id { get; protected set; }
+        public Guid Id { get; set; }
         public ValidationResult ValidationResult { get; set; }
         public abstract bool IsValid();
 

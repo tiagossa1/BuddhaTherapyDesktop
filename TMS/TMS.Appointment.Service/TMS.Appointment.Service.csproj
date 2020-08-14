@@ -52,6 +52,14 @@
       <Project>{0814701F-71D0-422B-BCC6-3BD0C58BDB41}</Project>
       <Name>TMS.Appointment.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TMS.Cliente.Services\TMS.Client.Service.csproj">
+      <Project>{19414BC8-F34A-4FE2-B744-BD81381D6FD8}</Project>
+      <Name>TMS.Client.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Clientes.Domain\TMS.Client.Domain.csproj">
+      <Project>{6F57D90B-6691-4709-B5B1-B216893C0310}</Project>
+      <Name>TMS.Client.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

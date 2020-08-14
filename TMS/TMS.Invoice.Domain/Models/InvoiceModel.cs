@@ -3,28 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS.Appointment.Domain.Models;
+using TMS.Client.Domain.Model;
 using TMS.Invoice.Domain.Validations;
 
 namespace TMS.Invoice.Domain.Models
 {
     public class InvoiceModel : Entity
     {
-        public InvoiceModel()
-        {
-        }
-
-        public InvoiceModel(Guid id, Guid appointmentId, Guid clientId, decimal price, DateTime invoiceDate)
-        {
-            Id = id;
-            AppointmentId = appointmentId;
-            ClientId = clientId;
-            Price = price;
-            InvoiceDate = invoiceDate;
-        }
-        public Guid AppointmentId { get; private set; }
-        public Guid ClientId { get; private set; }
-        public decimal Price { get; private set; }
-        public DateTime InvoiceDate { get; private set; }
+        public Guid AppointmentID { get; set; }
+        public Guid ClientID { get; set; }
+        public decimal Price { get; set; }
+        public DateTime InvoiceDate { get; set; }
         public override bool IsValid()
         {
             ValidationResult = new InvoiceModelValidation().Validate(this);

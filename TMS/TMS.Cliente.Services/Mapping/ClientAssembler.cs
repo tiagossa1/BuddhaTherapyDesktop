@@ -7,46 +7,47 @@ namespace TMS.Clientes.Service.Mapping
 {
     public static class ClientAssembler
     {
-        public static Client.Domain.Model.ClientModel DtoToEntity(ClientDto ClientDto)
+        public static Client.Domain.Model.ClientModel DtoToEntity(ClientDto clientDto)
         {
-            if (ClientDto is null)
+            if (clientDto is null)
                 return new Client.Domain.Model.ClientModel();
-            return new Client.Domain.Model.ClientModel(ClientDto.Id,
-                ClientDto.FirstName,
-                ClientDto.LastName,
-                ClientDto.Address,
-                ClientDto.PhoneNumber,
-                ClientDto.Email,
-                ClientDto.NIF,
-                ClientDto.JobTitle);
+            return new Client.Domain.Model.ClientModel()
+            {
+                Address = clientDto.Address,
+                Email = clientDto.Email,
+                FirstName = clientDto.FirstName,
+                Id = clientDto.Id,
+                JobTitle = clientDto.JobTitle,
+                LastName = clientDto.LastName,
+                NIF = clientDto.NIF,
+                PhoneNumber = clientDto.PhoneNumber
+            };
         }
 
-        public static ClientDto EntityToDto(Client.Domain.Model.ClientModel cliente)
+        public static ClientDto EntityToDto(Client.Domain.Model.ClientModel client)
         {
-            if (cliente is null)
+            if (client is null)
                 return new ClientDto();
-            return new ClientDto(cliente.Id,
-                cliente.FirstName,
-                cliente.LastName,
-                cliente.Address,
-                cliente.PhoneNumber,
-                cliente.Email,
-                cliente.NIF,
-                cliente.JobTitle);
+
+            return new ClientDto()
+            {
+                PhoneNumber = client.PhoneNumber,
+                NIF = client.NIF,
+                LastName = client.LastName,
+                JobTitle = client.JobTitle,
+                Id = client.Id,
+                FirstName = client.FirstName,
+                Email = client.Email,
+                Address = client.Address
+            };
         }
 
         public static List<Client.Domain.Model.ClientModel> DtosToEntities(List<ClientDto> cliente)
         {
             if (cliente is null)
                 return new List<Client.Domain.Model.ClientModel>();
-            return new List<ClientModel>(cliente.Select(x=> new ClientModel(x.Id,
-                x.FirstName,
-                x.LastName,
-                x.Address,
-                x.PhoneNumber,
-                x.Email,
-                x.NIF,
-                x.JobTitle)));
+
+            return new List<ClientModel>(cliente.Select(DtoToEntity));
         }
 
         public static List<ClientDto> EntitiesToDto(List<Client.Domain.Model.ClientModel> cliente)
@@ -54,14 +55,7 @@ namespace TMS.Clientes.Service.Mapping
             if (cliente is null)
                 return new List<ClientDto>();
 
-            return new List<ClientDto>(cliente.Select(x => new ClientDto(x.Id,
-                  x.FirstName,
-                  x.LastName,
-                  x.Address,
-                  x.PhoneNumber,
-                  x.Email,
-                  x.NIF,
-                  x.JobTitle)));
+            return new List<ClientDto>(cliente.Select(EntityToDto));
         }
     }
 }

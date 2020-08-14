@@ -49,6 +49,14 @@
     <Compile Include="Repository\InvoiceRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TMS.Appointment.Domain\TMS.Appointment.Domain.csproj">
+      <Project>{0814701F-71D0-422B-BCC6-3BD0C58BDB41}</Project>
+      <Name>TMS.Appointment.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Clientes.Domain\TMS.Client.Domain.csproj">
+      <Project>{6F57D90B-6691-4709-B5B1-B216893C0310}</Project>
+      <Name>TMS.Client.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TMS.Invoice.Domain\TMS.Invoice.Domain.csproj">
       <Project>{61668B91-0F28-4AFB-9C03-43B410F751FA}</Project>
       <Name>TMS.Invoice.Domain</Name>

@@ -19,10 +19,17 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), default, default);
+            InvoiceModel invoice = new InvoiceModel()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = Guid.NewGuid(),
+                InvoiceDate = default,
+                Price = 5
+            };
 
             // Act
-            IList<string> result = invoiceDomainService.Post(invoice);
+            List<string> result = invoiceDomainService.Post(invoice);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -38,7 +45,14 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), default, default);
+            InvoiceModel invoice = new InvoiceModel()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = Guid.NewGuid(),
+                InvoiceDate = default,
+                Price = default
+            };
 
             // Act
             IList<string> result = invoiceDomainService.Post(invoice);
@@ -57,10 +71,17 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceModel invoice = new InvoiceModel()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = Guid.NewGuid(),
+                InvoiceDate = DateTime.Now,
+                Price = 5
+            };
 
             // Act
-            IList<string> result = invoiceDomainService.Post(invoice);
+            List<string> result = invoiceDomainService.Post(invoice);
 
             // Assert
             Assert.IsTrue(result.Count == 0);
@@ -74,10 +95,17 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService InvoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, default);
+            InvoiceModel invoice = new InvoiceModel()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = Guid.NewGuid(),
+                InvoiceDate = default,
+                Price = decimal.One
+            };
 
             // Act
-            IList<string> result = InvoiceDomainService.Put(invoice);
+            List<string> result = InvoiceDomainService.Put(invoice);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -93,7 +121,14 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceModel invoice = new InvoiceModel()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = Guid.NewGuid(),
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
             // Act
             IList<string> result = invoiceDomainService.Put(invoice);
@@ -112,10 +147,17 @@ namespace TMS.Invoice.Domain.Tests
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
-            InvoiceModel invoice = new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now);
+            InvoiceModel invoice = new InvoiceModel()
+            {
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                Id = Guid.NewGuid(),
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            };
 
             // Act
-            IList<string> result = invoiceDomainService.Put(invoice);
+            List<string> result = invoiceDomainService.Put(invoice);
 
             // Assert
             Assert.IsTrue(result.Count == 0);
@@ -146,7 +188,14 @@ namespace TMS.Invoice.Domain.Tests
 
             var invoiceRepository = new Mock<IInvoiceRepository>();
 
-            invoiceRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(new InvoiceModel(invoiceGuid, Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now));
+            invoiceRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(new InvoiceModel()
+            {
+                Id = invoiceGuid,
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            });
 
             InvoiceDomainService invoiceDomainService = new InvoiceDomainService(invoiceRepository.Object);
 
@@ -161,7 +210,13 @@ namespace TMS.Invoice.Domain.Tests
         public void GetAll_VaiRetornarOsRecibos()
         {
             // Arrange
-            var invoices = new List<InvoiceModel>() { new InvoiceModel(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), decimal.One, DateTime.Now) };
+            var invoices = new List<InvoiceModel>() { new InvoiceModel() {
+                Id = Guid.NewGuid(),
+                AppointmentID = Guid.NewGuid(),
+                ClientID = Guid.NewGuid(),
+                InvoiceDate = DateTime.Now,
+                Price = decimal.One
+            } };
 
             var invoiceRepository = new Mock<IInvoiceRepository>();
 

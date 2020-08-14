@@ -15,13 +15,24 @@ namespace TMS.Client.Domain.Tests
     public class ClientService_Tests
     {
         [DataTestMethod]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ")]
-        public void ClientAssembler_ConverterDeDtoToEntity(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "XYZ")]
+        public void ClientAssembler_ConverterDeDtoToEntity(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
             ClientDto ClientDto = new ClientDto(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle);
-            Model.ClientModel cliente = new Model.ClientModel(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle);
+
+            Model.ClientModel cliente = new Model.ClientModel()
+            {
+                Address = address,
+                PhoneNumber = phoneNumber,
+                NIF = nif,
+                LastName = lastname,
+                Email = email,
+                FirstName = firstName,
+                Id = newGuid,
+                JobTitle = jobTitle
+            };
 
             // Act
             Model.ClientModel result = ClientAssembler.DtoToEntity(ClientDto);
@@ -40,13 +51,23 @@ namespace TMS.Client.Domain.Tests
         }
 
         [DataTestMethod]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ")]
-        public void ClientAssembler_ConverterDeEntityParaDto(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "XYZ")]
+        public void ClientAssembler_ConverterDeEntityParaDto(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
             ClientDto ClientDto = new ClientDto(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle);
-            Model.ClientModel cliente = new Model.ClientModel(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle);
+            Model.ClientModel cliente = new Model.ClientModel()
+            {
+                Address = address,
+                PhoneNumber = phoneNumber,
+                NIF = nif,
+                LastName = lastname,
+                Email = email,
+                FirstName = firstName,
+                Id = newGuid,
+                JobTitle = jobTitle
+            };
 
             // Act
             ClientDto result = ClientAssembler.EntityToDto(cliente);
@@ -56,13 +77,22 @@ namespace TMS.Client.Domain.Tests
         }
 
         [DataTestMethod]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ")]
-        public void ClientAssembler_ConverterDeEntitiesParaDtos(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "XYZ")]
+        public void ClientAssembler_ConverterDeEntitiesParaDtos(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
             List<ClientDto> ClientDtos = new List<ClientDto>() { new ClientDto(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle) };
-            List<Model.ClientModel> cliente = new List<Model.ClientModel>() { new Model.ClientModel(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle) };
+            List<Model.ClientModel> cliente = new List<Model.ClientModel>() { new Model.ClientModel() {
+                Address = address,
+                PhoneNumber = phoneNumber,
+                NIF = nif,
+                LastName = lastname,
+                Email = email,
+                FirstName = firstName,
+                Id = newGuid,
+                JobTitle = jobTitle
+            } };
 
             // Act
             List<ClientDto> result = ClientAssembler.EntitiesToDto(cliente);
@@ -72,13 +102,22 @@ namespace TMS.Client.Domain.Tests
         }
 
         [DataTestMethod]
-        [DataRow("XYZ", "XYZ", "XYZ", 912564785, "XYZ@x.x", 123456789, "XYZ")]
-        public void ClientAssembler_ConverterDeDtosParaEntities(string firstName, string lastname, string address, int phoneNumber, string email, int nif, string jobTitle)
+        [DataRow("XYZ", "XYZ", "XYZ", "912564785", "XYZ@x.x", "123456789", "XYZ")]
+        public void ClientAssembler_ConverterDeDtosParaEntities(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
             Guid newGuid = Guid.NewGuid();
             List<ClientDto> ClientDtos = new List<ClientDto>() { new ClientDto(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle) };
-            List<Model.ClientModel> cliente = new List<Model.ClientModel>() { new Model.ClientModel(newGuid, firstName, lastname, address, phoneNumber, email, nif, jobTitle) };
+            List<Model.ClientModel> cliente = new List<Model.ClientModel>() { new Model.ClientModel() {
+                Address = address,
+                PhoneNumber = phoneNumber,
+                NIF = nif,
+                LastName = lastname,
+                Email = email,
+                FirstName = firstName,
+                Id = newGuid,
+                JobTitle = jobTitle
+            } };
 
             // Act
             List<Model.ClientModel> result = ClientAssembler.DtosToEntities(ClientDtos);

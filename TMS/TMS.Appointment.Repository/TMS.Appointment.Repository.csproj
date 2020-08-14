@@ -53,6 +53,10 @@
       <Project>{0814701F-71D0-422B-BCC6-3BD0C58BDB41}</Project>
       <Name>TMS.Appointment.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TMS.Clientes.Domain\TMS.Client.Domain.csproj">
+      <Project>{6F57D90B-6691-4709-B5B1-B216893C0310}</Project>
+      <Name>TMS.Client.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

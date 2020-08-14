@@ -93,11 +93,13 @@ namespace TMS.UI
             {
                 btnDelete.Enabled = true;
                 btnEdit.Enabled = true;
+                btnPrint.Enabled = true;
             }
-            else if(e.StateChanged != DataGridViewElementStates.Displayed)
+            else if (e.StateChanged != DataGridViewElementStates.Displayed)
             {
                 btnDelete.Enabled = false;
                 btnEdit.Enabled = false;
+                btnPrint.Enabled = false;
             }
         }
 
@@ -129,6 +131,18 @@ namespace TMS.UI
             }
 
             return table;
+        }
+
+        private void BtnPrint_Click(object sender, EventArgs e)
+        {
+            var selectedItem = invoices[dataGridView1.CurrentCell.RowIndex];
+
+            Hide();
+
+            var invoicePrintPreviewForm = new InvoicePrintPreviewForm(selectedItem);
+            invoicePrintPreviewForm.FormClosed += (x, y) => Show();
+
+            invoicePrintPreviewForm.Show();
         }
     }
 }

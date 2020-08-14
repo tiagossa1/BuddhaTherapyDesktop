@@ -28,3 +28,7 @@ E:\DesktopProjects\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.Integr
 E:\DesktopProjects\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.csproj.CopyComplete
 E:\DesktopProjects\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.dll
 E:\DesktopProjects\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.csprojAssemblyReference.cache
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.csproj.CoreCompileInputs.cache
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.pdb

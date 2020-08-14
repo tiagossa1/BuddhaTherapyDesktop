@@ -34,12 +34,12 @@ namespace TMS.Client.Domain.Validations
         protected void ValidateNif()
         {
             RuleFor(c => c.NIF)
-                .Must(x => x.ToString().Length == 9).WithMessage("Please ensure you have entered the Nif");
+                .Must(x => x?.Length == 9).WithMessage("Please ensure you have entered the Nif");
         }
         protected void ValidatePhoneNumber()
         {
             RuleFor(c => c.PhoneNumber)
-                .Must(x => x.ToString().Length == 9).WithMessage("Please ensure you have entered the Phone Number");
+                .Must(x => x?.Length == 9).WithMessage("Please ensure you have entered the Phone Number");
         }
     }
 }

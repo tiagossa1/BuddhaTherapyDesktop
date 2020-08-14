@@ -14,7 +14,6 @@ namespace TMS.Appointment.Domain.Interfaces
         bool Update(AppointmentModel obj);
 
         bool Delete(Guid id);
-        bool DeleteByClientID(Guid id);
 
         AppointmentModel Get(Guid id);
 

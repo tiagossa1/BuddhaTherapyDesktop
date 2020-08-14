@@ -51,8 +51,8 @@ namespace TMS.UI.ClientForms
                 txtFirstName.Text = Client.FirstName;
                 txtJobTitle.Text = Client.JobTitle;
                 txtLastName.Text = Client.LastName;
-                txtNIF.Text = Client.NIF.ToString();
-                txtPhoneNumber.Text = Client.PhoneNumber.ToString();
+                txtNIF.Text = Client.NIF;
+                txtPhoneNumber.Text = Client.PhoneNumber;
 
                 ChangeCreateLabelsToEditingLabels();
             }
@@ -77,8 +77,8 @@ namespace TMS.UI.ClientForms
                 FirstName = txtFirstName.Text,
                 LastName = txtLastName.Text,
                 JobTitle = txtJobTitle.Text,
-                NIF = int.Parse(txtNIF.Text),
-                PhoneNumber = int.Parse(txtPhoneNumber.Text)
+                NIF = txtNIF.Text,
+                PhoneNumber = txtPhoneNumber.Text
             };
 
             if (Client != null)

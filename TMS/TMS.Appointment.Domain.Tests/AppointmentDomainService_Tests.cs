@@ -18,8 +18,25 @@ namespace TMS.Appointment.Domain.Tests
             var appointmentRepository = new Mock<IAppointmentRepository>();
             AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
 
-            AppointmentModel appointmentOne = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), default, 1, "XYZ", "XYZ");
-            AppointmentModel appointmentTwo = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 0, "XYZ", "XYZ");
+            AppointmentModel appointmentOne = new AppointmentModel()
+            {
+                AppointmentDescription = "xyz",
+                Id = Guid.NewGuid(),
+                AppointmentTypeID = 1,
+                AppointmentTypeName = "xyz",
+                ClientID = Guid.NewGuid(),
+                DateTime = default
+            };
+
+            AppointmentModel appointmentTwo = new AppointmentModel()
+            {
+                AppointmentDescription = "xyz",
+                Id = Guid.NewGuid(),
+                AppointmentTypeID = 0,
+                AppointmentTypeName = "xyz",
+                ClientID = Guid.NewGuid(),
+                DateTime = DateTime.Now
+            };
 
             // Act
             IList<string> resultOne = appointmentDomainService.Create(appointmentOne);
@@ -37,7 +54,16 @@ namespace TMS.Appointment.Domain.Tests
             var appointmentRepository = new Mock<IAppointmentRepository>();
             appointmentRepository.Setup(x => x.Create(It.IsAny<AppointmentModel>())).Returns(false);
             AppointmentDomainService AppointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
-            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "XYZ", "XYZ");
+
+            AppointmentModel appointment = new AppointmentModel()
+            {
+                AppointmentDescription = "xyz",
+                Id = Guid.NewGuid(),
+                AppointmentTypeID = 1,
+                AppointmentTypeName = "xyz",
+                ClientID = Guid.NewGuid(),
+                DateTime = default
+            };
 
             // Act
             IList<string> result = AppointmentDomainService.Create(appointment);
@@ -53,7 +79,16 @@ namespace TMS.Appointment.Domain.Tests
             var appointmentRepository = new Mock<IAppointmentRepository>();
             appointmentRepository.Setup(x => x.Create(It.IsAny<AppointmentModel>())).Returns(true);
             var appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
-            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 5, "XYZ", "XYZ");
+
+            AppointmentModel appointment = new AppointmentModel()
+            {
+                AppointmentDescription = "xyz",
+                Id = Guid.NewGuid(),
+                AppointmentTypeID = 1,
+                AppointmentTypeName = "xyz",
+                ClientID = Guid.NewGuid(),
+                DateTime = DateTime.Now
+            };
 
             // Act
             IList<string> result = appointmentDomainService.Create(appointment);
@@ -68,7 +103,15 @@ namespace TMS.Appointment.Domain.Tests
             // Arrange
             var appointmentRepository = new Mock<IAppointmentRepository>();
             AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
-            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 2, null, null);
+            AppointmentModel appointment = new AppointmentModel()
+            {
+                AppointmentDescription = null,
+                Id = Guid.NewGuid(),
+                AppointmentTypeID = 1,
+                AppointmentTypeName = null,
+                ClientID = Guid.NewGuid(),
+                DateTime = DateTime.Now
+            };
 
             // Act
             IList<string> result = appointmentDomainService.Update(appointment);
@@ -84,10 +127,19 @@ namespace TMS.Appointment.Domain.Tests
             var appointmentRepository = new Mock<IAppointmentRepository>();
             appointmentRepository.Setup(x => x.Update(It.IsAny<AppointmentModel>())).Returns(false);
             AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
-            AppointmentModel cliente = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
+
+            AppointmentModel appointment = new AppointmentModel()
+            {
+                AppointmentDescription = "xyz",
+                Id = Guid.NewGuid(),
+                AppointmentTypeID = 1,
+                AppointmentTypeName = "xyz",
+                ClientID = Guid.NewGuid(),
+                DateTime = DateTime.Now
+            };
 
             // Act
-            IList<string> result = appointmentDomainService.Update(cliente);
+            IList<string> result = appointmentDomainService.Update(appointment);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -101,7 +153,15 @@ namespace TMS.Appointment.Domain.Tests
             appointmentRepository.Setup(x => x.Update(It.IsAny<AppointmentModel>())).Returns(true);
 
             var appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
-            AppointmentModel appointment = new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz");
+            AppointmentModel appointment = new AppointmentModel()
+            {
+                AppointmentDescription = "xyz",
+                Id = Guid.NewGuid(),
+                AppointmentTypeID = 1,
+                AppointmentTypeName = "xyz",
+                ClientID = Guid.NewGuid(),
+                DateTime = DateTime.Now
+            };
 
             // Act
             IList<string> result = appointmentDomainService.Update(appointment);
@@ -131,11 +191,20 @@ namespace TMS.Appointment.Domain.Tests
             // Arrange
             Guid appointmentGuid = Guid.NewGuid();
             var appointmentRepository = new Mock<IAppointmentRepository>();
-            appointmentRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(new AppointmentModel(appointmentGuid, Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz"));
-            AppointmentDomainService AppointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
+            appointmentRepository.Setup(x => x.Get(It.IsAny<Guid>())).Returns(new AppointmentModel()
+            {
+                DateTime = DateTime.Now,
+                ClientID = Guid.NewGuid(),
+                AppointmentDescription = "xyz",
+                AppointmentTypeName = "xyz",
+                AppointmentTypeID = 1,
+                Id = appointmentGuid
+            });
+
+            AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);
 
             // Act
-            AppointmentModel result = AppointmentDomainService.Get(Guid.NewGuid());
+            AppointmentModel result = appointmentDomainService.Get(Guid.NewGuid());
 
             // Assert
             Assert.AreEqual(result.GetType(), typeof(AppointmentModel));
@@ -145,7 +214,15 @@ namespace TMS.Appointment.Domain.Tests
         public void GetAll_VaiRetornarOsClientes()
         {
             // Arrange
-            var appointments = new List<AppointmentModel>() { new AppointmentModel(Guid.NewGuid(), Guid.NewGuid(), DateTime.Now, 1, "xyz", "xyz") };
+            var appointments = new List<AppointmentModel>() { new AppointmentModel() {
+                Id = Guid.NewGuid(),
+                AppointmentDescription = "xyz",
+                AppointmentTypeID = 1,
+                AppointmentTypeName = "xyz",
+                ClientID = Guid.NewGuid(),
+                DateTime = DateTime.Now
+            } };
+
             var appointmentRepository = new Mock<IAppointmentRepository>();
             appointmentRepository.Setup(x => x.GetAll()).Returns(appointments);
             AppointmentDomainService appointmentDomainService = new AppointmentDomainService(appointmentRepository.Object);

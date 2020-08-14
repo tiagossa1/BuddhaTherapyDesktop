@@ -14,7 +14,7 @@ namespace TMS.UI.UIModels
         {
         }
 
-        public ClientUIModel(string firstName, string lastName, string address, int phoneNumber, string email, int nif, string jobTitle)
+        public ClientUIModel(string firstName, string lastName, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             Nome = firstName;
             Sobrenome = lastName;
@@ -32,11 +32,11 @@ namespace TMS.UI.UIModels
         [Ordinal(2)]
         public string Endereco { get; set; }
         [Ordinal(3)]
-        public int Contacto { get; set; }
+        public string Contacto { get; set; }
         [Ordinal(4)]
         public string Email { get; set; }
         [Ordinal(5)]
-        public int NIF { get; set; }
+        public string NIF { get; set; }
         [Ordinal(6)]
         public string Profissao { get; set; }
     }

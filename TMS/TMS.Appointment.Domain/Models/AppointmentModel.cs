@@ -1,28 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TMS.Appointment.Domain.Validations;
+using TMS.Client.Domain.Model;
 
 namespace TMS.Appointment.Domain.Models
 {
     public class AppointmentModel : Entity
     {
-        public AppointmentModel(Guid id, Guid clientID, DateTime dateTime, int appointmentTypeID, string appointmentTypeName, string appointmentDescription)
-        {
-            Id = id;
-            ClientID = clientID;
-            DateTime = dateTime;
-            AppointmentTypeID = appointmentTypeID;
-            AppointmentTypeName = appointmentTypeName;
-            AppointmentDescription = appointmentDescription;
-        }
-
-        public AppointmentModel()
-        {
-        }
-
         public Guid ClientID { get; set; }
         public DateTime DateTime { get; set; }
         public int AppointmentTypeID { get; set; }

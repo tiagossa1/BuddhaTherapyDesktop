@@ -10,15 +10,12 @@ namespace TMS.UI
     {
         public enum AppointmentType
         {
-            DrenagemLinfatica = 1,
-            Geotermal = 2,
-            MassagemDesportiva = 3,
-            MassagemRelaxamento = 4,
-            MassagemTerapeutica = 5,
-            Reflexologia = 6,
-            Reiki = 7,
-            MesaRadionica = 8,
-            Tarot = 9
+            MassagemRelaxamento = 1,
+            MassagemTerapeutica = 2,
+            Reiki = 3,
+            MesaRadionica = 4,
+            Tarot = 5,
+            PrimeiraConsulta = 6
         }
     }
 }

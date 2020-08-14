@@ -3,24 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS.Clientes.Service.Model;
 
 namespace TMS.Appointment.Service.Model
 {
     public class AppointmentDto
     {
-        public AppointmentDto(Guid id, Guid clientID, DateTime dateTime, int appointmentTypeID, string appointmentTypeName, string appointmentDescription)
-        {
-            Id = id;
-            ClientID = clientID;
-            DateTime = dateTime;
-            AppointmentTypeID = appointmentTypeID;
-            AppointmentTypeName = appointmentTypeName;
-            AppointmentDescription = appointmentDescription;
-        }
-
-        public AppointmentDto()
-        {
-        }
         public Guid Id { get; set; }
         public Guid ClientID { get; set; }
         public DateTime DateTime { get; set; }

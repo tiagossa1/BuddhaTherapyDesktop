@@ -9,13 +9,15 @@ namespace TMS.Clientes.Repository.Repository
 {
     public class ClientRepository : IClientRepository
     {
+        private const string tableName = "client";
+
         public bool Post(ClientModel obj)
         {
             try
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<ClientModel>("cliente");
+                    var col = db.GetCollection<ClientModel>(tableName);
                     Guid id = col.Insert(obj);
                 }
             }
@@ -31,7 +33,7 @@ namespace TMS.Clientes.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<ClientModel>("cliente");
+                    var col = db.GetCollection<ClientModel>(tableName);
                     if (col.FindById(id) != null)
                         return col.Delete(id);
                     return false;
@@ -49,7 +51,7 @@ namespace TMS.Clientes.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<ClientModel>("cliente");
+                    var col = db.GetCollection<ClientModel>(tableName);
                     return col.FindById(id);
                 }
             }
@@ -65,11 +67,11 @@ namespace TMS.Clientes.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<ClientModel>("cliente");
+                    var col = db.GetCollection<ClientModel>(tableName);
                     return col.FindAll().ToList();
                 }
             }
-            catch
+            catch (Exception)
             {
                 return new List<ClientModel>();
             }
@@ -81,7 +83,7 @@ namespace TMS.Clientes.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<ClientModel>("cliente");
+                    var col = db.GetCollection<ClientModel>(tableName);
                     return col.Update(obj);
                 }
             }

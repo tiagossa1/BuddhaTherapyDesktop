@@ -40,7 +40,7 @@ namespace TMS.UI
 
             if (Appointment != null)
             {
-                cmbClient.SelectedValue = Appointment.ClientID;
+                cmbClient.SelectedValue = Appointment.Client.Id;
                 cmbAppointmentType.SelectedIndex = cmbAppointmentType.FindStringExact(Enum.GetName(typeof(CoreEnums.AppointmentType), Appointment.AppointmentTypeID));
 
                 datePicker.Value = Appointment.DateTime;
@@ -88,7 +88,7 @@ namespace TMS.UI
             {
                 Id = Appointment != null ? Appointment.Id : Guid.NewGuid(),
                 DateTime = datePicker.Value.Date + timePicker.Value.TimeOfDay,
-                ClientID = ((ClientDto)cmbClient.SelectedItem).Id,
+                Client = ((ClientDto)cmbClient.SelectedItem),
                 AppointmentTypeID = (int)(CoreEnums.AppointmentType)cmbAppointmentType.SelectedItem,
                 AppointmentTypeName = ((CoreEnums.AppointmentType)cmbAppointmentType.SelectedItem).ToString(),
                 AppointmentDescription = txtDescription.Text

@@ -11,40 +11,18 @@ namespace TMS.Invoice.Repository.Repository
 {
     public class InvoiceRepository : IInvoiceRepository
     {
-        private readonly string collectionName = "invoice";
+        private const string tableName = "invoice";
+        private const string appointmentTableName = "appointment";
+
         public bool Delete(Guid id)
         {
             try
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<InvoiceModel>(collectionName);
+                    var col = db.GetCollection<InvoiceModel>(tableName);
                     if (col.FindById(id) != null)
                         return col.Delete(id);
-                    return false;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public bool DeleteByClientID(Guid id)
-        {
-            try
-            {
-                using (var db = new LiteDatabase("Database.db"))
-                {
-                    var col = db.GetCollection<InvoiceModel>(collectionName);
-
-                    var findByClientID = col.FindOne(x => x.ClientId == id);
-
-                    if (findByClientID != null)
-                    {
-                        return col.Delete(findByClientID.Id);
-                    }
-
                     return false;
                 }
             }
@@ -60,7 +38,8 @@ namespace TMS.Invoice.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<InvoiceModel>(collectionName);
+                    var col = db.GetCollection<InvoiceModel>(tableName);
+
                     return col.FindById(id);
                 }
             }
@@ -76,11 +55,11 @@ namespace TMS.Invoice.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<InvoiceModel>(collectionName);
+                    var col = db.GetCollection<InvoiceModel>(tableName);
                     return col.FindAll().ToList();
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 return new List<InvoiceModel>();
             }
@@ -92,14 +71,15 @@ namespace TMS.Invoice.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<InvoiceModel>(collectionName);
-                    Guid id = col.Insert(obj);
+                    var col = db.GetCollection<InvoiceModel>(tableName);
+                    col.Insert(obj);
                 }
             }
             catch
             {
                 return false;
             }
+
             return true;
         }
 
@@ -109,7 +89,7 @@ namespace TMS.Invoice.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<InvoiceModel>(collectionName);
+                    var col = db.GetCollection<InvoiceModel>(tableName);
                     return col.Update(obj);
                 }
             }

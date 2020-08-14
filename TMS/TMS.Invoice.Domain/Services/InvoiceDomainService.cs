@@ -22,11 +22,6 @@ namespace TMS.Invoice.Domain.Services
             return invoiceRepository.Delete(id);
         }
 
-        public bool DeleteByClientID(Guid id)
-        {
-            return invoiceRepository.DeleteByClientID(id);
-        }
-
         public InvoiceModel Get(Guid id)
         {
             return invoiceRepository.Get(id);

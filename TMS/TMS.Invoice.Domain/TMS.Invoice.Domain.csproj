@@ -60,6 +60,15 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.Appointment.Domain\TMS.Appointment.Domain.csproj">
+      <Project>{0814701f-71d0-422b-bcc6-3bd0c58bdb41}</Project>
+      <Name>TMS.Appointment.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMS.Clientes.Domain\TMS.Client.Domain.csproj">
+      <Project>{6f57d90b-6691-4709-b5b1-b216893c0310}</Project>
+      <Name>TMS.Client.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

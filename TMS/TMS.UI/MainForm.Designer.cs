@@ -33,6 +33,8 @@
             this.btnInvoices = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnAppointments = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnClients = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnImportFromSqlite = new Guna.UI2.WinForms.Guna2Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // appointmentsNotificationBadge
@@ -43,7 +45,7 @@
             this.appointmentsNotificationBadge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.appointmentsNotificationBadge.ForeColor = System.Drawing.Color.Red;
             this.appointmentsNotificationBadge.HoverState.Parent = this.appointmentsNotificationBadge;
-            this.appointmentsNotificationBadge.Location = new System.Drawing.Point(547, 5);
+            this.appointmentsNotificationBadge.Location = new System.Drawing.Point(495, 12);
             this.appointmentsNotificationBadge.Name = "appointmentsNotificationBadge";
             this.appointmentsNotificationBadge.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.appointmentsNotificationBadge.ShadowDecoration.Parent = this.appointmentsNotificationBadge;
@@ -58,7 +60,7 @@
             this.btnInvoices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnInvoices.CheckedState.Parent = this.btnInvoices;
             this.btnInvoices.HoverState.Parent = this.btnInvoices;
-            this.btnInvoices.Location = new System.Drawing.Point(383, 12);
+            this.btnInvoices.Location = new System.Drawing.Point(371, 64);
             this.btnInvoices.Name = "btnInvoices";
             this.btnInvoices.PressedState.Parent = this.btnInvoices;
             this.btnInvoices.Size = new System.Drawing.Size(147, 134);
@@ -71,7 +73,7 @@
             this.btnAppointments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAppointments.CheckedState.Parent = this.btnAppointments;
             this.btnAppointments.HoverState.Parent = this.btnAppointments;
-            this.btnAppointments.Location = new System.Drawing.Point(203, 12);
+            this.btnAppointments.Location = new System.Drawing.Point(193, 64);
             this.btnAppointments.Name = "btnAppointments";
             this.btnAppointments.PressedState.Parent = this.btnAppointments;
             this.btnAppointments.Size = new System.Drawing.Size(147, 134);
@@ -85,18 +87,39 @@
             this.btnClients.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClients.CheckedState.Parent = this.btnClients;
             this.btnClients.HoverState.Parent = this.btnClients;
-            this.btnClients.Location = new System.Drawing.Point(23, 12);
+            this.btnClients.Location = new System.Drawing.Point(11, 64);
             this.btnClients.Name = "btnClients";
             this.btnClients.PressedState.Parent = this.btnClients;
             this.btnClients.Size = new System.Drawing.Size(147, 134);
             this.btnClients.TabIndex = 4;
             this.btnClients.Click += new System.EventHandler(this.BtnClients_Click);
             // 
+            // btnImportFromSqlite
+            // 
+            this.btnImportFromSqlite.CheckedState.Parent = this.btnImportFromSqlite;
+            this.btnImportFromSqlite.CustomImages.Parent = this.btnImportFromSqlite;
+            this.btnImportFromSqlite.FillColor = System.Drawing.Color.DarkRed;
+            this.btnImportFromSqlite.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportFromSqlite.ForeColor = System.Drawing.Color.White;
+            this.btnImportFromSqlite.HoverState.Parent = this.btnImportFromSqlite;
+            this.btnImportFromSqlite.Location = new System.Drawing.Point(11, 12);
+            this.btnImportFromSqlite.Name = "btnImportFromSqlite";
+            this.btnImportFromSqlite.ShadowDecoration.Parent = this.btnImportFromSqlite;
+            this.btnImportFromSqlite.Size = new System.Drawing.Size(86, 32);
+            this.btnImportFromSqlite.TabIndex = 8;
+            this.btnImportFromSqlite.Text = "Importar";
+            this.btnImportFromSqlite.Click += new System.EventHandler(this.BtnImportFromSqlite_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "Sqlite files (*.sqlite, *.db)|*.sqlite;*.db|All files (*.*)|*.*";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 158);
+            this.ClientSize = new System.Drawing.Size(530, 210);
+            this.Controls.Add(this.btnImportFromSqlite);
             this.Controls.Add(this.appointmentsNotificationBadge);
             this.Controls.Add(this.btnInvoices);
             this.Controls.Add(this.btnAppointments);
@@ -118,6 +141,8 @@
         private Guna.UI2.WinForms.Guna2ImageButton btnAppointments;
         private Guna.UI2.WinForms.Guna2ImageButton btnInvoices;
         private Guna.UI2.WinForms.Guna2CircleButton appointmentsNotificationBadge;
+        private Guna.UI2.WinForms.Guna2Button btnImportFromSqlite;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
