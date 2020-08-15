@@ -49,7 +49,7 @@ namespace TMS.Invoice.IntegrationTests
             };
 
             // Act
-            List<string> result = InvoiceService.Post(invoice);
+            List<string> result = InvoiceService.Create(invoice);
 
             bool invoiceResult = InvoiceService.Delete(invoiceId);
 

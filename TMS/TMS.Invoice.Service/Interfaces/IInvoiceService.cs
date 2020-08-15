@@ -9,9 +9,9 @@ namespace TMS.Invoice.Service.Interfaces
 {
     public interface IInvoiceService
     {
-        List<string> Post(InvoiceDto obj);
+        List<string> Create(InvoiceDto obj);
 
-        List<string> Put(InvoiceDto obj);
+        List<string> Edit(InvoiceDto obj);
 
         bool Delete(Guid id);
 

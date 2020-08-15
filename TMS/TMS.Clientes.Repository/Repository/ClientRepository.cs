@@ -11,7 +11,7 @@ namespace TMS.Clientes.Repository.Repository
     {
         private const string tableName = "client";
 
-        public bool Post(ClientModel obj)
+        public bool Create(ClientModel obj)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace TMS.Clientes.Repository.Repository
             }
         }
 
-        public bool Put(ClientModel obj)
+        public bool Edit(ClientModel obj)
         {
             try
             {
@@ -90,6 +90,21 @@ namespace TMS.Clientes.Repository.Repository
             catch
             {
                 return false;
+            }
+        }
+
+        public long Count()
+        {
+            try
+            {
+                using (var db = new LiteDatabase("Database.db"))
+                {
+                    return db.GetCollection<ClientModel>(tableName).LongCount();
+                }
+            }
+            catch
+            {
+                return default;
             }
         }
     }

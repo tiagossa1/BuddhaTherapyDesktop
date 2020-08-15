@@ -34,12 +34,12 @@ namespace TMS.Invoice.Service.Service
             return InvoiceAssembler.EntitiesToDto(invoiceDomainService.GetAll().ToList());
         }
 
-        public List<string> Post(InvoiceDto obj)
+        public List<string> Create(InvoiceDto obj)
         {
             return invoiceDomainService.Post(InvoiceAssembler.DtoToEntity(obj));
         }
 
-        public List<string> Put(InvoiceDto obj)
+        public List<string> Edit(InvoiceDto obj)
         {
             return invoiceDomainService.Put(InvoiceAssembler.DtoToEntity(obj));
         }

@@ -43,11 +43,11 @@ namespace TMS.Invoice.IntegrationTests
             };
 
             // Act
-            List<string> insertResult = invoiceService.Post(invoice);
+            List<string> insertResult = invoiceService.Create(invoice);
 
             invoice.Price = 5.00M;
 
-            List<string> updateResult = invoiceService.Put(invoice);
+            List<string> updateResult = invoiceService.Edit(invoice);
 
             InvoiceDto getResult = invoiceService.Get(invoiceId);
 
@@ -65,7 +65,7 @@ namespace TMS.Invoice.IntegrationTests
 
             InvoiceService InvoiceService = new InvoiceService(container.GetInstance<InvoiceDomainService>());
 
-            List<string> updateResult = InvoiceService.Put(null);
+            List<string> updateResult = InvoiceService.Edit(null);
 
             // Assert
             Assert.IsTrue(updateResult.Count > 0);

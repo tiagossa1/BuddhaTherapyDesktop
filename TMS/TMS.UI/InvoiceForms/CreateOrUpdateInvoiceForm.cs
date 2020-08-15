@@ -73,6 +73,7 @@ namespace TMS.UI.InvoiceForms
             {
                 Id = Invoice != null ? Invoice.Id : Guid.NewGuid(),
                 AppointmentID = selectedAppointment.Id,
+                ClientID = selectedAppointment.ClientID,
                 InvoiceDate = DateTime.UtcNow,
                 Price = decimal.Parse(txtPrice.Text)
             };
@@ -81,11 +82,11 @@ namespace TMS.UI.InvoiceForms
 
             if (Invoice != null)
             {
-                results = invoiceService.Put(invoice).ToList();
+                results = invoiceService.Edit(invoice).ToList();
             }
             else
             {
-                results = invoiceService.Post(invoice).ToList();
+                results = invoiceService.Create(invoice).ToList();
             }
 
             if (results.Count > 0)
@@ -98,6 +99,8 @@ namespace TMS.UI.InvoiceForms
 
                 MessageBox.Show(message, "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            Close();
         }
 
         private void TxtPrice_KeyPress(object sender, KeyPressEventArgs e)

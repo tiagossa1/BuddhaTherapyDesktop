@@ -21,3 +21,16 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.pdb
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\TMS.Appointment.Domain.dll
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\TMS.Appointment.Domain.pdb
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\FluentValidation.dll
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\TMS.Client.Domain.dll
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\TMS.Client.Domain.pdb
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\TMS.Client.Domain.dll.config
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\bin\Debug\FluentValidation.xml
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.csprojAssemblyReference.cache
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.csproj.CopyComplete
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.dll
+C:\Users\Tiago\Documents\TherapyManagementSystemDesktop\TMS\TMS.Appointment.Domain\obj\Debug\TMS.Appointment.Domain.pdb

@@ -40,22 +40,45 @@ namespace TMS.UI
 
         private void BtnAppointments_Click(object sender, EventArgs e)
         {
-            var appointmentsForm = new AppointmentMainForm();
+            var clientService = new ClientDomainService(new ClientRepository());
 
-            Hide();
+            if (clientService.Count() == 0)
+            {
+                MessageBox.Show("Não tem clientes. Por favor, crie pelo menos um cliente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var appointmentsForm = new AppointmentMainForm();
 
-            appointmentsForm.Closed += (s, args) => Show();
-            appointmentsForm.Show();
+                Hide();
+
+                appointmentsForm.Closed += (s, args) => Show();
+                appointmentsForm.Show();
+            }
         }
 
         private void BtnInvoices_Click(object sender, EventArgs e)
         {
-            var invoicesForm = new InvoicesForm();
+            var clientService = new ClientDomainService(new ClientRepository());
+            var appointmentService = new AppointmentDomainService(new AppointmentRepository());
 
-            Hide();
+            if (clientService.Count() == 0)
+            {
+                MessageBox.Show("Não existem clientes. Por favor, crie pelo menos um cliente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (appointmentService.Count() == 0)
+            {
+                MessageBox.Show("Não existem consultas. Por favor, crie pelo menos uma consulta.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var invoicesForm = new InvoicesForm();
 
-            invoicesForm.Closed += (s, args) => Show();
-            invoicesForm.Show();
+                Hide();
+
+                invoicesForm.Closed += (s, args) => Show();
+                invoicesForm.Show();
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)

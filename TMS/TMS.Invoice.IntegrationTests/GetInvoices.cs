@@ -49,7 +49,7 @@ namespace TMS.Invoice.IntegrationTests
                 Price = decimal.One
             };
 
-            List<string> postResult = InvoiceService.Post(invoice);
+            List<string> postResult = InvoiceService.Create(invoice);
 
             InvoiceDto getResult = InvoiceService.Get(invoiceId);
 
@@ -78,7 +78,7 @@ namespace TMS.Invoice.IntegrationTests
                 Price = decimal.One
             };
 
-            List<string> postResult = InvoiceService.Post(invoice);
+            List<string> postResult = InvoiceService.Create(invoice);
 
             List<InvoiceDto> getAllResult = InvoiceService.GetAll().ToList();
 

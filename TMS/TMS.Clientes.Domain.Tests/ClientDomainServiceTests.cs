@@ -34,7 +34,7 @@ namespace TMS.Client.Domain.Tests
             };
 
             // Act
-            List<string> result = clientDomainService.Post(cliente);
+            List<string> result = clientDomainService.Create(cliente);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -48,7 +48,7 @@ namespace TMS.Client.Domain.Tests
         {
             // Arrange
             var clientRepository = new Mock<IClientRepository>();
-            clientRepository.Setup(x => x.Post(It.IsAny<ClientModel>())).Returns(false);
+            clientRepository.Setup(x => x.Create(It.IsAny<ClientModel>())).Returns(false);
             ClientDomainService ClientDomainService = new ClientDomainService(clientRepository.Object);
 
             ClientModel client = new ClientModel()
@@ -64,7 +64,7 @@ namespace TMS.Client.Domain.Tests
             };
 
             // Act
-            List<string> result = ClientDomainService.Post(client);
+            List<string> result = ClientDomainService.Create(client);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -76,7 +76,7 @@ namespace TMS.Client.Domain.Tests
         {
             // Arrange
             var clientRepository = new Mock<IClientRepository>();
-            clientRepository.Setup(x => x.Post(It.IsAny<ClientModel>())).Returns(true);
+            clientRepository.Setup(x => x.Create(It.IsAny<ClientModel>())).Returns(true);
             ClientDomainService clientDomainService = new ClientDomainService(clientRepository.Object);
 
             ClientModel client = new ClientModel()
@@ -92,7 +92,7 @@ namespace TMS.Client.Domain.Tests
             };
 
             // Act
-            List<string> result = clientDomainService.Post(client);
+            List<string> result = clientDomainService.Create(client);
 
             // Assert
             Assert.IsTrue(result.Count == 0);
@@ -121,7 +121,7 @@ namespace TMS.Client.Domain.Tests
             };
 
             // Act
-            List<string> result = clientDomainService.Put(client);
+            List<string> result = clientDomainService.Edit(client);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -135,7 +135,7 @@ namespace TMS.Client.Domain.Tests
         {
             // Arrange
             var clientRepository = new Mock<IClientRepository>();
-            clientRepository.Setup(x => x.Put(It.IsAny<ClientModel>())).Returns(false);
+            clientRepository.Setup(x => x.Edit(It.IsAny<ClientModel>())).Returns(false);
             ClientDomainService clientDomainService = new ClientDomainService(clientRepository.Object);
 
             ClientModel client = new ClientModel()
@@ -151,7 +151,7 @@ namespace TMS.Client.Domain.Tests
             };
 
             // Act
-            List<string> result = clientDomainService.Put(client);
+            List<string> result = clientDomainService.Edit(client);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -163,7 +163,7 @@ namespace TMS.Client.Domain.Tests
         {
             // Arrange
             var clientRepository = new Mock<IClientRepository>();
-            clientRepository.Setup(x => x.Put(It.IsAny<ClientModel>())).Returns(true);
+            clientRepository.Setup(x => x.Edit(It.IsAny<ClientModel>())).Returns(true);
             ClientDomainService ClientDomainService = new ClientDomainService(clientRepository.Object);
 
             ClientModel client = new ClientModel()
@@ -179,7 +179,7 @@ namespace TMS.Client.Domain.Tests
             };
 
             // Act
-            List<string> result = ClientDomainService.Put(client);
+            List<string> result = ClientDomainService.Edit(client);
 
             // Assert
             Assert.IsTrue(result.Count == 0);
