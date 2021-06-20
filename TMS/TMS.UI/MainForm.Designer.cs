@@ -46,10 +46,9 @@
             this.appointmentsNotificationBadge.ForeColor = System.Drawing.Color.Red;
             this.appointmentsNotificationBadge.HoverState.Parent = this.appointmentsNotificationBadge;
             this.appointmentsNotificationBadge.Location = new System.Drawing.Point(660, 15);
-            this.appointmentsNotificationBadge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.appointmentsNotificationBadge.Margin = new System.Windows.Forms.Padding(4);
             this.appointmentsNotificationBadge.Name = "appointmentsNotificationBadge";
             this.appointmentsNotificationBadge.ShadowDecoration.Depth = 20;
-            this.appointmentsNotificationBadge.ShadowDecoration.Enabled = true;
             this.appointmentsNotificationBadge.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.appointmentsNotificationBadge.ShadowDecoration.Parent = this.appointmentsNotificationBadge;
             this.appointmentsNotificationBadge.Size = new System.Drawing.Size(31, 30);
@@ -64,7 +63,7 @@
             this.btnInvoices.CheckedState.Parent = this.btnInvoices;
             this.btnInvoices.HoverState.Parent = this.btnInvoices;
             this.btnInvoices.Location = new System.Drawing.Point(495, 79);
-            this.btnInvoices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInvoices.Margin = new System.Windows.Forms.Padding(4);
             this.btnInvoices.Name = "btnInvoices";
             this.btnInvoices.PressedState.Parent = this.btnInvoices;
             this.btnInvoices.Size = new System.Drawing.Size(196, 165);
@@ -78,7 +77,7 @@
             this.btnAppointments.CheckedState.Parent = this.btnAppointments;
             this.btnAppointments.HoverState.Parent = this.btnAppointments;
             this.btnAppointments.Location = new System.Drawing.Point(267, 79);
-            this.btnAppointments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAppointments.Margin = new System.Windows.Forms.Padding(4);
             this.btnAppointments.Name = "btnAppointments";
             this.btnAppointments.PressedState.Parent = this.btnAppointments;
             this.btnAppointments.Size = new System.Drawing.Size(166, 165);
@@ -93,7 +92,7 @@
             this.btnClients.CheckedState.Parent = this.btnClients;
             this.btnClients.HoverState.Parent = this.btnClients;
             this.btnClients.Location = new System.Drawing.Point(15, 79);
-            this.btnClients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClients.Margin = new System.Windows.Forms.Padding(4);
             this.btnClients.Name = "btnClients";
             this.btnClients.PressedState.Parent = this.btnClients;
             this.btnClients.Size = new System.Drawing.Size(177, 165);
@@ -109,15 +108,14 @@
             this.btnImportFromSqlite.ForeColor = System.Drawing.Color.White;
             this.btnImportFromSqlite.HoverState.Parent = this.btnImportFromSqlite;
             this.btnImportFromSqlite.Location = new System.Drawing.Point(15, 15);
-            this.btnImportFromSqlite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImportFromSqlite.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportFromSqlite.Name = "btnImportFromSqlite";
             this.btnImportFromSqlite.ShadowDecoration.BorderRadius = 5;
-            this.btnImportFromSqlite.ShadowDecoration.Enabled = true;
             this.btnImportFromSqlite.ShadowDecoration.Parent = this.btnImportFromSqlite;
             this.btnImportFromSqlite.Size = new System.Drawing.Size(115, 39);
             this.btnImportFromSqlite.TabIndex = 8;
             this.btnImportFromSqlite.Text = "Importar";
-            this.btnImportFromSqlite.Click += new System.EventHandler(this.BtnImportFromSqlite_Click);
+            this.btnImportFromSqlite.Click += new System.EventHandler(this.BtnAppointments_Click);
             // 
             // openFileDialog1
             // 
@@ -135,7 +133,7 @@
             this.Controls.Add(this.btnClients);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -115,44 +115,5 @@ namespace TMS.UI
                 todaysAppointmentTooltipText = $"Consultas para hoje: {string.Join(" | ", appointmentsForToday.Select(x => x.Nome))} | {string.Join(" ", appointmentsForToday.Select(x => x.TipoDeConsulta))} | {string.Join(" ", appointmentsForToday.Select(x => x.Data))}.";
             }
         }
-
-        private void BtnImportFromSqlite_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    var clientService = new ClientService(new ClientDomainService(new ClientRepository()));
-                    var errorList = new Dictionary<string, List<string>>();
-                    var repository = new Repository($"Data Source={openFileDialog1.FileName};Version=3;");
-
-                    foreach (var client in repository.Get())
-                    {
-                        var clientDto = new ClientDto()
-                        {
-                            Id = Guid.NewGuid(),
-                            Address = client.Localidade,
-                            Email = client.Email,
-                            FirstName = client.Nome,
-                            LastName = client.Apelidos,
-                            JobTitle = client.Profisso,
-                            NIF = client.NIF,
-                            PhoneNumber = string.IsNullOrEmpty(client.Telemvel) ? client.TelefoneFixo : client.Telemvel
-                        };
-
-                        var errors = clientService.Create(clientDto);
-
-                        if (errors?.Count > 0)
-                        {
-                            errorList.Add($"{client.Nome} {client.Apelidos}", errors);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
     }
 }
