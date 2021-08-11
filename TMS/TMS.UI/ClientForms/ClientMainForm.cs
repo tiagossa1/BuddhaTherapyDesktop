@@ -1,17 +1,11 @@
 ﻿using FastMember;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TMS.Client.Domain.Interfaces;
 using TMS.Client.Domain.Services;
-using TMS.Clientes.Repository.Repository;
+using TMS.Client.Repository.Repository;
 using TMS.Clientes.Service.Model;
 using TMS.UI.ClientForms;
 using TMS.UI.Mapper;
@@ -95,10 +89,10 @@ namespace TMS.UI
             if (!string.IsNullOrWhiteSpace(txtFilter.Text))
             {
                 var selectedClients = clientMapper.ToUiModelList(clients).FindAll(x =>
-                (x.Contacto.ToString() ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.Contacto.ToString()).Contains(txtFilter.Text) ||
                 (x.Email ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Endereco ?? string.Empty).Contains(txtFilter.Text) ||
-                (x.NIF.ToString() ?? string.Empty).Contains(txtFilter.Text) ||
+                (x.NIF.ToString()).Contains(txtFilter.Text) ||
                 (x.Nome ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Profissao ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Sobrenome ?? string.Empty).Contains(txtFilter.Text));
@@ -113,7 +107,7 @@ namespace TMS.UI
 
         private DataTable ConvertToDataTable(List<ClientUIModel> selectedClients)
         {
-            DataTable table = new DataTable();
+            var table = new DataTable();
             using (var reader = ObjectReader.Create(selectedClients))
             {
                 table.Load(reader);

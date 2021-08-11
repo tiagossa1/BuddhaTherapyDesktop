@@ -12,7 +12,7 @@ using TMS.Appointment.Repository;
 using TMS.Appointment.Service.Model;
 using TMS.Appointment.Service.Service;
 using TMS.Client.Domain.Services;
-using TMS.Clientes.Repository.Repository;
+using TMS.Client.Repository.Repository;
 using TMS.Invoice.Domain.Services;
 using TMS.Invoice.Repository.Repository;
 using TMS.Invoice.Service.Model;

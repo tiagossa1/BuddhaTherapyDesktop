@@ -14,7 +14,7 @@ namespace TMS.Client.IntegrationTests
         public void VaiAtualizarComSucesso()
         {
             // Arrange
-            var container = BootStrapDI.Bootstrap();
+            var container = BootStrapDi.Bootstrap();
             ClientService ClientService = new ClientService(container.GetInstance<ClientDomainService>());
             Guid userId = Guid.NewGuid();
             ClientDto cliente = new ClientDto()
@@ -57,7 +57,7 @@ namespace TMS.Client.IntegrationTests
         public void NãoAtualizaComValorNull()
         {
             // Arrange
-            var container = BootStrapDI.Bootstrap();
+            var container = BootStrapDi.Bootstrap();
             ClientService ClientService = new ClientService(container.GetInstance<ClientDomainService>());
 
             List<string> updateResult = ClientService.Edit(null);

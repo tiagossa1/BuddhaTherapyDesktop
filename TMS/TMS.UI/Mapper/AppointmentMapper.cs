@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TMS.Appointment.Service.Model;
 using TMS.Client.Domain.Services;
-using TMS.Clientes.Repository.Repository;
+using TMS.Client.Repository.Repository;
 using TMS.UI.Mapper.Interfaces;
 using TMS.UI.UIModels;
 

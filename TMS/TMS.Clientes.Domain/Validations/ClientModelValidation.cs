@@ -9,9 +9,9 @@ namespace TMS.Client.Domain.Validations
             ValidateName();
             ValidateLastName();
             ValidateAddress();
-            ValidateJobTitle();
+            //ValidateJobTitle();
             //ValidateNif();
-            ValidatePhoneNumber();
+            //ValidatePhoneNumber();
             //ValidateEmail();
         }
     }

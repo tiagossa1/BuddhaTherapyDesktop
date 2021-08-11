@@ -15,7 +15,7 @@ namespace TMS.Client.IntegrationTests
         public void VaiRetornarUmClienteVazio()
         {
             // Arrange
-            var container = BootStrapDI.Bootstrap();
+            var container = BootStrapDi.Bootstrap();
             ClientService ClientService = new ClientService(container.GetInstance<ClientDomainService>());
 
             // Act
@@ -29,7 +29,7 @@ namespace TMS.Client.IntegrationTests
         public void VaiRetornarUmCliente()
         {
             // Arrange
-            var container = BootStrapDI.Bootstrap();
+            var container = BootStrapDi.Bootstrap();
             ClientService ClientService = new ClientService(container.GetInstance<ClientDomainService>());
             Guid userId = Guid.NewGuid();
             // Act
@@ -57,7 +57,7 @@ namespace TMS.Client.IntegrationTests
         public void VaiRetornarTodosOsClientes()
         {
             // Arrange
-            var container = BootStrapDI.Bootstrap();
+            var container = BootStrapDi.Bootstrap();
             ClientService ClientService = new ClientService(container.GetInstance<ClientDomainService>());
             Guid userId = Guid.NewGuid();
 

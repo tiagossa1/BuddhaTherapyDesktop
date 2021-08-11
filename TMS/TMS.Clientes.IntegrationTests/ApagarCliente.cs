@@ -14,7 +14,7 @@ namespace TMS.Client.IntegrationTests
         public void VaiApagarUmClienteQueNaoExiste()
         {
             // Arrange
-            var container = BootStrapDI.Bootstrap();
+            var container = BootStrapDi.Bootstrap();
             ClientService ClientService = new ClientService(container.GetInstance<ClientDomainService>());
             // Act
             bool clienteResult = ClientService.Delete(Guid.NewGuid());
@@ -27,7 +27,7 @@ namespace TMS.Client.IntegrationTests
         public void VaiApagarUmCliente()
         {
             // Arrange
-            var container = BootStrapDI.Bootstrap();
+            var container = BootStrapDi.Bootstrap();
             ClientService clientService = new ClientService(container.GetInstance<ClientDomainService>());
             Guid clientId = Guid.NewGuid();
 

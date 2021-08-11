@@ -16,7 +16,7 @@ namespace TMS.Client.IntegrationTests
         public void VaiFalharDevidoaErrosdeValidacaodeDominio(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
-            var container = BootStrapDI.Bootstrap();
+            var container = BootStrapDi.Bootstrap();
             ClientService clientService = new ClientService(container.GetInstance<ClientDomainService>());
             ClientDto client = new ClientDto()
             {
@@ -42,7 +42,7 @@ namespace TMS.Client.IntegrationTests
         public void VaiAdicionarComSucesso(string firstName, string lastname, string address, string phoneNumber, string email, string nif, string jobTitle)
         {
             // Arrange
-            var container = BootStrapDI.Bootstrap();
+            var container = BootStrapDi.Bootstrap();
             ClientService clientService = new ClientService(container.GetInstance<ClientDomainService>());
             ClientDto client = new ClientDto()
             {

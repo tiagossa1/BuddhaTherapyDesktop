@@ -1,11 +1,11 @@
-﻿using LiteDB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using LiteDB;
 using TMS.Client.Domain.Interfaces;
 using TMS.Client.Domain.Model;
 
-namespace TMS.Clientes.Repository.Repository
+namespace TMS.Client.Repository.Repository
 {
     public class ClientRepository : IClientRepository
     {
@@ -85,6 +85,22 @@ namespace TMS.Clientes.Repository.Repository
                 {
                     var col = db.GetCollection<ClientModel>(tableName);
                     return col.Update(obj);
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool Exists(ClientModel obj)
+        {
+            try
+            {
+                using (var db = new LiteDatabase("Database.db"))
+                {
+                    var col = db.GetCollection<ClientModel>(tableName);
+                    return col.Exists(x => x.FirstName == obj.FirstName && x.LastName == obj.LastName);
                 }
             }
             catch

@@ -1,17 +1,17 @@
 ﻿using SimpleInjector;
 using TMS.Client.Domain.Interfaces;
 using TMS.Client.Domain.Services;
-using TMS.Clientes.Repository.Repository;
+using TMS.Client.Repository.Repository;
 using TMS.Clientes.Services.Interfaces;
 
 namespace TMS.Client.DI
 {
-    public static class BootStrapDI
+    public static class BootStrapDi
     {
         public static Container Bootstrap()
         {
             // Create the container as usual.
-            Container container = new Container();
+            var container = new Container();
 
             // Register your types, for instance:
             container.Register<IClientDomainService, ClientDomainService>();

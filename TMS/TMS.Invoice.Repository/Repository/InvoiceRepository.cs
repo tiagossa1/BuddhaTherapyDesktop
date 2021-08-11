@@ -11,7 +11,7 @@ namespace TMS.Invoice.Repository.Repository
 {
     public class InvoiceRepository : IInvoiceRepository
     {
-        private const string tableName = "invoice";
+        private const string TableName = "invoice";
 
         public bool Delete(Guid id)
         {
@@ -19,10 +19,8 @@ namespace TMS.Invoice.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<InvoiceModel>(tableName);
-                    if (col.FindById(id) != null)
-                        return col.Delete(id);
-                    return false;
+                    var col = db.GetCollection<InvoiceModel>(TableName);
+                    return col.FindById(id) != null && col.Delete(id);
                 }
             }
             catch
@@ -37,7 +35,7 @@ namespace TMS.Invoice.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<InvoiceModel>(tableName);
+                    var col = db.GetCollection<InvoiceModel>(TableName);
 
                     return col.FindById(id);
                 }
@@ -54,7 +52,7 @@ namespace TMS.Invoice.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<InvoiceModel>(tableName);
+                    var col = db.GetCollection<InvoiceModel>(TableName);
                     return col.FindAll().ToList();
                 }
             }
@@ -70,7 +68,7 @@ namespace TMS.Invoice.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<InvoiceModel>(tableName);
+                    var col = db.GetCollection<InvoiceModel>(TableName);
                     col.Insert(obj);
                 }
             }
@@ -88,7 +86,7 @@ namespace TMS.Invoice.Repository.Repository
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
-                    var col = db.GetCollection<InvoiceModel>(tableName);
+                    var col = db.GetCollection<InvoiceModel>(TableName);
                     return col.Update(obj);
                 }
             }

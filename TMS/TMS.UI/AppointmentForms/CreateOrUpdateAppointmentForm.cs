@@ -13,7 +13,7 @@ using TMS.Appointment.Repository;
 using TMS.Appointment.Service.Model;
 using TMS.Appointment.Service.Service;
 using TMS.Client.Domain.Services;
-using TMS.Clientes.Repository.Repository;
+using TMS.Client.Repository.Repository;
 using TMS.Clientes.Service.Model;
 
 namespace TMS.UI

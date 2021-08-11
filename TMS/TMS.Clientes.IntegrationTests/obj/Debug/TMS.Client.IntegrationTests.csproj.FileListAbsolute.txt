@@ -40,6 +40,10 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTe
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Client.Domain.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Client.Repository.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Client.Services.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Repository.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Repository.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\FluentValidation.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\LiteDB.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Client.Services.pdb
@@ -51,6 +55,10 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTe
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\SimpleInjector.xml
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Repository.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Repository.pdb
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\FluentValidation.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\LiteDB.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.csprojAssemblyReference.cache
@@ -58,11 +66,3 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTe
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\obj\Debug\TMS.Client.IntegrationTests.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Domain.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Domain.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Repository.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Repository.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Domain.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Domain.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Appointment.Repository.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.IntegrationTests\bin\Debug\TMS.Invoice.Repository.pdb

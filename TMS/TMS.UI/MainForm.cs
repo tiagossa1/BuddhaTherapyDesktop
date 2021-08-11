@@ -11,7 +11,7 @@ using TMS.Appointment.Domain.Services;
 using TMS.Appointment.Repository;
 using TMS.Appointment.Service.Service;
 using TMS.Client.Domain.Services;
-using TMS.Clientes.Repository.Repository;
+using TMS.Client.Repository.Repository;
 using TMS.Clientes.Service.Model;
 using TMS.ImportRepository;
 using TMS.UI.AppointmentForms;
@@ -105,24 +105,36 @@ namespace TMS.UI
 
                     foreach (var client in repository.Get())
                     {
+                        var telefone = SetTelefone(client);
+
                         var clientDto = new ClientDto()
                         {
                             Id = Guid.NewGuid(),
-                            Address = client.Localidade,
-                            Email = client.Email,
-                            FirstName = client.Nome,
-                            LastName = client.Apelidos,
-                            JobTitle = client.Profisso,
-                            NIF = client.NIF,
-                            PhoneNumber = string.IsNullOrEmpty(client.Telemvel) ? client.TelefoneFixo : client.Telemvel
+                            Address = client.Localidade ?? "Localidade não definida",
+                            Email = client.Email ?? "Email não definido",
+                            FirstName = client.Nome ?? "Nome não definido",
+                            LastName = client.Apelidos ?? "Apelido não definido",
+                            JobTitle = client.Profisso ?? "Profissão não definida",
+                            NIF = client.NIF ?? "NIF não definido",
+                            PhoneNumber = telefone
                         };
 
                         var errors = clientService.Create(clientDto);
 
                         if (errors?.Count > 0)
                         {
-                            errorList.Add($"{client.Nome} {client.Apelidos}", errors);
+                            errorList.Add($"{client.Nome}{client.Apelidos}", errors);
                         }
+                    }
+
+                    if (errorList?.Count > 0)
+                    {
+                        MessageBox.Show($"Houve erros: {string.Join(",", errorList.Values)}.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Todos os utilizadores foram importados com sucesso.", "Sucesso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)
@@ -130,6 +142,26 @@ namespace TMS.UI
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private static string SetTelefone(AccessClientModel client)
+        {
+            string telefone;
+
+            if (!string.IsNullOrWhiteSpace(client.TelefoneFixo))
+            {
+                telefone = client.TelefoneFixo;
+            }
+            else if (!string.IsNullOrWhiteSpace(client.Telemvel))
+            {
+                telefone = client.Telemvel;
+            }
+            else
+            {
+                telefone = "Telefone não definido.";
+            }
+
+            return telefone;
         }
     }
 }

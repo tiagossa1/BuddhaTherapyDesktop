@@ -25,6 +25,10 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Client.Domain.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Client.Repository.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Client.Services.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Appointment.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Invoice.Domain.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Appointment.Repository.dll
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Invoice.Repository.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\FluentValidation.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\LiteDB.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Client.Services.pdb
@@ -33,6 +37,10 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Client.Repository.pdb
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Client.Repository.dll.config
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\SimpleInjector.xml
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Appointment.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Invoice.Domain.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Appointment.Repository.pdb
+E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Invoice.Repository.pdb
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\FluentValidation.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\LiteDB.xml
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\obj\Debug\TMS.Client.DI.csprojAssemblyReference.cache
@@ -40,11 +48,3 @@ E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\obj\Debug\
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\obj\Debug\TMS.Client.DI.csproj.CopyComplete
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\obj\Debug\TMS.Client.DI.dll
 E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\obj\Debug\TMS.Client.DI.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Appointment.Domain.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Invoice.Domain.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Appointment.Repository.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Invoice.Repository.dll
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Appointment.Domain.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Invoice.Domain.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Appointment.Repository.pdb
-E:\DesktopProjects\TherapyManagementSystemDesktop\TMS\TMS.Clientes.DI\bin\Debug\TMS.Invoice.Repository.pdb

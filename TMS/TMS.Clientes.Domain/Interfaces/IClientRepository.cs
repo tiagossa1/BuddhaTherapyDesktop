@@ -9,6 +9,7 @@ namespace TMS.Client.Domain.Interfaces
         bool Post(Model.ClientModel obj);
 
         bool Put(Model.ClientModel obj);
+        bool Exists(Model.ClientModel obj);
 
         bool Delete(Guid id);
 
