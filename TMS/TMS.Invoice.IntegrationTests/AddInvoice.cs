@@ -27,7 +27,7 @@ namespace TMS.Invoice.IntegrationTests
             };
 
             // Act
-            List<string> result = invoiceService.Post(invoice);
+            List<string> result = invoiceService.Create(invoice);
 
             // Assert
             Assert.IsTrue(result.Count > 0);
@@ -50,7 +50,7 @@ namespace TMS.Invoice.IntegrationTests
             };
 
             // Act
-            List<string> result = invoiceService.Post(invoice);
+            List<string> result = invoiceService.Create(invoice);
 
             // Assert
             Assert.IsTrue(result.Count == 0);

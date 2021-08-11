@@ -141,7 +141,6 @@ namespace TMS.UI
 
             var invoicePrintPreviewForm = new InvoicePrintPreviewForm(selectedItem);
             invoicePrintPreviewForm.FormClosed += (x, y) => Show();
-
             invoicePrintPreviewForm.Show();
         }
     }

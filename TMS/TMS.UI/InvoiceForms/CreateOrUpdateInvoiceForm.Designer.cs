@@ -40,9 +40,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 23);
+            this.label1.Location = new System.Drawing.Point(12, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 15);
+            this.label1.Size = new System.Drawing.Size(71, 21);
             this.label1.TabIndex = 35;
             this.label1.Text = "Consulta";
             // 
@@ -50,9 +51,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 58);
+            this.label4.Location = new System.Drawing.Point(12, 71);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.Size = new System.Drawing.Size(50, 21);
             this.label4.TabIndex = 47;
             this.label4.Text = "Preço";
             // 
@@ -66,10 +68,11 @@
             this.btnCreateOrEdit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateOrEdit.ForeColor = System.Drawing.Color.Black;
             this.btnCreateOrEdit.HoverState.Parent = this.btnCreateOrEdit;
-            this.btnCreateOrEdit.Location = new System.Drawing.Point(238, 99);
+            this.btnCreateOrEdit.Location = new System.Drawing.Point(497, 124);
+            this.btnCreateOrEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateOrEdit.Name = "btnCreateOrEdit";
             this.btnCreateOrEdit.ShadowDecoration.Parent = this.btnCreateOrEdit;
-            this.btnCreateOrEdit.Size = new System.Drawing.Size(85, 26);
+            this.btnCreateOrEdit.Size = new System.Drawing.Size(113, 32);
             this.btnCreateOrEdit.TabIndex = 49;
             this.btnCreateOrEdit.Text = "CRIAR";
             this.btnCreateOrEdit.Click += new System.EventHandler(this.BtnCreateOrEdit_Click);
@@ -89,13 +92,14 @@
             this.txtPrice.FocusedState.Parent = this.txtPrice;
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrice.HoverState.Parent = this.txtPrice;
-            this.txtPrice.Location = new System.Drawing.Point(112, 54);
+            this.txtPrice.Location = new System.Drawing.Point(149, 66);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "";
             this.txtPrice.SelectedText = "";
             this.txtPrice.ShadowDecoration.Parent = this.txtPrice;
-            this.txtPrice.Size = new System.Drawing.Size(211, 22);
+            this.txtPrice.Size = new System.Drawing.Size(460, 27);
             this.txtPrice.TabIndex = 50;
             // 
             // cmbAppointments
@@ -112,17 +116,18 @@
             this.cmbAppointments.HoverState.Parent = this.cmbAppointments;
             this.cmbAppointments.ItemHeight = 30;
             this.cmbAppointments.ItemsAppearance.Parent = this.cmbAppointments;
-            this.cmbAppointments.Location = new System.Drawing.Point(112, 11);
+            this.cmbAppointments.Location = new System.Drawing.Point(149, 14);
+            this.cmbAppointments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbAppointments.Name = "cmbAppointments";
             this.cmbAppointments.ShadowDecoration.Parent = this.cmbAppointments;
-            this.cmbAppointments.Size = new System.Drawing.Size(211, 36);
+            this.cmbAppointments.Size = new System.Drawing.Size(461, 36);
             this.cmbAppointments.TabIndex = 51;
             // 
             // CreateOrUpdateInvoiceForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 137);
+            this.ClientSize = new System.Drawing.Size(623, 169);
             this.Controls.Add(this.cmbAppointments);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.btnCreateOrEdit);
@@ -130,6 +135,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "CreateOrUpdateInvoiceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

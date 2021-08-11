@@ -11,7 +11,7 @@ namespace TMS.Client.Repository.Repository
     {
         private const string tableName = "client";
 
-        public bool Post(ClientModel obj)
+        public bool Create(ClientModel obj)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace TMS.Client.Repository.Repository
             }
         }
 
-        public bool Put(ClientModel obj)
+        public bool Edit(ClientModel obj)
         {
             try
             {
@@ -93,19 +93,31 @@ namespace TMS.Client.Repository.Repository
             }
         }
 
+<<<<<<< HEAD
         public bool Exists(ClientModel obj)
+=======
+        public long Count()
+>>>>>>> d0773f26227fc8a3d8bff854b8a182039290b894
         {
             try
             {
                 using (var db = new LiteDatabase("Database.db"))
                 {
+<<<<<<< HEAD
                     var col = db.GetCollection<ClientModel>(tableName);
                     return col.Exists(x => x.FirstName == obj.FirstName && x.LastName == obj.LastName);
+=======
+                    return db.GetCollection<ClientModel>(tableName).LongCount();
+>>>>>>> d0773f26227fc8a3d8bff854b8a182039290b894
                 }
             }
             catch
             {
+<<<<<<< HEAD
                 return false;
+=======
+                return default;
+>>>>>>> d0773f26227fc8a3d8bff854b8a182039290b894
             }
         }
     }

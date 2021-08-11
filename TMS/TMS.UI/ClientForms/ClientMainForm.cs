@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using TMS.Client.Domain.Services;
 using TMS.Client.Repository.Repository;
 using TMS.Clientes.Service.Model;
+using TMS.Core;
 using TMS.UI.ClientForms;
 using TMS.UI.Mapper;
 using TMS.UI.UIModels;
@@ -49,13 +50,14 @@ namespace TMS.UI
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            var clientIndex = dataGridView1.CurrentCell.RowIndex;
+            var nifSelected = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
             DialogResult dialogResult = MessageBox.Show("Ao eliminar este cliente, todas as receitas e consultas são eliminadas. Continuar?", "Confirmação", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.Yes)
             {
-                clientService.Delete(clients[clientIndex].Id);
+                var clientSelected = clients.Find(x => x.NIF == nifSelected);
+                clientService.Delete(clientSelected.Id);
                 RefreshDataSource();
             }
         }
@@ -68,7 +70,9 @@ namespace TMS.UI
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            var selectedClient = clients[dataGridView1.CurrentCell.RowIndex];
+            var nifSelected = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+
+            var selectedClient = clients.Find(x => string.Equals(x.NIF, nifSelected, StringComparison.InvariantCulture));
             var addClientForm = new CreateOrUpdateClientForm(selectedClient);
 
             Hide();
@@ -89,6 +93,7 @@ namespace TMS.UI
             if (!string.IsNullOrWhiteSpace(txtFilter.Text))
             {
                 var selectedClients = clientMapper.ToUiModelList(clients).FindAll(x =>
+<<<<<<< HEAD
                 (x.Contacto.ToString()).Contains(txtFilter.Text) ||
                 (x.Email ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Endereco ?? string.Empty).Contains(txtFilter.Text) ||
@@ -96,6 +101,15 @@ namespace TMS.UI
                 (x.Nome ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Profissao ?? string.Empty).Contains(txtFilter.Text) ||
                 (x.Sobrenome ?? string.Empty).Contains(txtFilter.Text));
+=======
+                (x.Contacto ?? string.Empty).ContainsIgnoreCase(txtFilter.Text) ||
+                (x.Email ?? string.Empty).ContainsIgnoreCase(txtFilter.Text) ||
+                (x.Endereco ?? string.Empty).ContainsIgnoreCase(txtFilter.Text) ||
+                (x.NIF ?? string.Empty).ContainsIgnoreCase(txtFilter.Text) ||
+                (x.Nome ?? string.Empty).ContainsIgnoreCase(txtFilter.Text) ||
+                (x.Profissao ?? string.Empty).ContainsIgnoreCase(txtFilter.Text) ||
+                (x.Sobrenome ?? string.Empty).ContainsIgnoreCase(txtFilter.Text));
+>>>>>>> d0773f26227fc8a3d8bff854b8a182039290b894
 
                 dataGridView1.DataSource = ConvertToDataTable(selectedClients);
             }

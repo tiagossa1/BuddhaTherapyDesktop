@@ -35,29 +35,6 @@ namespace TMS.Appointment.Repository
                 return false;
             }
         }
-        public bool DeleteByClientID(Guid id)
-        {
-            try
-            {
-                using (var db = new LiteDatabase("Database.db"))
-                {
-                    var col = db.GetCollection<AppointmentModel>(tableName);
-
-                    var findAppointmentByClientID = col.FindOne(x => x.ClientID == id);
-
-                    if (findAppointmentByClientID != null)
-                    {
-                        return col.Delete(findAppointmentByClientID.Id);
-                    }
-
-                    return false;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
 
         public AppointmentModel Get(Guid id)
         {
@@ -105,6 +82,7 @@ namespace TMS.Appointment.Repository
             {
                 return false;
             }
+
             return true;
         }
 
@@ -121,6 +99,21 @@ namespace TMS.Appointment.Repository
             catch
             {
                 return false;
+            }
+        }
+
+        public long Count()
+        {
+            try
+            {
+                using (var db = new LiteDatabase("Database.db"))
+                {
+                    return db.GetCollection<AppointmentModel>(tableName).LongCount();
+                }
+            }
+            catch
+            {
+                return default;
             }
         }
     }

@@ -28,28 +28,33 @@ namespace TMS.Client.Domain.Services
             return clientRepository.GetAll();
         }
 
-        public List<string> Post(ClientModel cliente)
+        public List<string> Create(ClientModel cliente)
         {
             if (!cliente.IsValid())
                 return NotifyValidationErrors(cliente);
 
-            bool result = clientRepository.Post(cliente);
+            bool result = clientRepository.Create(cliente);
 
             return result ? new List<string>() : new List<string>() { "Error inserting on the database" };
         }
 
-        public List<string> Put(ClientModel cliente)
+        public List<string> Edit(ClientModel cliente)
         {
             if (!cliente.IsValid())
                 return NotifyValidationErrors(cliente);
 
-            bool result = clientRepository.Put(cliente);
+            bool result = clientRepository.Edit(cliente);
 
             return result ? new List<string>() : new List<string>() { "Error updating on the database" };
         }
         private List<string> NotifyValidationErrors(ClientModel cliente)
         {
             return cliente.ValidationResult.Errors.Select(x => x.ErrorMessage).ToList();
+        }
+
+        public long Count()
+        {
+            return clientRepository.Count();
         }
     }
 }

@@ -53,12 +53,16 @@ namespace TMS.Client.Domain.Services
 
         public List<string> Create(ClientDto cliente)
         {
+<<<<<<< HEAD
             return clientDomainService.Post(ClientAssembler.DtoToEntity(cliente));
+=======
+            return  clientDomainService.Create(ClientAssembler.DtoToEntity(cliente));
+>>>>>>> d0773f26227fc8a3d8bff854b8a182039290b894
         }
 
         public List<string> Edit(ClientDto cliente)
         {
-            return clientDomainService.Put(ClientAssembler.DtoToEntity(cliente));
+            return clientDomainService.Edit(ClientAssembler.DtoToEntity(cliente));
         }
     }
 }

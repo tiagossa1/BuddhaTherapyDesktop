@@ -56,5 +56,10 @@ namespace TMS.Appointment.Domain.Services
         {
             return appointment.ValidationResult.Errors.Select(x => x.ErrorMessage).ToList();
         }
+
+        public long Count()
+        {
+            return _appointmentRepository.Count();
+        }
     }
 }

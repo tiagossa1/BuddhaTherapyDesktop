@@ -18,5 +18,6 @@ namespace TMS.Appointment.Domain.Interfaces
         AppointmentModel Get(Guid id);
 
         List<AppointmentModel> GetAll();
+        long Count();
     }
 }
